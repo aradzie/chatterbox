@@ -1,0 +1,9 @@
+*.tgz
+*~
+.idea
+build
+lib
+lib-esnext
+node_modules
+out
+tmp

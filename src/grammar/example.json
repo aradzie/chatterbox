@@ -1,0 +1,13 @@
+{
+  "rule": {
+    "start": {
+      "alt": ["The <noun> is <adj>.", "A <adj> <noun>."]
+    },
+    "noun": {
+      "alt": ["house", "cat"]
+    },
+    "adj": {
+      "alt": ["green", "big"]
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "name": "@aradzie/chatterbox",
+  "version": "0.1.0",
+  "description": "Generates text based on a context-free grammar",
+  "author": "Aliaksandr Radzivanovich",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aradzie/chatterbox.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aradzie/chatterbox/issues"
+  },
+  "homepage": "https://github.com/aradzie/chatterbox",
+  "keywords": [
+    "context-free grammar",
+    "context-free",
+    "grammar",
+    "langauge generator",
+    "generator",
+    "lorem ipsum",
+    "lorem",
+    "ipsum"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "rm -fr lib; tsc",
+    "format": "prettier --write src/**/*.{ts,json}",
+    "lint": "eslint src --ext .ts",
+    "lint-fix": "eslint src --ext .ts --fix",
+    "start": "node lib/example.js",
+    "test": "ava"
+  },
+  "dependencies": {
+    "tslib": "^1.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "^13.1.8",
+    "@typescript-eslint/eslint-plugin": "^2.17.0",
+    "@typescript-eslint/parser": "^2.17.0",
+    "ava": "^3.0.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-ava": "^10.0.0",
+    "eslint-plugin-import": "^2.20.0",
+    "prettier": "^1.19.1",
+    "source-map-support": "^0.5.16",
+    "typescript": "^3.7.5"
+  },
+  "ava": {
+    "files": [
+      "lib/**/*.test.js"
+    ],
+    "require": [
+      "source-map-support"
+    ]
+  }
+}

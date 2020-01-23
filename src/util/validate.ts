@@ -1,0 +1,66 @@
+import { Grammar, isAlt, isLit, isRef, isSeq, P } from "../types";
+
+/**
+ * Checks that the given grammar is valid.
+ *
+ * - Checks that there are no empty `seq`s.
+ * - Checks that there are no empty `alt`s.
+ * - Checks that all refs can be resolved.
+ * - Checks that there are no unreferenced rules.
+ */
+export function validate(grammar: Grammar): Grammar {
+  const { rule, start = "start" } = grammar;
+  if (!(start in rule)) {
+    throw new Error(`Invalid ref [${start}]`);
+  }
+  const referenced = new Set<string>();
+  referenced.add(start);
+  for (const item of Object.values(rule)) {
+    visit(item);
+  }
+  for (const item of Object.keys(rule)) {
+    if (!referenced.has(item)) {
+      throw new Error(`Unreferenced rule [${item}]`);
+    }
+  }
+  return grammar;
+
+  function visit(p: P): void {
+    if (isLit(p)) {
+      return;
+    }
+
+    if (isSeq(p)) {
+      const { seq } = p;
+      if (seq.length == 0) {
+        throw new Error(`Empty seq`);
+      }
+      for (const child of seq) {
+        visit(child);
+      }
+      return;
+    }
+
+    if (isAlt(p)) {
+      const { alt } = p;
+      if (alt.length == 0) {
+        throw new Error(`Empty alt`);
+      }
+      for (const child of alt) {
+        visit(child);
+      }
+      return;
+    }
+
+    if (isRef(p)) {
+      const { ref } = p;
+      if (!(ref in rule)) {
+        throw new Error(`Invalid ref [${ref}]`);
+      }
+      referenced.add(ref);
+      return;
+    }
+
+    throw new Error(`Invalid element`);
+  }
+}
