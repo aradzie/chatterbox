@@ -1,5 +1,5 @@
 import test from "ava";
-import { parse } from "./parser";
+import { parse, SyntaxError } from "./parser";
 
 test("parse empty", (t) => {
   t.deepEqual(parse(``), { rule: {} });
@@ -39,6 +39,30 @@ test("parse rules", (t) => {
     rule: {
       a: "a",
       b: "b",
+    },
+  });
+});
+
+test("syntax error", (t) => {
+  const { location } = t.throws<SyntaxError>(
+    () => {
+      parse(" a -> ");
+    },
+    {
+      name: "SyntaxError",
+      message: 'Expected "(", literal, or ref but end of input found.',
+    },
+  );
+  t.deepEqual(location, {
+    start: {
+      line: 1,
+      column: 7,
+      offset: 6,
+    },
+    end: {
+      line: 1,
+      column: 7,
+      offset: 6,
     },
   });
 });
