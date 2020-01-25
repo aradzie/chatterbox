@@ -1,7 +1,7 @@
 import test from "ava";
 import { generate } from "./generate";
 
-test("generate", (t) => {
+test("generate from deterministic grammar", (t) => {
   t.is(
     generate({
       rule: {

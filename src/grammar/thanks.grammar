@@ -1,0 +1,400 @@
+money.object ->
+    "new clothes"
+  | "a really good book"
+  | "drugs"
+  | "comic books"
+  | "booze for a party I'm throwing this weekend"
+  | "new computer hardware"
+  | "a stuffed animal"
+  | "a cute little pewter castle with crystals on the towers"
+  | "sexy underwear"
+  | "a bread machine"
+  | "car repairs"
+  | "a digital watch"
+  | "a new pet hamster"
+  | "a new toaster"
+  | "shampoo"
+  | "things for my new baby"
+  | "legal fees"
+  | "my divorce"
+  | "this month's rent"
+  | "food" ( "for the baby" | "for the next " ( "week" | "few days" ) )
+  | "plastic surgery"
+  ;
+thank.you.paragraph ->
+    <money.thanks>
+  | <gift.thanks>
+  ;
+closing ->
+  <closing.line> ( <male.name> | <female.name> )
+  ;
+gift.used ->
+    "I'm planning to take it to the shooting range the next time I go."
+  | "I'm sure I will put it to good use."
+  | "Everyone I know is envious."
+  | "It looks lovely in my " <room> "."
+  | "I've made it the central focus of my " <room> "."
+  | "My " <room> " looked empty without it."
+  ;
+money.thanks ->
+  <money.received> ( <money.spent> | <money.saved> ) <money.tag.line>
+  ;
+male.name ->
+    "Bob"
+  | "Jim"
+  | "John"
+  | "Fred"
+  | "Elmer"
+  | "Charlie"
+  | "Lester"
+  | "David"
+  | "Mark"
+  | "Andrew"
+  | "Pete"
+  | "Bill"
+  | "William"
+  | "James"
+  | "Richard"
+  | "Scott"
+  | "Nathan"
+  | "Matt"
+  | "Jeff"
+  | "Archie"
+  | "Tom"
+  | "Harry"
+  | "Vinnie"
+  | "Michael"
+  | "Dan"
+  | "Ray"
+  | "Roy"
+  | "Todd"
+  | "Chad"
+  | "Jeremy"
+  | "Jason"
+  | "Kurt"
+  | "Keith"
+  | "Ken"
+  | "Tim"
+  | "Randall"
+  | "Eric"
+  | "Stuart"
+  | "Roger"
+  | "Alex"
+  | "Joel"
+  | "Don"
+  | "Ron"
+  | "Arnold"
+  | "Frank"
+  | "Ted"
+  | "Gary"
+  | "Josh"
+  | "Warren"
+  | "Nick"
+  | "Ben"
+  | "Calvin"
+  | "Martin"
+  | "Jake"
+  | "Ed"
+  ;
+gift.thanks ->
+  <gift.received> <gift.used> <gift.tag.line>
+  ;
+money.amount ->
+    "$5"
+  | "$10"
+  | "$15"
+  | "$20"
+  | "$25"
+  | "$30"
+  | "$35"
+  | "$40"
+  | "$45"
+  | "$50"
+  | "$75"
+  | "$100"
+  ;
+female.name ->
+    "Mary"
+  | "Emily"
+  | "Anne"
+  | "Kathy"
+  | "Natalie"
+  | "Ellen"
+  | "Joan"
+  | "Jean"
+  | "Jill"
+  | "Rachel"
+  | "Kendra"
+  | "Sabina"
+  | "Sheila"
+  | "Jessica"
+  | "Andrea"
+  | "Megan"
+  | "Alison"
+  | "Robin"
+  | "Lynn"
+  | "Joy"
+  | "Wendy"
+  | "Kristin"
+  | "Donna"
+  | "Kim"
+  | "Jen"
+  | "Beth"
+  | "Lisa"
+  | "Angie"
+  | "Sarah"
+  | "Peggy"
+  | "Becky"
+  | "Laura"
+  | "Nicole"
+  | "Melanie"
+  | "Miriam"
+  | "Alicia"
+  | "Sylvia"
+  | "Clara"
+  | "Julie"
+  | "Rhoda"
+  | "Rhonda"
+  | "Greta"
+  | "Amelia"
+  | "Emma"
+  | "Courtney"
+  | "Ashley"
+  | "Stephanie"
+  | "Vicky"
+  | "Lois"
+  | "Thelma"
+  | "Ruth"
+  | "Elizabeth"
+  | "Sandy"
+  | "Stella"
+  | "Carolyn"
+  | "Maria"
+  | "Marjorie"
+  | "Edith"
+  | "Teresa"
+  | "Linda"
+  | "Sue"
+  | "Rose"
+  | "April"
+  | "Frances"
+  | "Dora"
+  ;
+room ->
+    "living room"
+  | "bathroom"
+  | "basement"
+  | "bedroom"
+  | "closet"
+  | "kitchen"
+  | "garage"
+  | "attic"
+  | "dining room"
+  | "hallway"
+  | "guest room"
+  | "sewing room"
+  | "office"
+  | "billiard parlor"
+  | "junk drawer"
+  | "backyard"
+  | "doghouse"
+  ;
+person ->
+    <male>
+  | <female>
+  | <female> " and " <male>
+  | <male> " and " <female>
+  | <male.name> " and " <male.name>
+  | <female.name> " and " <female.name>
+  ;
+magazine ->
+    "Maxim"
+  | "The New Yorker"
+  | "Time"
+  | "Newsweek"
+  | "Guns and Ammo"
+  | "Esquire"
+  | "GQ"
+  | "Cosmopolitan"
+  | "The American Spectator"
+  | "The Nation"
+  | "Mother Jones"
+  | "Field and Stream"
+  | "Reader's Digest"
+  | "The Journal of the American Chemical Society"
+  | "Mind"
+  | "Discover"
+  | "Games"
+  | "MacWorld"
+  | "New Republic"
+  | "Wired"
+  ;
+female ->
+    "Grandma" <female.name>
+  | "Mom"
+  | "Aunt " <female.name>
+  | "sister"
+  | <female.name>
+  | <female.name>
+  | <female.name>
+  ;
+male ->
+    "Grandpa" <male.name>
+  | "Dad"
+  | "Uncle " <male.name>
+  | "brother"
+  | <male.name>
+  | <male.name>
+  | <male.name>
+  ;
+state ->
+    "dead"
+  | "in prison"
+  | "in a labor camp in Siberia"
+  | "in the hospital"
+  | "reported missing last month"
+  | "broke"
+  | "destitute"
+  | "in the witness relocation program"
+  ;
+money.saved ->
+    "I've already " ( "put" | "stashed" ) " it in " ( "the bank" | "a shoebox" ) " to save for " <money.object> "."
+  | "I'd love to spend it, but " "I'm saving it to buy " <money.object> "."
+  | "It's nice to have some \"fun money\" to spend, but " "I've decided to save it for " <money.object> "."
+  | "I'd love to spend it" ( "immediately" | "right away" ) ", but " "I need to save up for " <money.object> "."
+  ;
+greeting ->
+  "Dear " <person> ","
+  ;
+money.tag.line ->
+    "It's not much by today's standards, but every little bit helps!"
+  | "It was either that or give it to the poor."
+  | <tag.line>
+  | <tag.line>
+  | <tag.line>
+  | <tag.line>
+  | <tag.line>
+  | <tag.line>
+  | <tag.line>
+  ;
+money.received ->
+    "This is " "just a brief note to " ( "say " ( "thanks" | "\"thank you\"" ) | "thank you" ) " for the " <money.amount> ( "you sent" | "I received from you" ) " for " <occasion> "."
+  | "Of all the " ( "presents" | "gifts" | "things" | "stuff" ) " I " ( "received" | "got" ) " for " <occasion> ", I " ( "liked" | "loved" ) " your " "gift of " <money.amount> ( "the most" | "more than anything else" ) "."
+  | "I " "really " ( "appreciate" | "enjoyed receiving" ) " the " <money.amount> " you " ( "gave" | "sent" ) " me for " <occasion> "."
+  | "I " "really " "love " ( "getting" | "receiving" ) " money for " <occasion> ", " ( "since" | "because" ) ( "that" | "it" ) " means I can " "always " "go out and " ( "spend it on" | "use it for" ) " what I really " ( "want" | "need" ) ". " ( "Thanks" | "Thank you" ) " for the " <money.amount> "."
+  | "You can't imagine how surprised I was to discover that you had sent me " <money.amount> " for " <occasion> "."
+  | ( "Thanks" | "Thank you" ) " for the " <money.amount> ( ". I" | "; i" ) "t was " ( "the perfect" | "a great" ) ( "present" | "gift" ) " for " <occasion> "."
+  | "I don't know how to thank you " ( "properly" | "enough" ) "for the " <money.amount> " you " ( "sent" | "gave" ) "me " "for " <occasion> "."
+  | "I'm " "just " "writing to say " ( "thanks" | "\"thank you\"" ) " for the " <money.amount> " you " "graciously " ( "gave" | "sent" ) " me for " <occasion> "."
+  | ( "Thank you" | "Thanks" ) " for the " <money.amount> " you " ( "bestowed upon" | "sent" ) " me for " <occasion> "."
+  | "This is " "just a quick note to " ( "say \"thank you\"" | "thank you" ) " for the " <money.amount> ( "I " ( "got" | "received" ) " from you" | "you sent" " me" ) " for " <occasion> "."
+  ;
+gift.received ->
+    "This is " "just a brief note to " ( "say " ( "thanks" | "\"thank you\"" ) | "thank you" ) " for the " <gift.object> ( "you sent" | "I received from you" ) " for " <occasion> "."
+  | "Of all the " ( "presents" | "gifts" | "things" | "stuff" ) " I " ( "received" | "got" ) " for " <occasion> ", I " ( "liked" | "loved" ) " your " "gift of " <gift.object> ( "the most" | "more than anything else" ) "."
+  | "I " "really " ( "appreciate" | "enjoyed receiving" ) " the " <gift.object> " you " ( "gave" | "sent" ) " me for " <occasion> "."
+  | "I " "really " "love " ( "getting" | "receiving" ) " money for " <occasion> ", " ( "since" | "because" ) ( "that" | "it" ) " means I can " "always " "go out and " ( "spend it on" | "use it for" ) " what I really " ( "want" | "need" ) ". " ( "Thanks" | "Thank you" ) " for the " <gift.object> "."
+  | "You can't imagine how surprised I was to discover that you had sent me " <gift.object> " for " <occasion> "."
+  | ( "Thanks" | "Thank you" ) " for the " <gift.object> ( ". I" | "; i" ) "t was " ( "the perfect" | "a great" ) ( "present" | "gift" ) " for " <occasion> "."
+  | "I don't know how to thank you " ( "properly" | "enough" ) "for the " <gift.object> " you " ( "sent" | "gave" ) "me " "for " <occasion> "."
+  | "I'm " "just " "writing to say " ( "thanks" | "\"thank you\"" ) " for the " <gift.object> " you " "graciously " ( "gave" | "sent" ) " me for " <occasion> "."
+  | ( "Thank you" | "Thanks" ) " for the " <gift.object> " you " ( "bestowed upon" | "sent" ) " me for " <occasion> "."
+  | "This is " "just a quick note to " ( "say \"thank you\"" | "thank you" ) " for the " <gift.object> ( "I " ( "got" | "received" ) " from you" | "you sent" " me" ) " for " <occasion> "."
+  ;
+occasion ->
+    "Christmas"
+  | "Valentine's Day"
+  | "my birthday"
+  | "Easter"
+  | "New Year's"
+  | "Hanukkah"
+  | "our wedding"
+  | "our divorce"
+  | "my half-birthday"
+  | "my confirmation"
+  | "my Bar Mitzvah"
+  | "my debutante ball"
+  | "my coming-out party"
+  | "our first baby"
+  | "my bachelor party"
+  | "my bridal shower"
+  | "our housewarming party"
+  ;
+gift.tag.line ->
+  <tag.line>
+  ;
+tag.line ->
+    "I know how much of a sacrifice this sort of gift is for you."
+  | <male.name> " and " <female.name> " tried to steal it from me, but I was too quick for them."
+  | "I'm " "looking forward to getting your next gift for " <occasion> "."
+  | "Frankly, " "it was " "a little " "strange to get anything from you" " at all" ", because " ( "I thought" | "my friends to me that" ) " you were " <state> "."
+  | "How thoughtful of you."
+  | "Give my love to " ( <male.name> | <female.name> ) "."
+  | "Best wishes to you" " and " <person> "."
+  ;
+closing.line ->
+    "Sincerely"
+  | "Love" " always" ","
+  | "Thank you" " again" ","
+  | "See you soon,"
+  | "Hugs and kisses,"
+  | "From,"
+  | "Thanks" " again" ","
+  | "Peace,"
+  | "Faithfully,"
+  ;
+thank.you.note ->
+  <greeting> "\n" <thank.you.paragraph> "\n" <closing>
+  ;
+money.spent ->
+    "You'll be happy to know that " "I've already spent it on " <money.object> "."
+  | "It" ( "'s" | " has" ) "already " "been well-spent on " <money.object> "."
+  | "My " ( "mother" | "father" ) " insisted that I spend it on " <money.object> "."
+  | "Now I " " finally" "have enough money for " <money.object> "."
+  | ( "As soon as I can, " | "When I get a chance, " ) "I'm going " "to the mall " "and spending it on " <money.object> "."
+  | "To be honest, " ( "I tried to get it to the bank" | "I wanted to save it" ) ", but I " "realized I " ( "needed" | "had" ) " to spend it on " <money.object> " instead" "."
+  | "I just wanted to let you know that " "it's already gone towards " <money.object> "."
+  | "I " ( "immediately" | "rushed right out and" ) "spent it on " <money.object> " for the first time" " in years" "."
+  | "As soon as I finish writing this letter, " "I'm going to put it towards " <money.object> "."
+  | "I have to admit that " "I already spent it on this month's protection."
+  ;
+gift.object ->
+    "toaster"
+  | "blender"
+  | "pajamas"
+  | "wallet"
+  | "umbrella"
+  | "shampoo"
+  | "mouthwash"
+  | "beer"
+  | "disk drive"
+  | "mousepad"
+  | "stereo"
+  | "compact disc"
+  | "dart board"
+  | "bread machine"
+  | "moustache comb"
+  | "fruitcake"
+  | "towel rack"
+  | "bong"
+  | "jigsaw puzzle"
+  | "Star Trek \"Picard\" doll"
+  | "stuffed animal"
+  | "beanbag chair"
+  | "box of chocolates"
+  | "microwave oven"
+  | "snowblower"
+  | "jacket"
+  | "sweatshirt"
+  | "tie"
+  | "laundry detergent"
+  | "fake tree"
+  | "makeup kit"
+  | "miniature pool table"
+  | "carton of cigarettes"
+  | "basketball"
+  | "fake vomit"
+  | "book"
+  | "subscription to " <magazine>
+  | "\"Critique of Pure Reason\""
+  ;

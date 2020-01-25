@@ -32,8 +32,7 @@
     "format": "prettier --write src/**/*.{ts,json}",
     "lint": "eslint src --ext .ts",
     "lint-fix": "eslint src --ext .ts --fix",
-    "start": "node lib/example.js",
-    "test": "ava"
+    "test": "ava --verbose"
   },
   "dependencies": {
     "tslib": "^1.10.0"

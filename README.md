@@ -4,20 +4,11 @@ Generates text based on a context-free grammar.
 
 For example, given this grammar:
 
-```json
-{
-  "rule": {
-    "start": {
-      "alt": ["The <noun> is <adj>.", "A <adj> <noun>."]
-    },
-    "noun": {
-      "alt": ["house", "cat"]
-    },
-    "adj": {
-      "alt": ["green", "big"]
-    }
-  }
-}
+```text
+start -> "The " <noun> " is " <adj> "." | "A " <adj> " " <noun> "." ;
+noun -> "house" | "cat" ;
+adj -> "green" | "big" ;
+
 ```
 
 will generate one of the following:

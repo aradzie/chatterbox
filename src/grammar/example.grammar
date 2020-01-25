@@ -1,0 +1,12 @@
+start ->
+    "The " <noun> " is " <adj> "."
+  | "A " <adj> " " <noun> "."
+  ;
+noun ->
+    "house"
+  | "cat"
+  ;
+adj ->
+    "green"
+  | "big"
+  ;
