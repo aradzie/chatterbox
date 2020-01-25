@@ -1,4 +1,4 @@
-import { Grammar, isAlt, isLit, isRef, isSeq, P } from "../types";
+import { Grammar, isAlt, isLit, isRef, isSeq, P } from "../../types";
 import { Printer } from "./printer";
 
 /**

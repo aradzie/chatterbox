@@ -1,5 +1,5 @@
 import { Grammar } from "../types";
-import { parse } from "../util/parse";
+import { parse } from "../util/json/parse";
 import * as exampleGrammar from "./example.json";
 import * as husserlGrammar from "./husserl.json";
 import * as kantGrammar from "./kant.json";

@@ -1,5 +1,5 @@
-import { Alt, Grammar, isAlt, isLit, isRef, isSeq, P, Ref, RuleMap, Seq } from "../types";
-import { isSimple } from "./util";
+import { Alt, Grammar, isAlt, isLit, isRef, isSeq, P, Ref, RuleMap, Seq } from "../../types";
+import { isSimple } from "../util";
 
 /**
  * Takes the given machine-processable grammar and converts it

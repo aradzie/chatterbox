@@ -1,6 +1,6 @@
-import { Grammar, isAlt, isLit, isRef, isSeq, P, RuleMap } from "../types";
-import { optimize } from "./optimize";
-import { validate } from "./validate";
+import { Grammar, isAlt, isLit, isRef, isSeq, P, RuleMap } from "../../types";
+import { optimize } from "../optimize";
+import { validate } from "../validate";
 
 /**
  * Takes the given grammar with embedded human-readable DSL fragments
