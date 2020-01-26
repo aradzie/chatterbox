@@ -1,5 +1,5 @@
 import test from "ava";
-import { parse, SyntaxError } from "./parser";
+import { parse, SyntaxError } from "./parse";
 
 test("parse empty", (t) => {
   t.deepEqual(parse(``), { rule: {} });

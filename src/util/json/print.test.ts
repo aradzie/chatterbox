@@ -1,9 +1,9 @@
 import test from "ava";
-import { format } from "./format";
+import { print } from "./print";
 
 test("join seq literals and refs", (t) => {
   t.deepEqual(
-    format({
+    print({
       rule: {
         start: {
           seq: [{ ref: "a" }, "-", { ref: "b" }, "-", { seq: [{ ref: "c" }] }],
@@ -20,7 +20,7 @@ test("join seq literals and refs", (t) => {
 
 test("join alt refs", (t) => {
   t.deepEqual(
-    format({
+    print({
       rule: {
         start: {
           alt: [{ ref: "a" }, { ref: "b" }, { ref: "c" }],

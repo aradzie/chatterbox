@@ -1,2 +1,2 @@
-export { parse, SyntaxError } from "./parser";
+export { parse, SyntaxError } from "./parse";
 export { print } from "./print";

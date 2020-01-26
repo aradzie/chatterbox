@@ -6,7 +6,7 @@ import { validate } from "../validate";
  * Takes the given grammar with embedded human-readable DSL fragments
  * and expands these fragments to machine-processable form.
  *
- * This function performs the opposite of `format()`.
+ * This function performs the opposite of `print()`.
  */
 export function parse(grammar: Grammar): Grammar {
   return validate(optimize(parseImpl(grammar)));

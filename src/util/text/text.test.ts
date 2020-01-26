@@ -1,6 +1,6 @@
 import test from "ava";
 import { grammars } from "../../grammar";
-import { parse } from "./parser";
+import { parse } from "./parse";
 import { print } from "./print";
 
 for (const { name, grammar } of [grammars[0]]) {

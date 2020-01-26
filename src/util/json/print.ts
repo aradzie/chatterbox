@@ -7,7 +7,7 @@ import { isSimple } from "../util";
  *
  * This function performs the opposite of `parse()`.
  */
-export function format(grammar: Grammar): Grammar {
+export function print(grammar: Grammar): Grammar {
   const { rule, start } = grammar;
   const result: RuleMap = Object.fromEntries(
     Object.entries(rule).map(([name, rule]) => [name, visit(rule)]),
