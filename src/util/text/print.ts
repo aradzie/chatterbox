@@ -1,4 +1,4 @@
-import { Grammar, isAlt, isLit, isRef, isSeq, P } from "../../types";
+import { Alt, Grammar, isAlt, isLit, isRef, isSeq, P, Ref, Seq } from "../../types";
 import { Printer } from "./printer";
 
 /**
@@ -9,20 +9,37 @@ export function print(grammar: Grammar): string {
   for (const [name, rule] of Object.entries(grammar.rule)) {
     printer.print(`${name} ->\n`);
     printer.indent();
-    printRule(rule, printer, true);
+    printRule(rule, true);
     printer.print(`\n;\n`);
     printer.unindent();
   }
   return printer.toString();
-}
 
-function printRule(p: P, printer: Printer, multiline: boolean): void {
-  if (isLit(p)) {
-    printer.print(JSON.stringify(p));
-    return;
+  function printRule(p: P, multiline: boolean): void {
+    if (isLit(p)) {
+      printer.print(JSON.stringify(p));
+      return;
+    }
+
+    if (isSeq(p)) {
+      printSeq(p, multiline);
+      return;
+    }
+
+    if (isAlt(p)) {
+      printAlt(p, multiline);
+      return;
+    }
+
+    if (isRef(p)) {
+      printRef(p);
+      return;
+    }
+
+    throw new Error(); // Unreachable.
   }
 
-  if (isSeq(p)) {
+  function printSeq(p: Seq, multiline: boolean): void {
     let i = 0;
     for (const child of p.seq) {
       if (i++ > 0) {
@@ -30,16 +47,15 @@ function printRule(p: P, printer: Printer, multiline: boolean): void {
       }
       if (isAlt(child)) {
         printer.print("( ");
-        printRule(child, printer, false);
+        printRule(child, false);
         printer.print(" )");
       } else {
-        printRule(child, printer, multiline);
+        printRule(child, multiline);
       }
     }
-    return;
   }
 
-  if (isAlt(p)) {
+  function printAlt(p: Alt, multiline: boolean): void {
     let i = 0;
     for (const child of p.alt) {
       if (multiline) {
@@ -53,15 +69,11 @@ function printRule(p: P, printer: Printer, multiline: boolean): void {
           printer.print(" | ");
         }
       }
-      printRule(child, printer, multiline);
+      printRule(child, multiline);
     }
-    return;
   }
 
-  if (isRef(p)) {
+  function printRef(p: Ref): void {
     printer.print(`<${p.ref}>`);
-    return;
   }
-
-  throw new Error(); // Unreachable.
 }
