@@ -48,12 +48,10 @@
           "seq": [
             "the ",
             {
-              "chance": 0.5,
-              "seq": [
-                {
-                  "alt": ["pure", "practical"]
-                }
-              ]
+              "f": 0.5,
+              "opt": {
+                "alt": ["pure", "practical"]
+              }
             },
             "employment of <Ns|Np>"
           ]
@@ -70,8 +68,8 @@
           "seq": [
             "our ",
             {
-              "chance": 0.5,
-              "seq": ["<knowledge.type>"]
+              "f": 0.5,
+              "opt": "<knowledge.type>"
             },
             "knowledge"
           ]
@@ -91,8 +89,8 @@
           "seq": [
             "the paralogisms",
             {
-              "chance": 0.5,
-              "seq": [" of <reason.type> reason"]
+              "f": 0.5,
+              "opt": " of <reason.type> reason"
             }
           ]
         },
@@ -103,8 +101,8 @@
           "seq": [
             "our ",
             {
-              "chance": 0.5,
-              "seq": ["<judgement.type>"]
+              "f": 0.5,
+              "opt": "<judgement.type>"
             },
             "judgements"
           ]
@@ -117,8 +115,8 @@
           "seq": [
             "our ",
             {
-              "chance": 0.5,
-              "seq": ["<knowledge.type>"]
+              "f": 0.5,
+              "opt": "<knowledge.type>"
             },
             "concepts"
           ]
@@ -127,8 +125,8 @@
           "seq": [
             "the ",
             {
-              "chance": 0.5,
-              "seq": ["<object.type>"]
+              "f": 0.5,
+              "opt": "<object.type>"
             },
             "objects in space and time"
           ]
@@ -168,8 +166,8 @@
           "seq": [
             "abstracts from all content of ",
             {
-              "chance": 0.5,
-              "seq": ["<knowledge.type>"]
+              "f": 0.5,
+              "opt": "<knowledge.type>"
             },
             "knowledge"
           ]
@@ -206,8 +204,8 @@
           "seq": [
             "abstract from all content of ",
             {
-              "chance": 0.5,
-              "seq": ["<knowledge.type>"]
+              "f": 0.5,
+              "opt": "<knowledge.type>"
             },
             "knowledge"
           ]
@@ -251,8 +249,8 @@
           "seq": [
             "I assert",
             {
-              "chance": 0.5,
-              "seq": [", <intro.clause>,"]
+              "f": 0.5,
+              "opt": ", <intro.clause>,"
             },
             " that"
           ]
@@ -300,8 +298,8 @@
           "seq": [
             "so far as regards <Ns>",
             {
-              "chance": 0.5,
-              "seq": [" and <Np>"]
+              "f": 0.5,
+              "opt": " and <Np>"
             }
           ]
         },
@@ -318,12 +316,10 @@
           "seq": [
             "<Ns>",
             {
-              "chance": 0.5,
-              "seq": [
-                {
-                  "alt": [" (and <certainty.clause> this is true)", ", <throwaway.clause>,"]
-                }
-              ]
+              "f": 0.5,
+              "opt": {
+                "alt": [" (and <certainty.clause> this is true)", ", <throwaway.clause>,"]
+              }
             },
             "<Vst><Ns|Np>"
           ]
@@ -332,8 +328,8 @@
           "seq": [
             "<Ns><Vst>",
             {
-              "chance": 0.5,
-              "seq": [", <throwaway.clause|intro.clause>,"]
+              "f": 0.5,
+              "opt": ", <throwaway.clause|intro.clause>,"
             },
             "<Ns|Np>"
           ]
@@ -342,8 +338,8 @@
           "seq": [
             "<Ns>",
             {
-              "chance": 0.5,
-              "seq": [", <throwaway.clause|intro.clause>,"]
+              "f": 0.5,
+              "opt": ", <throwaway.clause|intro.clause>,"
             },
             "<Vsi>"
           ]
@@ -352,12 +348,10 @@
           "seq": [
             "<Np>",
             {
-              "chance": 0.5,
-              "seq": [
-                {
-                  "alt": [" (and <certainty.clause> this is the case)", ", <intro.clause>,"]
-                }
-              ]
+              "f": 0.5,
+              "opt": {
+                "alt": [" (and <certainty.clause> this is the case)", ", <intro.clause>,"]
+              }
             },
             "<Vpt><Ns|Np>"
           ]
@@ -366,8 +360,8 @@
           "seq": [
             "<Np><Vpt>",
             {
-              "chance": 0.5,
-              "seq": [", <throwaway.clause|intro.clause>,"]
+              "f": 0.5,
+              "opt": ", <throwaway.clause|intro.clause>,"
             },
             "<Ns|Np>"
           ]
@@ -376,8 +370,8 @@
           "seq": [
             "<Np>",
             {
-              "chance": 0.5,
-              "seq": [", <throwaway.clause|intro.clause>,"]
+              "f": 0.5,
+              "opt": ", <throwaway.clause|intro.clause>,"
             },
             "<Vpi>"
           ]
@@ -390,17 +384,17 @@
           "cls": "sentence",
           "seq": [
             {
-              "chance": 0.5,
-              "seq": ["<intro.clause>, "]
+              "f": 0.5,
+              "opt": "<intro.clause>, "
             },
             {
-              "chance": 0.5,
-              "seq": ["<certainty.clause>"]
+              "f": 0.5,
+              "opt": "<certainty.clause>"
             },
             "<main.clause>",
             {
-              "chance": 0.5,
-              "seq": [", <proof>"]
+              "f": 0.5,
+              "opt": ", <proof>"
             },
             "."
           ]
@@ -409,17 +403,17 @@
           "cls": "sentence",
           "seq": [
             {
-              "chance": 0.5,
-              "seq": ["<proof>, "]
+              "f": 0.5,
+              "opt": "<proof>, "
             },
             {
-              "chance": 0.5,
-              "seq": ["<certainty.clause>, <throwaway.clause>, "]
+              "f": 0.5,
+              "opt": "<certainty.clause>, <throwaway.clause>, "
             },
             "<main.clause>",
             {
-              "chance": 0.5,
-              "seq": [", <conjunction><main.clause>"]
+              "f": 0.5,
+              "opt": ", <conjunction><main.clause>"
             },
             "."
           ]
@@ -428,17 +422,17 @@
           "cls": "sentence",
           "seq": [
             {
-              "chance": 0.5,
-              "seq": ["<proof>, "]
+              "f": 0.5,
+              "opt": "<proof>, "
             },
             {
-              "chance": 0.5,
-              "seq": ["<certainty.clause>"]
+              "f": 0.5,
+              "opt": "<certainty.clause>"
             },
             "<main.clause>",
             {
-              "chance": 0.5,
-              "seq": ["; <intro.clause>, <main.clause>"]
+              "f": 0.5,
+              "opt": "; <intro.clause>, <main.clause>"
             },
             "."
           ]
@@ -452,8 +446,8 @@
           "cls": "sentence",
           "seq": [
             {
-              "chance": 0.5,
-              "seq": ["<intro.clause>, "]
+              "f": 0.5,
+              "opt": "<intro.clause>, "
             },
             "is it ",
             {
@@ -466,8 +460,8 @@
           "seq": [
             "Has it ever been suggested that",
             {
-              "chance": 0.5,
-              "seq": [", <proof>,"]
+              "f": 0.5,
+              "opt": ", <proof>,"
             },
             "<certainty.clause> there is ",
             {
@@ -513,30 +507,30 @@
           "seq": [
             "<sentence><sentence>",
             {
-              "chance": 0.5,
-              "seq": ["<sentence>"]
+              "f": 0.5,
+              "opt": "<sentence>"
             },
             "<sentence>",
             {
-              "chance": 0.5,
-              "seq": ["<sentence>"]
+              "f": 0.5,
+              "opt": "<sentence>"
             },
             {
-              "chance": 0.5,
-              "seq": ["<question>"]
+              "f": 0.5,
+              "opt": "<question>"
             },
             {
-              "chance": 0.5,
-              "seq": ["<sentence>"]
+              "f": 0.5,
+              "opt": "<sentence>"
             },
             {
-              "chance": 0.5,
-              "seq": ["<sentence>"]
+              "f": 0.5,
+              "opt": "<sentence>"
             },
             "<sentence>",
             {
-              "chance": 0.5,
-              "seq": ["<throwaway.sentence>"]
+              "f": 0.5,
+              "opt": "<throwaway.sentence>"
             }
           ]
         },
@@ -544,18 +538,18 @@
           "seq": [
             "<sentence><sentence>",
             {
-              "chance": 0.5,
-              "seq": ["<sentence>"]
+              "f": 0.5,
+              "opt": "<sentence>"
             },
             "<sentence>",
             {
-              "chance": 0.5,
-              "seq": ["(<sentence>) "]
+              "f": 0.5,
+              "opt": "(<sentence>) "
             },
             "<sentence><sentence>",
             {
-              "chance": 0.5,
-              "seq": ["<throwaway.sentence>"]
+              "f": 0.5,
+              "opt": "<throwaway.sentence>"
             }
           ]
         },
@@ -563,21 +557,21 @@
           "seq": [
             "<sentence><sentence>",
             {
-              "chance": 0.5,
-              "seq": ["<sentence>"]
+              "f": 0.5,
+              "opt": "<sentence>"
             },
             "<sentence>",
             {
-              "chance": 0.5,
-              "seq": ["<sentence>"]
+              "f": 0.5,
+              "opt": "<sentence>"
             },
             {
-              "chance": 0.5,
-              "seq": ["<sentence>"]
+              "f": 0.5,
+              "opt": "<sentence>"
             },
             {
-              "chance": 0.5,
-              "seq": ["<sentence>"]
+              "f": 0.5,
+              "opt": "<sentence>"
             },
             "<sentence>"
           ]
@@ -588,28 +582,28 @@
       "seq": [
         "<paragraph><paragraph><paragraph><paragraph>",
         {
-          "chance": 0.5,
-          "seq": ["<paragraph>"]
+          "f": 0.5,
+          "opt": "<paragraph>"
         },
         {
-          "chance": 0.5,
-          "seq": ["<paragraph>"]
+          "f": 0.5,
+          "opt": "<paragraph>"
         },
         {
-          "chance": 0.5,
-          "seq": ["<paragraph>"]
+          "f": 0.5,
+          "opt": "<paragraph>"
         },
         {
-          "chance": 0.5,
-          "seq": ["<paragraph>"]
+          "f": 0.5,
+          "opt": "<paragraph>"
         },
         {
-          "chance": 0.5,
-          "seq": ["<paragraph>"]
+          "f": 0.5,
+          "opt": "<paragraph>"
         },
         {
-          "chance": 0.5,
-          "seq": ["<paragraph>"]
+          "f": 0.5,
+          "opt": "<paragraph>"
         }
       ]
     }

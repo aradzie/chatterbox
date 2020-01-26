@@ -1,4 +1,4 @@
-import { Grammar, isAlt, isLit, isRef, isSeq, P } from "../types";
+import { Grammar, isAlt, isLit, isOpt, isRef, isSeq, P } from "../types";
 
 /**
  * Checks that the given grammar is valid.
@@ -11,7 +11,7 @@ import { Grammar, isAlt, isLit, isRef, isSeq, P } from "../types";
 export function validate(grammar: Grammar): Grammar {
   const { rule, start = "start" } = grammar;
   if (!(start in rule)) {
-    throw new Error(`Invalid ref [${start}]`);
+    throw new Error(`Invalid ref <${start}>`);
   }
   const referenced = new Set<string>();
   referenced.add(start);
@@ -20,7 +20,7 @@ export function validate(grammar: Grammar): Grammar {
   }
   for (const item of Object.keys(rule)) {
     if (!referenced.has(item)) {
-      throw new Error(`Unreferenced rule [${item}]`);
+      throw new Error(`Unreferenced rule <${item}>`);
     }
   }
   return grammar;
@@ -55,9 +55,18 @@ export function validate(grammar: Grammar): Grammar {
     if (isRef(p)) {
       const { ref } = p;
       if (!(ref in rule)) {
-        throw new Error(`Invalid ref [${ref}]`);
+        throw new Error(`Invalid ref <${ref}>`);
       }
       referenced.add(ref);
+      return;
+    }
+
+    if (isOpt(p)) {
+      const { f, opt } = p;
+      if (f < 0 || f > 1) {
+        throw new Error(`Invalid probability`);
+      }
+      visit(opt);
       return;
     }
 

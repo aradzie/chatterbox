@@ -1,4 +1,4 @@
-import { Grammar, isAlt, isLit, isRef, isSeq, P, RuleMap } from "../../types";
+import { Grammar, isAlt, isLit, isOpt, isRef, isSeq, P, RuleMap } from "../../types";
 import { optimize } from "../optimize";
 import { validate } from "../validate";
 
@@ -39,6 +39,10 @@ function visit(p: P): P {
 
   if (isRef(p)) {
     return p;
+  }
+
+  if (isOpt(p)) {
+    return { ...p, opt: visit(p.opt) };
   }
 
   throw new Error(); // Unreachable.

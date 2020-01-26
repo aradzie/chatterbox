@@ -6,16 +6,14 @@ test("flatten seqs", (t) => {
     optimize({
       rule: {
         start: {
-          chance: 0.5,
-          seq: ["a", "b", { seq: ["c", "d", { chance: 0.5, seq: ["e", "f"] }, "g", "h"] }],
+          seq: ["a", "b", { seq: ["c", "d", { f: 0.5, opt: { seq: ["e", "f"] } }, "g", "h"] }],
         },
       },
     }),
     {
       rule: {
         start: {
-          chance: 0.5,
-          seq: ["abcd", { chance: 0.5, seq: ["ef"] }, "gh"],
+          seq: ["abcd", { f: 0.5, opt: "ef" }, "gh"],
         },
       },
     },
@@ -27,16 +25,14 @@ test("flatten alts", (t) => {
     optimize({
       rule: {
         start: {
-          chance: 0.5,
-          alt: ["a", "b", { alt: ["c", "d", { chance: 0.5, alt: ["e", "f"] }, "g", "h"] }],
+          alt: ["a", "b", { alt: ["c", "d", { f: 0.5, opt: { alt: ["e", "f"] } }, "g", "h"] }],
         },
       },
     }),
     {
       rule: {
         start: {
-          chance: 0.5,
-          alt: ["a", "b", "c", "d", { chance: 0.5, alt: ["e", "f"] }, "g", "h"],
+          alt: ["a", "b", "c", "d", { f: 0.5, opt: { alt: ["e", "f"] } }, "g", "h"],
         },
       },
     },
@@ -48,17 +44,13 @@ test("flatten trivial nested seqs and alts", (t) => {
     optimize({
       rule: {
         start: {
-          chance: 0.5,
           seq: [{ alt: [{ seq: [{ alt: [{ ref: "a" }] }] }] }],
         },
       },
     }),
     {
       rule: {
-        start: {
-          chance: 0.5,
-          seq: [{ ref: "a" }],
-        },
+        start: { ref: "a" },
       },
     },
   );

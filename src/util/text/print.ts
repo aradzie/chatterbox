@@ -1,4 +1,4 @@
-import { Alt, Grammar, isAlt, isLit, isRef, isSeq, P, Ref, Seq } from "../../types";
+import { Alt, Grammar, isAlt, isLit, isOpt, isRef, isSeq, Opt, P, Ref, Seq } from "../../types";
 import { Printer } from "./printer";
 
 /**
@@ -33,6 +33,11 @@ export function print(grammar: Grammar): string {
 
     if (isRef(p)) {
       printRef(p);
+      return;
+    }
+
+    if (isOpt(p)) {
+      printOpt(p);
       return;
     }
 
@@ -75,5 +80,14 @@ export function print(grammar: Grammar): string {
 
   function printRef(p: Ref): void {
     printer.print(`<${p.ref}>`);
+  }
+
+  function printOpt(p: Opt): void {
+    printer.print("[ ");
+    if (p.f != 0.5) {
+      printer.print(`f=${p.f} `);
+    }
+    printRule(p.opt, false);
+    printer.print(" ]");
   }
 }

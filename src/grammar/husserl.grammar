@@ -1,24 +1,24 @@
 Ns ->
     "the phenomenon"
   | "an object"
-  | "the cogitatum" " (qua cogitatum)"
-  | "transcendental " "phenomenology"
-  | ( "pure" " and genuine" | "scientific" ) " evidence"
+  | "the cogitatum" [ " (qua cogitatum)" ]
+  | [ "transcendental " ] "phenomenology"
+  | ( "pure" [ " and genuine" ] | "scientific" ) " evidence"
   | "cognition"
   | "the ego cogito"
   | "transcendental subjectivity"
   | "the transcendental-phenomenological reduction"
-  | "the " "phenomenological " "epoche"
+  | "the " [ "phenomenological " ] "epoche"
   | "the Objective world"
   | "a transcendental grounding of " ( <Ns> | <Np> )
   | "philosophy"
   | "the stream of " <Np>
   | "what is itself given"
-  | "the repeatable act of grounding" " of " <Np>
+  | "the repeatable act of grounding" [ " of " <Np> ]
   | "an infinite horizon of approximations"
   | "the " <ego.type> " Ego"
   | "the fundamental form of this universal synthesis"
-  | "the " "all-embracing " "consciousness of internal time"
+  | "the " [ "all-embracing " ] "consciousness of internal time"
   | "immanent time"
   | "the task of clarifying " <Np>
   | "the whole of conscious life"
@@ -27,7 +27,7 @@ Np ->
     "noetic acts"
   | "cogitationes"
   | "noematic descriptions"
-  | "separated " "modes of consciousness"
+  | [ "separated " ] "modes of consciousness"
   | "multiplicities of " <Ns>
   | "experiences"
   ;
@@ -44,7 +44,7 @@ Vpt ->
   | "denote the universal primary phenomena of"
   | "are only modalities of"
   | "become modalized also in correlation with"
-  | "stand in contrast to" " the accident being \"for me\" of"
+  | "stand in contrast to" [ " the accident being \"for me\" of" ]
   | "become adjusted to"
   ;
 Vsi ->
@@ -61,12 +61,12 @@ Vsi ->
   | "synthetically constitutes all particular " <Np> " that ever become prominent"
   ;
 Vpi ->
-    "inhibit " ( "my" | "our" ) "acceptance of " ( <Ns> | <Np> ) " as existent"
-  | "do not yet produce for " ( "us" | "me" ) " any abiding being" " apart from their relation to " ( <Ns> | <Np> )
+    "inhibit " [ "my" | "our" ] "acceptance of " ( <Ns> | <Np> ) " as existent"
+  | "do not yet produce for " ( "us" | "me" ) " any abiding being" [ " apart from their relation to " ( <Ns> | <Np> ) ]
   | "are \"in themselves\""
-  | "are infinite ideas, related to infinities of harmoniously combinable " <Np> " and " <Np>
-  | "can be seen as " "full " "proof that, in spite of the continual experiencedness of " <Ns> ", a non-being of " ( <Ns> | <Np> ) " is " ( "conceivable" | "possible" )
-  | "need to be criticized with regard to their validity and range, before they can be used for " "the purposes of " "a radical grounding of " ( <Ns> | <Np> )
+  | "are infinite ideas, related to infinities of harmoniously combinable " <Np> [ " and " <Np> ]
+  | "can be seen as " [ "full " ] "proof that, in spite of the continual experiencedness of " <Ns> ", a non-being of " ( <Ns> | <Np> ) " is " ( "conceivable" | "possible" )
+  | "need to be criticized with regard to their validity and range, before they can be used for " [ "the purposes of " ] "a radical grounding of " ( <Ns> | <Np> )
   | "are precisely what make critical decisions about " ( <Ns> | <Np> ) " at all possible"
   | "are unified synthetically"
   | "synthetically constitute all particular instances of " <Ns> " that ever become prominent"
@@ -98,7 +98,7 @@ certainty.clause ->
   | "hence it follows without more ado that"
   | ( <Ns> " calls" | <Np> " call" ) " our attention to the fact that"
   | "we see in advance that"
-  | "the fact is evident" ", even apodictically evident," " that"
+  | "the fact is evident" [ ", even apodictically evident," ] " that"
   | "it becomes evident that"
   ;
 throwaway.clause ->
@@ -122,10 +122,10 @@ how.clause ->
   | "by the fundamental nature of " ( <Ns> | <Np> )
   ;
 main.clause ->
-    <Ns> ", " <throwaway.clause> "," <Vst> ( <Ns> | <Np> ) "; " <subject.clause>
-  | <Ns> " (" <intro.clause> ")" <Vsi> <how.clause>
-  | <Np> ", " <throwaway.clause> "," <Vpt> ", " <how.clause> "," ( <Ns> | <Np> )
-  | <Np> " (" <intro.clause> ")" <Vpi> ", " <how.clause> "; " <subject.clause>
+    <Ns> [ ", " <throwaway.clause> "," ] <Vst> ( <Ns> | <Np> ) [ "; " <subject.clause> ]
+  | <Ns> [ " (" <intro.clause> ")" ] <Vsi> [ <how.clause> ]
+  | <Np> [ ", " <throwaway.clause> "," ] <Vpt> [ ", " <how.clause> "," ] ( <Ns> | <Np> )
+  | <Np> [ " (" <intro.clause> ")" ] <Vpi> [ ", " <how.clause> ] [ "; " <subject.clause> ]
   ;
 ego.type ->
     "reflecting"
@@ -134,23 +134,23 @@ ego.type ->
   | "worldly"
   ;
 subject.clause ->
-    ( "I" | "we" ) " now shift the weight of transcendental evidence of " ( <Ns> | <Np> ) "(" <intro.clause> ") " "from the " <ego.type> "ego to " ( <Ns> | <Np> )
+    ( "I" | "we" ) " now shift the weight of transcendental evidence of " ( <Ns> | <Np> ) [ "(" <intro.clause> ") " ] "from the " [ <ego.type> ] "ego to " ( <Ns> | <Np> )
   | "we must not let ourselves be frightened by considerations of " <Ns> " and " <Np>
   | "only in reflection do we \"direct\" ourselves to " <Ns> " and to its perceptual directedness to " <Np>
-  | "we have not simply lost " <Ns> " for phenomenology; we retain it" ", " <throwaway.clause> "," <how.clause>
+  | "we have not simply lost " <Ns> " for phenomenology; we retain it" [ ", " <throwaway.clause> "," ] <how.clause>
   | "I have the reflection that " <Ns> " is given continuously as an objective unity in a multi-form and changeable multiplicity of " <Np> ", which belong determinately to it"
-  | "I" ", the meditating phenomenologist," " set myself the all-embracing task of uncovering " ( "myself" | <Ns> | <Np> ) <how.clause>
+  | "I" [ ", the meditating phenomenologist," ] " set myself the all-embracing task of uncovering " ( "myself" | <Ns> | <Np> ) <how.clause>
   ;
 sentence ->
-    <certainty.clause> <main.clause> "."
-  | <certainty.clause> <main.clause> "."
-  | <certainty.clause> ", " <how.clause> "," <subject.clause> "."
+    [ <certainty.clause> ] <main.clause> "."
+  | [ <certainty.clause> ] <main.clause> "."
+  | [ <certainty.clause> [ ", " <how.clause> "," ] ] <subject.clause> "."
   ;
 paragraph ->
-    <sentence> <sentence> <sentence> <sentence> <sentence> <sentence> <sentence> <sentence> <sentence>
-  | <sentence> <sentence> <sentence> <sentence> <sentence> <sentence> <sentence>
-  | <sentence> <sentence> <sentence> <sentence> <sentence> <sentence> <sentence> <sentence>
+    [ <sentence> ] [ <sentence> ] [ <sentence> ] [ <sentence> ] <sentence> <sentence> <sentence> <sentence> <sentence>
+  | [ <sentence> ] [ <sentence> ] <sentence> <sentence> <sentence> <sentence> <sentence>
+  | [ <sentence> ] [ <sentence> ] [ <sentence> ] [ <sentence> ] <sentence> <sentence> <sentence> <sentence>
   ;
 section ->
-  <paragraph> <paragraph> <paragraph> <paragraph> <paragraph> <paragraph> <paragraph> <paragraph> <paragraph> <paragraph>
+  <paragraph> <paragraph> <paragraph> <paragraph> [ <paragraph> ] [ <paragraph> ] [ <paragraph> ] [ <paragraph> ] [ <paragraph> ] [ <paragraph> ]
   ;

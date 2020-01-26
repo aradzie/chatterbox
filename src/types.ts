@@ -7,21 +7,23 @@ export interface RuleMap {
   readonly [name: string]: P;
 }
 
-export type P = string | Seq | Alt | Ref;
+export type P = string | Seq | Alt | Ref | Opt;
 
 export interface Seq {
-  readonly chance?: number;
   readonly cls?: string;
   readonly seq: readonly P[];
 }
 
 export interface Alt {
-  readonly chance?: number;
   readonly alt: readonly P[];
 }
 
+export interface Opt {
+  readonly f: number;
+  readonly opt: P;
+}
+
 export interface Ref {
-  readonly chance?: number;
   readonly ref: string;
 }
 
@@ -39,4 +41,8 @@ export function isAlt(v: P): v is Alt {
 
 export function isRef(v: P): v is Ref {
   return typeof v == "object" && "ref" in v;
+}
+
+export function isOpt(v: P): v is Opt {
+  return typeof v == "object" && "opt" in v;
 }

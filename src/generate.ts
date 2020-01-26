@@ -1,4 +1,4 @@
-import { Grammar, isAlt, isLit, isRef, isSeq, P } from "./types";
+import { Grammar, isAlt, isLit, isOpt, isRef, isSeq, P } from "./types";
 
 export interface Options {
   readonly random?: () => number;
@@ -23,27 +23,26 @@ export function generate(grammar: Grammar, options: Options = {}): string {
     }
 
     if (isSeq(p)) {
-      const { chance = 1 } = p;
-      if (chance == 1 || chance > random()) {
-        for (const child of p.seq) {
-          visit(child);
-        }
+      for (const child of p.seq) {
+        visit(child);
       }
       return;
     }
 
     if (isAlt(p)) {
-      const { chance = 1 } = p;
-      if (chance == 1 || chance > random()) {
-        visit(choose(p.alt));
-      }
+      visit(choose(p.alt));
       return;
     }
 
     if (isRef(p)) {
-      const { chance = 1 } = p;
-      if (chance == 1 || chance > random()) {
-        visit(getRule(p.ref));
+      visit(getRule(p.ref));
+      return;
+    }
+
+    if (isOpt(p)) {
+      const { f = 1 } = p;
+      if (f == 1 || f > random()) {
+        visit(p.opt);
       }
       return;
     }

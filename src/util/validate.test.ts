@@ -23,7 +23,7 @@ test("missing start ref", (t) => {
       });
     },
     {
-      message: "Invalid ref [invalidStart]",
+      message: "Invalid ref <invalidStart>",
     },
   );
 });
@@ -41,7 +41,7 @@ test("missing ref", (t) => {
       });
     },
     {
-      message: "Invalid ref [invalidRef]",
+      message: "Invalid ref <invalidRef>",
     },
   );
 });
@@ -58,7 +58,7 @@ test("unreferenced rule", (t) => {
       });
     },
     {
-      message: "Unreferenced rule [extra]",
+      message: "Unreferenced rule <extra>",
     },
   );
 });

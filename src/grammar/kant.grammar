@@ -59,7 +59,7 @@ Ns ->
   | "the Ideal of " <reason.type> " reason"
   | "the architectonic of " <reason.type> " reason"
   | "the discipline of " <reason.type> " reason"
-  | "the " ( "pure" | "practical" ) "employment of " ( <Ns> | <Np> )
+  | "the " [ "pure" | "practical" ] "employment of " ( <Ns> | <Np> )
   | "the Ideal"
   | "the manifold"
   | "the Transcendental Deduction"
@@ -68,7 +68,7 @@ Ns ->
   | "metaphysics"
   | "the thing in itself"
   | "our understanding"
-  | "our " <knowledge.type> "knowledge"
+  | "our " [ <knowledge.type> ] "knowledge"
   | <reason.type> " reason"
   | "space"
   | "time"
@@ -78,17 +78,17 @@ Ns ->
   ;
 Np ->
     "the Antinomies"
-  | "the paralogisms" " of " <reason.type> " reason"
+  | "the paralogisms" [ " of " <reason.type> " reason" ]
   | "the Categories"
   | "our sense perceptions"
   | "our faculties"
-  | "our " <judgement.type> "judgements"
+  | "our " [ <judgement.type> ] "judgements"
   | "the objects in space and time"
   | "the things in themselves"
   | "natural causes"
   | "our ideas"
-  | "our " <knowledge.type> "concepts"
-  | "the " <object.type> "objects in space and time"
+  | "our " [ <knowledge.type> ] "concepts"
+  | "the " [ <object.type> ] "objects in space and time"
   | "the noumena"
   | "the phenomena"
   ;
@@ -116,7 +116,7 @@ Vsi ->
   | "occupies part of the sphere of " <Ns> " concerning the existence of " <Np> " in general"
   | "is by its very nature contradictory"
   | "would be falsified"
-  | "abstracts from all content of " <knowledge.type> "knowledge"
+  | "abstracts from all content of " [ <knowledge.type> ] "knowledge"
   | "is a body of demonstrated science, and " <quantity> " it must be known " <knowledge.type>
   | "can never furnish a true and demonstrated science, because, like " <Ns> ", it " <Vst> <judgement.type> " principles"
   | "can be treated like " ( <Ns> | <Np> )
@@ -141,7 +141,7 @@ Vpi ->
   | "occupy part of the sphere of " <Ns> " concerning the existence of " <Np> " in general"
   | "are by their very nature contradictory"
   | "would be falsified"
-  | "abstract from all content of " <knowledge.type> "knowledge"
+  | "abstract from all content of " [ <knowledge.type> ] "knowledge"
   | "constitute a body of demonstrated doctrine, and " <quantity> " this body must be known " <knowledge.type>
   | "can never, as a whole, furnish a true and demonstrated science, because, like " <Ns> ", they " <Vpt> <judgement.type> " principles"
   | "can be treated like " ( <Ns> | <Np> )
@@ -173,7 +173,7 @@ certainty.clause ->
   | "it is not at all certain that"
   | <philosopher> " tells us that"
   | "it remains a mystery why"
-  | "I assert" ", " <intro.clause> "," " that"
+  | "I assert" [ ", " <intro.clause> "," ] " that"
   | "to avoid all misapprehension, it is necessary to explain that"
   | "let us suppose that"
   | "it is obvious that"
@@ -209,7 +209,7 @@ throwaway.clause ->
   | "so regarded"
   | "for example"
   | "irrespective of all empirical conditions"
-  | "so far as regards " <Ns> " and " <Np>
+  | "so far as regards " <Ns> [ " and " <Np> ]
   | "on the contrary"
   | "in accordance with the principles of " ( <Ns> | <Np> )
   | "in reference to ends"
@@ -217,22 +217,22 @@ throwaway.clause ->
   | "so far as I know"
   ;
 main.clause ->
-    <Ns> ( " (and " <certainty.clause> " this is true)" | ", " <throwaway.clause> "," ) <Vst> ( <Ns> | <Np> )
-  | <Ns> <Vst> ", " ( <throwaway.clause> | <intro.clause> ) "," ( <Ns> | <Np> )
-  | <Ns> ", " ( <throwaway.clause> | <intro.clause> ) "," <Vsi>
-  | <Np> ( " (and " <certainty.clause> " this is the case)" | ", " <intro.clause> "," ) <Vpt> ( <Ns> | <Np> )
-  | <Np> <Vpt> ", " ( <throwaway.clause> | <intro.clause> ) "," ( <Ns> | <Np> )
-  | <Np> ", " ( <throwaway.clause> | <intro.clause> ) "," <Vpi>
+    <Ns> [ " (and " <certainty.clause> " this is true)" | ", " <throwaway.clause> "," ] <Vst> ( <Ns> | <Np> )
+  | <Ns> <Vst> [ ", " ( <throwaway.clause> | <intro.clause> ) "," ] ( <Ns> | <Np> )
+  | <Ns> [ ", " ( <throwaway.clause> | <intro.clause> ) "," ] <Vsi>
+  | <Np> [ " (and " <certainty.clause> " this is the case)" | ", " <intro.clause> "," ] <Vpt> ( <Ns> | <Np> )
+  | <Np> <Vpt> [ ", " ( <throwaway.clause> | <intro.clause> ) "," ] ( <Ns> | <Np> )
+  | <Np> [ ", " ( <throwaway.clause> | <intro.clause> ) "," ] <Vpi>
   ;
 sentence ->
-    <intro.clause> ", " <certainty.clause> <main.clause> ", " <proof> "."
-  | <proof> ", " <certainty.clause> ", " <throwaway.clause> ", " <main.clause> ", " <conjunction> <main.clause> "."
-  | <proof> ", " <certainty.clause> <main.clause> "; " <intro.clause> ", " <main.clause> "."
+    [ <intro.clause> ", " ] [ <certainty.clause> ] <main.clause> [ ", " <proof> ] "."
+  | [ <proof> ", " ] [ <certainty.clause> ", " <throwaway.clause> ", " ] <main.clause> [ ", " <conjunction> <main.clause> ] "."
+  | [ <proof> ", " ] [ <certainty.clause> ] <main.clause> [ "; " <intro.clause> ", " <main.clause> ] "."
   ;
 question ->
     "Whence comes " <Ns> ", the solution of which involves the relation between " ( <Ns> | <Np> ) " and " ( <Ns> | <Np> ) "?"
-  | <intro.clause> ", " "is it " ( "true" | "the case" ) " that " <Ns> <Vst> ( <Ns> | <Np> ) ", or is the real question whether " <Np> <Vpi> "?"
-  | "Has it ever been suggested that" ", " <proof> "," <certainty.clause> " there is " ( "no relation" | "a causal connection" ) " bewteen " ( <Ns> | <Np> ) " and " ( <Ns> | <Np> ) "?"
+  | [ <intro.clause> ", " ] "is it " ( "true" | "the case" ) " that " <Ns> <Vst> ( <Ns> | <Np> ) ", or is the real question whether " <Np> <Vpi> "?"
+  | "Has it ever been suggested that" [ ", " <proof> "," ] <certainty.clause> " there is " ( "no relation" | "a causal connection" ) " bewteen " ( <Ns> | <Np> ) " and " ( <Ns> | <Np> ) "?"
   | "In which of our cognitive faculties are " ( <Ns> | <Np> ) " and " ( <Ns> | <Np> ) " connected together?"
   | <conjunction> " can I entertain " <Ns> " in thought, or does it present itself to me?"
   ;
@@ -259,10 +259,10 @@ throwaway.sentence ->
   | "But this is to be dismissed as random groping."
   ;
 paragraph ->
-    <sentence> <sentence> <sentence> <sentence> <sentence> <question> <sentence> <sentence> <sentence> <throwaway.sentence>
-  | <sentence> <sentence> <sentence> <sentence> "(" <sentence> ") " <sentence> <sentence> <throwaway.sentence>
-  | <sentence> <sentence> <sentence> <sentence> <sentence> <sentence> <sentence> <sentence>
+    <sentence> <sentence> [ <sentence> ] <sentence> [ <sentence> ] [ <question> ] [ <sentence> ] [ <sentence> ] <sentence> [ <throwaway.sentence> ]
+  | <sentence> <sentence> [ <sentence> ] <sentence> [ "(" <sentence> ") " ] <sentence> <sentence> [ <throwaway.sentence> ]
+  | <sentence> <sentence> [ <sentence> ] <sentence> [ <sentence> ] [ <sentence> ] [ <sentence> ] <sentence>
   ;
 section ->
-  <paragraph> <paragraph> <paragraph> <paragraph> <paragraph> <paragraph> <paragraph> <paragraph> <paragraph> <paragraph>
+  <paragraph> <paragraph> <paragraph> <paragraph> [ <paragraph> ] [ <paragraph> ] [ <paragraph> ] [ <paragraph> ] [ <paragraph> ] [ <paragraph> ]
   ;

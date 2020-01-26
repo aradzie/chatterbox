@@ -27,7 +27,6 @@ test("parse literals and refs", (t) => {
     parse({
       rule: {
         start: {
-          chance: 0.5,
           seq: ["-<a>"],
         },
         a: "a",
@@ -36,7 +35,6 @@ test("parse literals and refs", (t) => {
     {
       rule: {
         start: {
-          chance: 0.5,
           seq: [
             "-",
             {

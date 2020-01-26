@@ -18,7 +18,7 @@ money.object ->
   | "legal fees"
   | "my divorce"
   | "this month's rent"
-  | "food" ( "for the baby" | "for the next " ( "week" | "few days" ) )
+  | "food" [ "for the baby" | "for the next " ( "week" | "few days" ) ]
   | "plastic surgery"
   ;
 thank.you.paragraph ->
@@ -230,7 +230,7 @@ magazine ->
   | "Wired"
   ;
 female ->
-    "Grandma" <female.name>
+    "Grandma" [ <female.name> ]
   | "Mom"
   | "Aunt " <female.name>
   | "sister"
@@ -239,7 +239,7 @@ female ->
   | <female.name>
   ;
 male ->
-    "Grandpa" <male.name>
+    "Grandpa" [ <male.name> ]
   | "Dad"
   | "Uncle " <male.name>
   | "brother"
@@ -258,10 +258,10 @@ state ->
   | "in the witness relocation program"
   ;
 money.saved ->
-    "I've already " ( "put" | "stashed" ) " it in " ( "the bank" | "a shoebox" ) " to save for " <money.object> "."
-  | "I'd love to spend it, but " "I'm saving it to buy " <money.object> "."
-  | "It's nice to have some \"fun money\" to spend, but " "I've decided to save it for " <money.object> "."
-  | "I'd love to spend it" ( "immediately" | "right away" ) ", but " "I need to save up for " <money.object> "."
+    "I've already " ( "put" | "stashed" ) " it in " ( "the bank" | "a shoebox" ) [ " to save for " <money.object> ] "."
+  | [ "I'd love to spend it, but " ] "I'm saving it to buy " <money.object> "."
+  | [ "It's nice to have some \"fun money\" to spend, but " ] "I've decided to save it for " <money.object> "."
+  | [ "I'd love to spend it" [ "immediately" | "right away" ] ", but " ] "I need to save up for " <money.object> "."
   ;
 greeting ->
   "Dear " <person> ","
@@ -278,28 +278,28 @@ money.tag.line ->
   | <tag.line>
   ;
 money.received ->
-    "This is " "just a brief note to " ( "say " ( "thanks" | "\"thank you\"" ) | "thank you" ) " for the " <money.amount> ( "you sent" | "I received from you" ) " for " <occasion> "."
-  | "Of all the " ( "presents" | "gifts" | "things" | "stuff" ) " I " ( "received" | "got" ) " for " <occasion> ", I " ( "liked" | "loved" ) " your " "gift of " <money.amount> ( "the most" | "more than anything else" ) "."
-  | "I " "really " ( "appreciate" | "enjoyed receiving" ) " the " <money.amount> " you " ( "gave" | "sent" ) " me for " <occasion> "."
-  | "I " "really " "love " ( "getting" | "receiving" ) " money for " <occasion> ", " ( "since" | "because" ) ( "that" | "it" ) " means I can " "always " "go out and " ( "spend it on" | "use it for" ) " what I really " ( "want" | "need" ) ". " ( "Thanks" | "Thank you" ) " for the " <money.amount> "."
+    [ "This is " ] "just a brief note to " ( "say " ( "thanks" | "\"thank you\"" ) | "thank you" ) " for the " <money.amount> ( "you sent" | "I received from you" ) " for " <occasion> "."
+  | "Of all the " ( "presents" | "gifts" | "things" | "stuff" ) " I " ( "received" | "got" ) " for " <occasion> ", I " ( "liked" | "loved" ) " your " [ "gift of " ] <money.amount> ( "the most" | "more than anything else" ) "."
+  | "I " [ "really " ] ( "appreciate" | "enjoyed receiving" ) " the " <money.amount> " you " ( "gave" | "sent" ) " me for " <occasion> "."
+  | "I " [ "really " ] "love " ( "getting" | "receiving" ) " money for " <occasion> ", " ( "since" | "because" ) ( "that" | "it" ) " means I can " [ "always " ] [ "go out and " ] ( "spend it on" | "use it for" ) " what I really " ( "want" | "need" ) ". " ( "Thanks" | "Thank you" ) " for the " <money.amount> "."
   | "You can't imagine how surprised I was to discover that you had sent me " <money.amount> " for " <occasion> "."
   | ( "Thanks" | "Thank you" ) " for the " <money.amount> ( ". I" | "; i" ) "t was " ( "the perfect" | "a great" ) ( "present" | "gift" ) " for " <occasion> "."
-  | "I don't know how to thank you " ( "properly" | "enough" ) "for the " <money.amount> " you " ( "sent" | "gave" ) "me " "for " <occasion> "."
-  | "I'm " "just " "writing to say " ( "thanks" | "\"thank you\"" ) " for the " <money.amount> " you " "graciously " ( "gave" | "sent" ) " me for " <occasion> "."
+  | "I don't know how to thank you " [ "properly" | "enough" ] "for the " <money.amount> " you " ( "sent" | "gave" ) [ "me " ] "for " <occasion> "."
+  | "I'm " [ "just " ] "writing to say " ( "thanks" | "\"thank you\"" ) " for the " <money.amount> " you " [ "graciously " ] ( "gave" | "sent" ) " me for " <occasion> "."
   | ( "Thank you" | "Thanks" ) " for the " <money.amount> " you " ( "bestowed upon" | "sent" ) " me for " <occasion> "."
-  | "This is " "just a quick note to " ( "say \"thank you\"" | "thank you" ) " for the " <money.amount> ( "I " ( "got" | "received" ) " from you" | "you sent" " me" ) " for " <occasion> "."
+  | [ "This is " ] "just a quick note to " ( "say \"thank you\"" | "thank you" ) " for the " <money.amount> ( "I " ( "got" | "received" ) " from you" | "you sent" [ " me" ] ) " for " <occasion> "."
   ;
 gift.received ->
-    "This is " "just a brief note to " ( "say " ( "thanks" | "\"thank you\"" ) | "thank you" ) " for the " <gift.object> ( "you sent" | "I received from you" ) " for " <occasion> "."
-  | "Of all the " ( "presents" | "gifts" | "things" | "stuff" ) " I " ( "received" | "got" ) " for " <occasion> ", I " ( "liked" | "loved" ) " your " "gift of " <gift.object> ( "the most" | "more than anything else" ) "."
-  | "I " "really " ( "appreciate" | "enjoyed receiving" ) " the " <gift.object> " you " ( "gave" | "sent" ) " me for " <occasion> "."
-  | "I " "really " "love " ( "getting" | "receiving" ) " money for " <occasion> ", " ( "since" | "because" ) ( "that" | "it" ) " means I can " "always " "go out and " ( "spend it on" | "use it for" ) " what I really " ( "want" | "need" ) ". " ( "Thanks" | "Thank you" ) " for the " <gift.object> "."
+    [ "This is " ] "just a brief note to " ( "say " ( "thanks" | "\"thank you\"" ) | "thank you" ) " for the " <gift.object> ( "you sent" | "I received from you" ) " for " <occasion> "."
+  | "Of all the " ( "presents" | "gifts" | "things" | "stuff" ) " I " ( "received" | "got" ) " for " <occasion> ", I " ( "liked" | "loved" ) " your " [ "gift of " ] <gift.object> ( "the most" | "more than anything else" ) "."
+  | "I " [ "really " ] ( "appreciate" | "enjoyed receiving" ) " the " <gift.object> " you " ( "gave" | "sent" ) " me for " <occasion> "."
+  | "I " [ "really " ] "love " ( "getting" | "receiving" ) " money for " <occasion> ", " ( "since" | "because" ) ( "that" | "it" ) " means I can " [ "always " ] [ "go out and " ] ( "spend it on" | "use it for" ) " what I really " ( "want" | "need" ) ". " ( "Thanks" | "Thank you" ) " for the " <gift.object> "."
   | "You can't imagine how surprised I was to discover that you had sent me " <gift.object> " for " <occasion> "."
   | ( "Thanks" | "Thank you" ) " for the " <gift.object> ( ". I" | "; i" ) "t was " ( "the perfect" | "a great" ) ( "present" | "gift" ) " for " <occasion> "."
-  | "I don't know how to thank you " ( "properly" | "enough" ) "for the " <gift.object> " you " ( "sent" | "gave" ) "me " "for " <occasion> "."
-  | "I'm " "just " "writing to say " ( "thanks" | "\"thank you\"" ) " for the " <gift.object> " you " "graciously " ( "gave" | "sent" ) " me for " <occasion> "."
+  | "I don't know how to thank you " [ "properly" | "enough" ] "for the " <gift.object> " you " ( "sent" | "gave" ) [ "me " ] "for " <occasion> "."
+  | "I'm " [ "just " ] "writing to say " ( "thanks" | "\"thank you\"" ) " for the " <gift.object> " you " [ "graciously " ] ( "gave" | "sent" ) " me for " <occasion> "."
   | ( "Thank you" | "Thanks" ) " for the " <gift.object> " you " ( "bestowed upon" | "sent" ) " me for " <occasion> "."
-  | "This is " "just a quick note to " ( "say \"thank you\"" | "thank you" ) " for the " <gift.object> ( "I " ( "got" | "received" ) " from you" | "you sent" " me" ) " for " <occasion> "."
+  | [ "This is " ] "just a quick note to " ( "say \"thank you\"" | "thank you" ) " for the " <gift.object> ( "I " ( "got" | "received" ) " from you" | "you sent" [ " me" ] ) " for " <occasion> "."
   ;
 occasion ->
     "Christmas"
@@ -326,20 +326,20 @@ gift.tag.line ->
 tag.line ->
     "I know how much of a sacrifice this sort of gift is for you."
   | <male.name> " and " <female.name> " tried to steal it from me, but I was too quick for them."
-  | "I'm " "looking forward to getting your next gift for " <occasion> "."
-  | "Frankly, " "it was " "a little " "strange to get anything from you" " at all" ", because " ( "I thought" | "my friends to me that" ) " you were " <state> "."
+  | [ "I'm " ] "looking forward to getting your next gift for " <occasion> "."
+  | [ "Frankly, " ] "it was " [ "a little " ] "strange to get anything from you" [ " at all" ] ", because " ( "I thought" | "my friends to me that" ) " you were " <state> "."
   | "How thoughtful of you."
   | "Give my love to " ( <male.name> | <female.name> ) "."
-  | "Best wishes to you" " and " <person> "."
+  | "Best wishes to you" [ " and " <person> ] "."
   ;
 closing.line ->
     "Sincerely"
-  | "Love" " always" ","
-  | "Thank you" " again" ","
+  | "Love" [ " always" ] ","
+  | "Thank you" [ " again" ] ","
   | "See you soon,"
   | "Hugs and kisses,"
   | "From,"
-  | "Thanks" " again" ","
+  | "Thanks" [ " again" ] ","
   | "Peace,"
   | "Faithfully,"
   ;
@@ -347,16 +347,16 @@ thank.you.note ->
   <greeting> "\n" <thank.you.paragraph> "\n" <closing>
   ;
 money.spent ->
-    "You'll be happy to know that " "I've already spent it on " <money.object> "."
-  | "It" ( "'s" | " has" ) "already " "been well-spent on " <money.object> "."
+    [ "You'll be happy to know that " ] "I've already spent it on " <money.object> "."
+  | "It" ( "'s" | " has" ) [ "already " ] "been well-spent on " <money.object> "."
   | "My " ( "mother" | "father" ) " insisted that I spend it on " <money.object> "."
-  | "Now I " " finally" "have enough money for " <money.object> "."
-  | ( "As soon as I can, " | "When I get a chance, " ) "I'm going " "to the mall " "and spending it on " <money.object> "."
-  | "To be honest, " ( "I tried to get it to the bank" | "I wanted to save it" ) ", but I " "realized I " ( "needed" | "had" ) " to spend it on " <money.object> " instead" "."
-  | "I just wanted to let you know that " "it's already gone towards " <money.object> "."
-  | "I " ( "immediately" | "rushed right out and" ) "spent it on " <money.object> " for the first time" " in years" "."
-  | "As soon as I finish writing this letter, " "I'm going to put it towards " <money.object> "."
-  | "I have to admit that " "I already spent it on this month's protection."
+  | "Now I " [ " finally" ] "have enough money for " <money.object> "."
+  | [ "As soon as I can, " | "When I get a chance, " ] "I'm going " [ "to the mall " ] "and spending it on " <money.object> "."
+  | [ "To be honest, " ] ( "I tried to get it to the bank" | "I wanted to save it" ) ", but I " [ "realized I " ] ( "needed" | "had" ) " to spend it on " <money.object> [ " instead" ] "."
+  | [ "I just wanted to let you know that " ] "it's already gone towards " <money.object> "."
+  | "I " [ "immediately" | "rushed right out and" ] "spent it on " <money.object> [ " for the first time" [ " in years" ] ] "."
+  | [ "As soon as I finish writing this letter, " ] "I'm going to put it towards " <money.object> "."
+  | [ "I have to admit that " ] "I already spent it on this month's protection."
   ;
 gift.object ->
     "toaster"

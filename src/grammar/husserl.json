@@ -8,16 +8,16 @@
           "seq": [
             "the cogitatum",
             {
-              "chance": 0.5,
-              "seq": [" (qua cogitatum)"]
+              "f": 0.5,
+              "opt": " (qua cogitatum)"
             }
           ]
         },
         {
           "seq": [
             {
-              "chance": 0.5,
-              "seq": ["transcendental "]
+              "f": 0.5,
+              "opt": "transcendental "
             },
             "phenomenology"
           ]
@@ -30,8 +30,8 @@
                   "seq": [
                     "pure",
                     {
-                      "chance": 0.5,
-                      "seq": [" and genuine"]
+                      "f": 0.5,
+                      "opt": " and genuine"
                     }
                   ]
                 },
@@ -49,8 +49,8 @@
           "seq": [
             "the ",
             {
-              "chance": 0.5,
-              "seq": ["phenomenological "]
+              "f": 0.5,
+              "opt": "phenomenological "
             },
             "epoche"
           ]
@@ -64,8 +64,8 @@
           "seq": [
             "the repeatable act of grounding",
             {
-              "chance": 0.5,
-              "seq": [" of <Np>"]
+              "f": 0.5,
+              "opt": " of <Np>"
             }
           ]
         },
@@ -76,8 +76,8 @@
           "seq": [
             "the ",
             {
-              "chance": 0.5,
-              "seq": ["all-embracing "]
+              "f": 0.5,
+              "opt": "all-embracing "
             },
             "consciousness of internal time"
           ]
@@ -95,8 +95,8 @@
         {
           "seq": [
             {
-              "chance": 0.5,
-              "seq": ["separated "]
+              "f": 0.5,
+              "opt": "separated "
             },
             "modes of consciousness"
           ]
@@ -125,8 +125,8 @@
           "seq": [
             "stand in contrast to",
             {
-              "chance": 0.5,
-              "seq": [" the accident being \"for me\" of"]
+              "f": 0.5,
+              "opt": " the accident being \"for me\" of"
             }
           ]
         },
@@ -154,12 +154,10 @@
           "seq": [
             "inhibit ",
             {
-              "chance": 0.5,
-              "seq": [
-                {
-                  "alt": ["my", "our"]
-                }
-              ]
+              "f": 0.5,
+              "opt": {
+                "alt": ["my", "our"]
+              }
             },
             "acceptance of <Ns|Np> as existent"
           ]
@@ -172,8 +170,8 @@
             },
             " any abiding being",
             {
-              "chance": 0.5,
-              "seq": [" apart from their relation to <Ns|Np>"]
+              "f": 0.5,
+              "opt": " apart from their relation to <Ns|Np>"
             }
           ]
         },
@@ -182,8 +180,8 @@
           "seq": [
             "are infinite ideas, related to infinities of harmoniously combinable <Np>",
             {
-              "chance": 0.5,
-              "seq": [" and <Np>"]
+              "f": 0.5,
+              "opt": " and <Np>"
             }
           ]
         },
@@ -191,8 +189,8 @@
           "seq": [
             "can be seen as ",
             {
-              "chance": 0.5,
-              "seq": ["full "]
+              "f": 0.5,
+              "opt": "full "
             },
             "proof that, in spite of the continual experiencedness of <Ns>, a non-being of <Ns|Np> is ",
             {
@@ -204,8 +202,8 @@
           "seq": [
             "need to be criticized with regard to their validity and range, before they can be used for ",
             {
-              "chance": 0.5,
-              "seq": ["the purposes of "]
+              "f": 0.5,
+              "opt": "the purposes of "
             },
             "a radical grounding of <Ns|Np>"
           ]
@@ -256,8 +254,8 @@
           "seq": [
             "the fact is evident",
             {
-              "chance": 0.5,
-              "seq": [", even apodictically evident,"]
+              "f": 0.5,
+              "opt": ", even apodictically evident,"
             },
             " that"
           ]
@@ -302,13 +300,13 @@
           "seq": [
             "<Ns>",
             {
-              "chance": 0.5,
-              "seq": [", <throwaway.clause>,"]
+              "f": 0.5,
+              "opt": ", <throwaway.clause>,"
             },
             "<Vst><Ns|Np>",
             {
-              "chance": 0.5,
-              "seq": ["; <subject.clause>"]
+              "f": 0.5,
+              "opt": "; <subject.clause>"
             }
           ]
         },
@@ -316,13 +314,13 @@
           "seq": [
             "<Ns>",
             {
-              "chance": 0.5,
-              "seq": [" (<intro.clause>)"]
+              "f": 0.5,
+              "opt": " (<intro.clause>)"
             },
             "<Vsi>",
             {
-              "chance": 0.5,
-              "seq": ["<how.clause>"]
+              "f": 0.5,
+              "opt": "<how.clause>"
             }
           ]
         },
@@ -330,13 +328,13 @@
           "seq": [
             "<Np>",
             {
-              "chance": 0.5,
-              "seq": [", <throwaway.clause>,"]
+              "f": 0.5,
+              "opt": ", <throwaway.clause>,"
             },
             "<Vpt>",
             {
-              "chance": 0.5,
-              "seq": [", <how.clause>,"]
+              "f": 0.5,
+              "opt": ", <how.clause>,"
             },
             "<Ns|Np>"
           ]
@@ -345,17 +343,17 @@
           "seq": [
             "<Np>",
             {
-              "chance": 0.5,
-              "seq": [" (<intro.clause>)"]
+              "f": 0.5,
+              "opt": " (<intro.clause>)"
             },
             "<Vpi>",
             {
-              "chance": 0.5,
-              "seq": [", <how.clause>"]
+              "f": 0.5,
+              "opt": ", <how.clause>"
             },
             {
-              "chance": 0.5,
-              "seq": ["; <subject.clause>"]
+              "f": 0.5,
+              "opt": "; <subject.clause>"
             }
           ]
         }
@@ -373,13 +371,13 @@
             },
             " now shift the weight of transcendental evidence of <Ns|Np>",
             {
-              "chance": 0.5,
-              "seq": ["(<intro.clause>) "]
+              "f": 0.5,
+              "opt": "(<intro.clause>) "
             },
             "from the ",
             {
-              "chance": 0.5,
-              "seq": ["<ego.type>"]
+              "f": 0.5,
+              "opt": "<ego.type>"
             },
             "ego to <Ns|Np>"
           ]
@@ -390,8 +388,8 @@
           "seq": [
             "we have not simply lost <Ns> for phenomenology; we retain it",
             {
-              "chance": 0.5,
-              "seq": [", <throwaway.clause>,"]
+              "f": 0.5,
+              "opt": ", <throwaway.clause>,"
             },
             "<how.clause>"
           ]
@@ -401,8 +399,8 @@
           "seq": [
             "I",
             {
-              "chance": 0.5,
-              "seq": [", the meditating phenomenologist,"]
+              "f": 0.5,
+              "opt": ", the meditating phenomenologist,"
             },
             " set myself the all-embracing task of uncovering ",
             {
@@ -419,8 +417,8 @@
           "cls": "sentence",
           "seq": [
             {
-              "chance": 0.5,
-              "seq": ["<certainty.clause>"]
+              "f": 0.5,
+              "opt": "<certainty.clause>"
             },
             "<main.clause>."
           ]
@@ -429,8 +427,8 @@
           "cls": "sentence",
           "seq": [
             {
-              "chance": 0.5,
-              "seq": ["<certainty.clause>"]
+              "f": 0.5,
+              "opt": "<certainty.clause>"
             },
             "<main.clause>."
           ]
@@ -439,14 +437,16 @@
           "cls": "sentence",
           "seq": [
             {
-              "chance": 0.5,
-              "seq": [
-                "<certainty.clause>",
-                {
-                  "chance": 0.5,
-                  "seq": [", <how.clause>,"]
-                }
-              ]
+              "f": 0.5,
+              "opt": {
+                "seq": [
+                  "<certainty.clause>",
+                  {
+                    "f": 0.5,
+                    "opt": ", <how.clause>,"
+                  }
+                ]
+              }
             },
             "<subject.clause>."
           ]
@@ -458,33 +458,20 @@
         {
           "seq": [
             {
-              "chance": 0.5,
-              "seq": ["<sentence>"]
+              "f": 0.5,
+              "opt": "<sentence>"
             },
             {
-              "chance": 0.5,
-              "seq": ["<sentence>"]
+              "f": 0.5,
+              "opt": "<sentence>"
             },
             {
-              "chance": 0.5,
-              "seq": ["<sentence>"]
+              "f": 0.5,
+              "opt": "<sentence>"
             },
             {
-              "chance": 0.5,
-              "seq": ["<sentence>"]
-            },
-            "<sentence><sentence><sentence><sentence><sentence>"
-          ]
-        },
-        {
-          "seq": [
-            {
-              "chance": 0.5,
-              "seq": ["<sentence>"]
-            },
-            {
-              "chance": 0.5,
-              "seq": ["<sentence>"]
+              "f": 0.5,
+              "opt": "<sentence>"
             },
             "<sentence><sentence><sentence><sentence><sentence>"
           ]
@@ -492,20 +479,33 @@
         {
           "seq": [
             {
-              "chance": 0.5,
-              "seq": ["<sentence>"]
+              "f": 0.5,
+              "opt": "<sentence>"
             },
             {
-              "chance": 0.5,
-              "seq": ["<sentence>"]
+              "f": 0.5,
+              "opt": "<sentence>"
+            },
+            "<sentence><sentence><sentence><sentence><sentence>"
+          ]
+        },
+        {
+          "seq": [
+            {
+              "f": 0.5,
+              "opt": "<sentence>"
             },
             {
-              "chance": 0.5,
-              "seq": ["<sentence>"]
+              "f": 0.5,
+              "opt": "<sentence>"
             },
             {
-              "chance": 0.5,
-              "seq": ["<sentence>"]
+              "f": 0.5,
+              "opt": "<sentence>"
+            },
+            {
+              "f": 0.5,
+              "opt": "<sentence>"
             },
             "<sentence><sentence><sentence><sentence>"
           ]
@@ -516,28 +516,28 @@
       "seq": [
         "<paragraph><paragraph><paragraph><paragraph>",
         {
-          "chance": 0.5,
-          "seq": ["<paragraph>"]
+          "f": 0.5,
+          "opt": "<paragraph>"
         },
         {
-          "chance": 0.5,
-          "seq": ["<paragraph>"]
+          "f": 0.5,
+          "opt": "<paragraph>"
         },
         {
-          "chance": 0.5,
-          "seq": ["<paragraph>"]
+          "f": 0.5,
+          "opt": "<paragraph>"
         },
         {
-          "chance": 0.5,
-          "seq": ["<paragraph>"]
+          "f": 0.5,
+          "opt": "<paragraph>"
         },
         {
-          "chance": 0.5,
-          "seq": ["<paragraph>"]
+          "f": 0.5,
+          "opt": "<paragraph>"
         },
         {
-          "chance": 0.5,
-          "seq": ["<paragraph>"]
+          "f": 0.5,
+          "opt": "<paragraph>"
         }
       ]
     }

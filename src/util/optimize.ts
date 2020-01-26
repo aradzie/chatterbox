@@ -1,4 +1,4 @@
-import { Alt, Grammar, isAlt, isLit, isSeq, P, RuleMap, Seq } from "../types";
+import { Alt, Grammar, isAlt, isLit, isOpt, isSeq, Opt, P, RuleMap, Seq } from "../types";
 import { isEmpty, isSimple } from "./util";
 
 /**
@@ -9,6 +9,7 @@ import { isEmpty, isSimple } from "./util";
  * - Consecutive `seq`s are joined.
  * - Nested `seq`s are flattened.
  * - Nested `alt`s are flattened.
+ * - Deterministic `opt`s are removed.
  */
 export function optimize(grammar: Grammar): Grammar {
   const { rule, start } = grammar;
@@ -29,6 +30,10 @@ function visit(p: P): P {
 
   if (isAlt(p)) {
     return visitAlt(p);
+  }
+
+  if (isOpt(p)) {
+    return visitOpt(p);
   }
 
   return p;
@@ -87,5 +92,14 @@ function visitAlt(v: Alt): P {
     if (!isEmpty(p)) {
       alt.push(p);
     }
+  }
+}
+
+function visitOpt(v: Opt): P {
+  const { f, opt } = v;
+  if (f == 1) {
+    return visit(opt);
+  } else {
+    return { f, opt: visit(opt) };
   }
 }

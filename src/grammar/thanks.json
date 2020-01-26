@@ -25,22 +25,20 @@
           "seq": [
             "food",
             {
-              "chance": 0.5,
-              "seq": [
-                {
-                  "alt": [
-                    "for the baby",
-                    {
-                      "seq": [
-                        "for the next ",
-                        {
-                          "alt": ["week", "few days"]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
+              "f": 0.5,
+              "opt": {
+                "alt": [
+                  "for the baby",
+                  {
+                    "seq": [
+                      "for the next ",
+                      {
+                        "alt": ["week", "few days"]
+                      }
+                    ]
+                  }
+                ]
+              }
             }
           ]
         },
@@ -264,8 +262,8 @@
           "seq": [
             "Grandma",
             {
-              "chance": 0.5,
-              "seq": ["<female.name>"]
+              "f": 0.5,
+              "opt": "<female.name>"
             }
           ]
         },
@@ -283,8 +281,8 @@
           "seq": [
             "Grandpa",
             {
-              "chance": 0.5,
-              "seq": ["<male.name>"]
+              "f": 0.5,
+              "opt": "<male.name>"
             }
           ]
         },
@@ -321,8 +319,8 @@
               "alt": ["the bank", "a shoebox"]
             },
             {
-              "chance": 0.5,
-              "seq": [" to save for <money.object>"]
+              "f": 0.5,
+              "opt": " to save for <money.object>"
             },
             "."
           ]
@@ -330,8 +328,8 @@
         {
           "seq": [
             {
-              "chance": 0.5,
-              "seq": ["I'd love to spend it, but "]
+              "f": 0.5,
+              "opt": "I'd love to spend it, but "
             },
             "I'm saving it to buy <money.object>."
           ]
@@ -339,8 +337,8 @@
         {
           "seq": [
             {
-              "chance": 0.5,
-              "seq": ["It's nice to have some \"fun money\" to spend, but "]
+              "f": 0.5,
+              "opt": "It's nice to have some \"fun money\" to spend, but "
             },
             "I've decided to save it for <money.object>."
           ]
@@ -348,19 +346,19 @@
         {
           "seq": [
             {
-              "chance": 0.5,
-              "seq": [
-                "I'd love to spend it",
-                {
-                  "chance": 0.5,
-                  "seq": [
-                    {
+              "f": 0.5,
+              "opt": {
+                "seq": [
+                  "I'd love to spend it",
+                  {
+                    "f": 0.5,
+                    "opt": {
                       "alt": ["immediately", "right away"]
                     }
-                  ]
-                },
-                ", but "
-              ]
+                  },
+                  ", but "
+                ]
+              }
             },
             "I need to save up for <money.object>."
           ]
@@ -414,8 +412,8 @@
           "cls": "sentence",
           "seq": [
             {
-              "chance": 0.5,
-              "seq": ["This is "]
+              "f": 0.5,
+              "opt": "This is "
             },
             "just a brief note to ",
             {
@@ -455,8 +453,8 @@
             },
             " your ",
             {
-              "chance": 0.5,
-              "seq": ["gift of "]
+              "f": 0.5,
+              "opt": "gift of "
             },
             "<money.amount>",
             {
@@ -470,8 +468,8 @@
           "seq": [
             "I ",
             {
-              "chance": 0.5,
-              "seq": ["really "]
+              "f": 0.5,
+              "opt": "really "
             },
             {
               "alt": ["appreciate", "enjoyed receiving"]
@@ -488,8 +486,8 @@
           "seq": [
             "I ",
             {
-              "chance": 0.5,
-              "seq": ["really "]
+              "f": 0.5,
+              "opt": "really "
             },
             "love ",
             {
@@ -504,12 +502,12 @@
             },
             " means I can ",
             {
-              "chance": 0.5,
-              "seq": ["always "]
+              "f": 0.5,
+              "opt": "always "
             },
             {
-              "chance": 0.5,
-              "seq": ["go out and "]
+              "f": 0.5,
+              "opt": "go out and "
             },
             {
               "alt": ["spend it on", "use it for"]
@@ -556,20 +554,18 @@
           "seq": [
             "I don't know how to thank you ",
             {
-              "chance": 0.5,
-              "seq": [
-                {
-                  "alt": ["properly", "enough"]
-                }
-              ]
+              "f": 0.5,
+              "opt": {
+                "alt": ["properly", "enough"]
+              }
             },
             "for the <money.amount> you ",
             {
               "alt": ["sent", "gave"]
             },
             {
-              "chance": 0.5,
-              "seq": ["me "]
+              "f": 0.5,
+              "opt": "me "
             },
             "for <occasion>."
           ]
@@ -579,8 +575,8 @@
           "seq": [
             "I'm ",
             {
-              "chance": 0.5,
-              "seq": ["just "]
+              "f": 0.5,
+              "opt": "just "
             },
             "writing to say ",
             {
@@ -588,8 +584,8 @@
             },
             " for the <money.amount> you ",
             {
-              "chance": 0.5,
-              "seq": ["graciously "]
+              "f": 0.5,
+              "opt": "graciously "
             },
             {
               "alt": ["gave", "sent"]
@@ -614,8 +610,8 @@
           "cls": "sentence",
           "seq": [
             {
-              "chance": 0.5,
-              "seq": ["This is "]
+              "f": 0.5,
+              "opt": "This is "
             },
             "just a quick note to ",
             {
@@ -637,8 +633,8 @@
                   "seq": [
                     "you sent",
                     {
-                      "chance": 0.5,
-                      "seq": [" me"]
+                      "f": 0.5,
+                      "opt": " me"
                     }
                   ]
                 }
@@ -655,8 +651,8 @@
           "cls": "sentence",
           "seq": [
             {
-              "chance": 0.5,
-              "seq": ["This is "]
+              "f": 0.5,
+              "opt": "This is "
             },
             "just a brief note to ",
             {
@@ -696,8 +692,8 @@
             },
             " your ",
             {
-              "chance": 0.5,
-              "seq": ["gift of "]
+              "f": 0.5,
+              "opt": "gift of "
             },
             "<gift.object>",
             {
@@ -711,8 +707,8 @@
           "seq": [
             "I ",
             {
-              "chance": 0.5,
-              "seq": ["really "]
+              "f": 0.5,
+              "opt": "really "
             },
             {
               "alt": ["appreciate", "enjoyed receiving"]
@@ -729,8 +725,8 @@
           "seq": [
             "I ",
             {
-              "chance": 0.5,
-              "seq": ["really "]
+              "f": 0.5,
+              "opt": "really "
             },
             "love ",
             {
@@ -745,12 +741,12 @@
             },
             " means I can ",
             {
-              "chance": 0.5,
-              "seq": ["always "]
+              "f": 0.5,
+              "opt": "always "
             },
             {
-              "chance": 0.5,
-              "seq": ["go out and "]
+              "f": 0.5,
+              "opt": "go out and "
             },
             {
               "alt": ["spend it on", "use it for"]
@@ -797,20 +793,18 @@
           "seq": [
             "I don't know how to thank you ",
             {
-              "chance": 0.5,
-              "seq": [
-                {
-                  "alt": ["properly", "enough"]
-                }
-              ]
+              "f": 0.5,
+              "opt": {
+                "alt": ["properly", "enough"]
+              }
             },
             "for the <gift.object> you ",
             {
               "alt": ["sent", "gave"]
             },
             {
-              "chance": 0.5,
-              "seq": ["me "]
+              "f": 0.5,
+              "opt": "me "
             },
             "for <occasion>."
           ]
@@ -820,8 +814,8 @@
           "seq": [
             "I'm ",
             {
-              "chance": 0.5,
-              "seq": ["just "]
+              "f": 0.5,
+              "opt": "just "
             },
             "writing to say ",
             {
@@ -829,8 +823,8 @@
             },
             " for the <gift.object> you ",
             {
-              "chance": 0.5,
-              "seq": ["graciously "]
+              "f": 0.5,
+              "opt": "graciously "
             },
             {
               "alt": ["gave", "sent"]
@@ -855,8 +849,8 @@
           "cls": "sentence",
           "seq": [
             {
-              "chance": 0.5,
-              "seq": ["This is "]
+              "f": 0.5,
+              "opt": "This is "
             },
             "just a quick note to ",
             {
@@ -878,8 +872,8 @@
                   "seq": [
                     "you sent",
                     {
-                      "chance": 0.5,
-                      "seq": [" me"]
+                      "f": 0.5,
+                      "opt": " me"
                     }
                   ]
                 }
@@ -928,8 +922,8 @@
           "cls": "sentence",
           "seq": [
             {
-              "chance": 0.5,
-              "seq": ["I'm "]
+              "f": 0.5,
+              "opt": "I'm "
             },
             "looking forward to getting your next gift for <occasion>."
           ]
@@ -938,18 +932,18 @@
           "cls": "sentence",
           "seq": [
             {
-              "chance": 0.5,
-              "seq": ["Frankly, "]
+              "f": 0.5,
+              "opt": "Frankly, "
             },
             "it was ",
             {
-              "chance": 0.5,
-              "seq": ["a little "]
+              "f": 0.5,
+              "opt": "a little "
             },
             "strange to get anything from you",
             {
-              "chance": 0.5,
-              "seq": [" at all"]
+              "f": 0.5,
+              "opt": " at all"
             },
             ", because ",
             {
@@ -971,8 +965,8 @@
           "seq": [
             "Best wishes to you",
             {
-              "chance": 0.5,
-              "seq": [" and <person>"]
+              "f": 0.5,
+              "opt": " and <person>"
             },
             "."
           ]
@@ -986,8 +980,8 @@
           "seq": [
             "Love",
             {
-              "chance": 0.5,
-              "seq": [" always"]
+              "f": 0.5,
+              "opt": " always"
             },
             ","
           ]
@@ -996,8 +990,8 @@
           "seq": [
             "Thank you",
             {
-              "chance": 0.5,
-              "seq": [" again"]
+              "f": 0.5,
+              "opt": " again"
             },
             ","
           ]
@@ -1009,8 +1003,8 @@
           "seq": [
             "Thanks",
             {
-              "chance": 0.5,
-              "seq": [" again"]
+              "f": 0.5,
+              "opt": " again"
             },
             ","
           ]
@@ -1026,8 +1020,8 @@
           "cls": "sentence",
           "seq": [
             {
-              "chance": 0.5,
-              "seq": ["You'll be happy to know that "]
+              "f": 0.5,
+              "opt": "You'll be happy to know that "
             },
             "I've already spent it on <money.object>."
           ]
@@ -1040,8 +1034,8 @@
               "alt": ["'s", " has"]
             },
             {
-              "chance": 0.5,
-              "seq": ["already "]
+              "f": 0.5,
+              "opt": "already "
             },
             "been well-spent on <money.object>."
           ]
@@ -1061,8 +1055,8 @@
           "seq": [
             "Now I ",
             {
-              "chance": 0.5,
-              "seq": [" finally"]
+              "f": 0.5,
+              "opt": " finally"
             },
             "have enough money for <money.object>."
           ]
@@ -1071,17 +1065,15 @@
           "cls": "sentence",
           "seq": [
             {
-              "chance": 0.5,
-              "seq": [
-                {
-                  "alt": ["As soon as I can, ", "When I get a chance, "]
-                }
-              ]
+              "f": 0.5,
+              "opt": {
+                "alt": ["As soon as I can, ", "When I get a chance, "]
+              }
             },
             "I'm going ",
             {
-              "chance": 0.5,
-              "seq": ["to the mall "]
+              "f": 0.5,
+              "opt": "to the mall "
             },
             "and spending it on <money.object>."
           ]
@@ -1090,24 +1082,24 @@
           "cls": "sentence",
           "seq": [
             {
-              "chance": 0.5,
-              "seq": ["To be honest, "]
+              "f": 0.5,
+              "opt": "To be honest, "
             },
             {
               "alt": ["I tried to get it to the bank", "I wanted to save it"]
             },
             ", but I ",
             {
-              "chance": 0.5,
-              "seq": ["realized I "]
+              "f": 0.5,
+              "opt": "realized I "
             },
             {
               "alt": ["needed", "had"]
             },
             " to spend it on <money.object>",
             {
-              "chance": 0.5,
-              "seq": [" instead"]
+              "f": 0.5,
+              "opt": " instead"
             },
             "."
           ]
@@ -1116,8 +1108,8 @@
           "cls": "sentence",
           "seq": [
             {
-              "chance": 0.5,
-              "seq": ["I just wanted to let you know that "]
+              "f": 0.5,
+              "opt": "I just wanted to let you know that "
             },
             "it's already gone towards <money.object>."
           ]
@@ -1127,23 +1119,23 @@
           "seq": [
             "I ",
             {
-              "chance": 0.5,
-              "seq": [
-                {
-                  "alt": ["immediately", "rushed right out and"]
-                }
-              ]
+              "f": 0.5,
+              "opt": {
+                "alt": ["immediately", "rushed right out and"]
+              }
             },
             "spent it on <money.object>",
             {
-              "chance": 0.5,
-              "seq": [
-                " for the first time",
-                {
-                  "chance": 0.5,
-                  "seq": [" in years"]
-                }
-              ]
+              "f": 0.5,
+              "opt": {
+                "seq": [
+                  " for the first time",
+                  {
+                    "f": 0.5,
+                    "opt": " in years"
+                  }
+                ]
+              }
             },
             "."
           ]
@@ -1152,8 +1144,8 @@
           "cls": "sentence",
           "seq": [
             {
-              "chance": 0.5,
-              "seq": ["As soon as I finish writing this letter, "]
+              "f": 0.5,
+              "opt": "As soon as I finish writing this letter, "
             },
             "I'm going to put it towards <money.object>."
           ]
@@ -1162,8 +1154,8 @@
           "cls": "sentence",
           "seq": [
             {
-              "chance": 0.5,
-              "seq": ["I have to admit that "]
+              "f": 0.5,
+              "opt": "I have to admit that "
             },
             "I already spent it on this month's protection."
           ]

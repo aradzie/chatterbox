@@ -2,11 +2,7 @@ import { isAlt, isSeq, P } from "../types";
 
 export function isSimple(p: P): boolean {
   if (isSeq(p)) {
-    return p.chance == null && p.cls == null;
-  }
-
-  if (isAlt(p)) {
-    return p.chance == null;
+    return p.cls == null;
   }
 
   return true;
