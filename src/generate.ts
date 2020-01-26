@@ -1,6 +1,7 @@
 import { Grammar, isAlt, isLit, isOpt, isRef, isSeq, P } from "./types";
 
 export interface Options {
+  readonly start?: string;
   readonly random?: () => number;
 }
 
@@ -8,9 +9,12 @@ export interface Options {
  * Generates text from the given context-free grammar.
  */
 export function generate(grammar: Grammar, options: Options = {}): string {
-  const { random = (): number => Math.random() } = options;
+  const {
+    start: defaultStart = "start", // The default start.
+    random = (): number => Math.random(), // The default RNG.
+  } = options;
 
-  const { rule, start = "start" } = grammar;
+  const { rule, start = defaultStart } = grammar;
   const rulesByName = new Map(Object.entries(rule));
   const result: string[] = [];
   visit(getRule(start));
