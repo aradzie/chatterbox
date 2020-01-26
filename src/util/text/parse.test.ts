@@ -14,6 +14,10 @@ test("parse ref", (t) => {
   t.deepEqual(parse(`start -> <id>;`), { rule: { start: { ref: "id" } } });
 });
 
+test("parse opt", (t) => {
+  t.deepEqual(parse(`start -> [ "a" ];`), { rule: { start: { f: 0.5, opt: "a" } } });
+});
+
 test("parse seq", (t) => {
   t.deepEqual(parse(`start -> "a" "b" "c";`), { rule: { start: { seq: ["a", "b", "c"] } } });
 });
@@ -31,6 +35,15 @@ test("priorities", (t) => {
   });
   t.deepEqual(parse(`start -> ( ( "a" | ( "b" | "c" ) ) );`), {
     rule: { start: { alt: ["a", { alt: ["b", "c"] }] } },
+  });
+  t.deepEqual(parse(`start -> [("a" | "b") "c"];`), {
+    rule: { start: { f: 0.5, opt: { seq: [{ alt: ["a", "b"] }, "c"] } } },
+  });
+  t.deepEqual(parse(`start -> (["a" | "b"]) "c";`), {
+    rule: { start: { seq: [{ f: 0.5, opt: { alt: ["a", "b"] } }, "c"] } },
+  });
+  t.deepEqual(parse(`start -> (["a"] | "b") "c";`), {
+    rule: { start: { seq: [{ alt: [{ f: 0.5, opt: "a" }, "b"] }, "c"] } },
   });
 });
 
@@ -50,7 +63,7 @@ test("syntax error", (t) => {
     },
     {
       name: "SyntaxError",
-      message: 'Expected "(", literal, or ref but end of input found.',
+      message: 'Expected "(", "[", literal, or ref but end of input found.',
     },
   );
   t.deepEqual(location, {

@@ -28,12 +28,13 @@ Seq
   }
 
 Factor
-  = "(" _ alt:Alt _ ")" { return alt; }
+  = "(" _ p:Alt _ ")" { return p; }
+  / "[" _ p:Alt _ "]" { return { f: 0.5, opt: p }; }
   / ref:Ref { return ref; }
   / lit:Lit { return lit; }
 
 Ref "ref"
-  = "<" name:Name ">" { return { ref: name }; }
+  = "<" ref:Name ">" { return { ref }; }
 
 Lit "literal"
   = string:string { return string; }
