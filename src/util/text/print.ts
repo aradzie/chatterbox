@@ -16,8 +16,8 @@ export function print(grammar: Grammar): string {
   return printer.toString();
 
   function printRule(p: P, multiline: boolean): void {
-    if (isLit(p)) {
-      printer.print(JSON.stringify(p));
+    if (isOpt(p)) {
+      printOpt(p);
       return;
     }
 
@@ -36,12 +36,21 @@ export function print(grammar: Grammar): string {
       return;
     }
 
-    if (isOpt(p)) {
-      printOpt(p);
+    if (isLit(p)) {
+      printer.print(JSON.stringify(p));
       return;
     }
 
     throw new Error(); // Unreachable.
+  }
+
+  function printOpt(p: Opt): void {
+    printer.print("[ ");
+    if (p.f != 0.5) {
+      printer.print(`f=${p.f} `);
+    }
+    printRule(p.opt, false);
+    printer.print(" ]");
   }
 
   function printSeq(p: Seq, multiline: boolean): void {
@@ -80,14 +89,5 @@ export function print(grammar: Grammar): string {
 
   function printRef(p: Ref): void {
     printer.print(`<${p.ref}>`);
-  }
-
-  function printOpt(p: Opt): void {
-    printer.print("[ ");
-    if (p.f != 0.5) {
-      printer.print(`f=${p.f} `);
-    }
-    printRule(p.opt, false);
-    printer.print(" ]");
   }
 }

@@ -1,4 +1,17 @@
-import { Alt, Grammar, isAlt, isLit, isOpt, isRef, isSeq, P, Ref, RuleMap, Seq } from "../../types";
+import {
+  Alt,
+  Grammar,
+  isAlt,
+  isLit,
+  isOpt,
+  isRef,
+  isSeq,
+  Opt,
+  P,
+  Ref,
+  RuleMap,
+  Seq,
+} from "../../types";
 import { isSimple } from "../util";
 
 /**
@@ -20,8 +33,8 @@ export function print(grammar: Grammar): Grammar {
 }
 
 function visit(p: P): P {
-  if (isLit(p)) {
-    return p;
+  if (isOpt(p)) {
+    return visitOpt(p);
   }
 
   if (isSeq(p)) {
@@ -36,11 +49,16 @@ function visit(p: P): P {
     return visitRef(p);
   }
 
-  if (isOpt(p)) {
+  if (isLit(p)) {
     return p;
   }
 
   throw new Error(); // Unreachable.
+}
+
+function visitOpt(p: Opt): P {
+  const { f, opt } = p;
+  return { f, opt: visit(opt) };
 }
 
 function visitSeq(p: Seq): P {

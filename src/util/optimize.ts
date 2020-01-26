@@ -24,6 +24,10 @@ export function optimize(grammar: Grammar): Grammar {
 }
 
 function visit(p: P): P {
+  if (isOpt(p)) {
+    return visitOpt(p);
+  }
+
   if (isSeq(p)) {
     return visitSeq(p);
   }
@@ -32,11 +36,16 @@ function visit(p: P): P {
     return visitAlt(p);
   }
 
-  if (isOpt(p)) {
-    return visitOpt(p);
-  }
-
   return p;
+}
+
+function visitOpt(v: Opt): P {
+  const { f, opt } = v;
+  if (f == 1) {
+    return visit(opt);
+  } else {
+    return { f, opt: visit(opt) };
+  }
 }
 
 function visitSeq(v: Seq): P {
@@ -92,14 +101,5 @@ function visitAlt(v: Alt): P {
     if (!isEmpty(p)) {
       alt.push(p);
     }
-  }
-}
-
-function visitOpt(v: Opt): P {
-  const { f, opt } = v;
-  if (f == 1) {
-    return visit(opt);
-  } else {
-    return { f, opt: visit(opt) };
   }
 }

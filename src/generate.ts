@@ -17,8 +17,11 @@ export function generate(grammar: Grammar, options: Options = {}): string {
   return result.join("");
 
   function visit(p: P): void {
-    if (isLit(p)) {
-      result.push(p);
+    if (isOpt(p)) {
+      const { f = 1 } = p;
+      if (f == 1 || f > random()) {
+        visit(p.opt);
+      }
       return;
     }
 
@@ -39,11 +42,8 @@ export function generate(grammar: Grammar, options: Options = {}): string {
       return;
     }
 
-    if (isOpt(p)) {
-      const { f = 1 } = p;
-      if (f == 1 || f > random()) {
-        visit(p.opt);
-      }
+    if (isLit(p)) {
+      result.push(p);
       return;
     }
 

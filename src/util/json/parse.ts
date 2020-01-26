@@ -25,8 +25,8 @@ function parseImpl(grammar: Grammar): Grammar {
 }
 
 function visit(p: P): P {
-  if (isLit(p)) {
-    return visitLiteral(p);
+  if (isOpt(p)) {
+    return { ...p, opt: visit(p.opt) };
   }
 
   if (isSeq(p)) {
@@ -41,8 +41,8 @@ function visit(p: P): P {
     return p;
   }
 
-  if (isOpt(p)) {
-    return { ...p, opt: visit(p.opt) };
+  if (isLit(p)) {
+    return visitLiteral(p);
   }
 
   throw new Error(); // Unreachable.

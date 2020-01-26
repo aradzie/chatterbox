@@ -26,7 +26,12 @@ export function validate(grammar: Grammar): Grammar {
   return grammar;
 
   function visit(p: P): void {
-    if (isLit(p)) {
+    if (isOpt(p)) {
+      const { f, opt } = p;
+      if (f < 0 || f > 1) {
+        throw new Error(`Invalid opt probability`);
+      }
+      visit(opt);
       return;
     }
 
@@ -61,12 +66,7 @@ export function validate(grammar: Grammar): Grammar {
       return;
     }
 
-    if (isOpt(p)) {
-      const { f, opt } = p;
-      if (f < 0 || f > 1) {
-        throw new Error(`Invalid probability`);
-      }
-      visit(opt);
+    if (isLit(p)) {
       return;
     }
 
