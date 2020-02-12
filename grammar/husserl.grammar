@@ -62,10 +62,10 @@ subject.clause ->
   ;
 how.clause ->
     "by conscious conversion into the corresponding " <Np>
-  | "by virture of a synthesis in which what is meant coincides and agree with " <Ns>
+  | "by virtue of a synthesis in which what is meant coincides and agree with " <Ns>
   | "by a freely actualizable return to " ( <Ns> | <Np> )
   | "by reconciling with " ( <Ns> | <Np> )
-  | "by orienting " ( <Ns> | <Np> ) " according to accured insights"
+  | "by orienting " ( <Ns> | <Np> ) " according to accrued insights"
   | "by the fundamental nature of " ( <Ns> | <Np> )
   ;
 intro.clause ->
