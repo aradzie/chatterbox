@@ -1,5 +1,4 @@
 export * from "./generate";
-export * from "./grammar";
 export * from "./types";
 export * from "./util/merge";
 export * from "./util/optimize";
