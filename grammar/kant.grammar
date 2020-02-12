@@ -1,19 +1,157 @@
+start ->
+  <section>
+  ;
+section ->
+  <paragraph> <paragraph> <paragraph> <paragraph> [ <paragraph> ] [ <paragraph> ] [ <paragraph> ] [ <paragraph> ] [ <paragraph> ] [ <paragraph> ]
+  ;
+paragraph ->
+    <sentence> <sentence> [ <sentence> ] <sentence> [ <sentence> ] [ <question> ] [ <sentence> ] [ <sentence> ] <sentence> [ <throwaway.sentence> ]
+  | <sentence> <sentence> [ <sentence> ] <sentence> [ "(" <sentence> ") " ] <sentence> <sentence> [ <throwaway.sentence> ]
+  | <sentence> <sentence> [ <sentence> ] <sentence> [ <sentence> ] [ <sentence> ] [ <sentence> ] <sentence>
+  ;
+throwaway.sentence ->
+    "But we have fallen short of the necessary interconnection that we have in mind when we speak of " ( <Ns> | <Np> ) "."
+  | "We thus have a pure synthesis of apprehension."
+  | "And similarly with all the others."
+  | "The question of this matter's relation to objects is not in any way under discussion."
+  | "This distinction must have some ground in the nature of " ( <Ns> | <Np> ) "."
+  | "The divisions are thus provided; all that is required is to fill them."
+  | "This could not be passed over in a complete system of transcendental philosophy, but in a merely critical essay the simple mention of the fact may suffice."
+  | "This is not something we are in a position to establish."
+  | "This is the sense in which it is to be understood in this work."
+  | "But this need not worry us."
+  | "Let us apply this to " <Ns> "."
+  | "But to this matter no answer is possible."
+  | "But the proof of this is a task from which we can here be absolved."
+  | "But at present we shall turn our attention to " <Ns> "."
+  | "This may be clear with an example."
+  | "I feel I have sufficiently shown this to be true."
+  | "This is what chiefly concerns us."
+  | "On this matter, what has been said already should in any case suffice by itself."
+  | "In my present remarks I am referring to " <Ns> " only in so far as it is founded on " <judgement.type> " principles."
+  | "But this is to be dismissed as random groping."
+  ;
+question ->
+    "Whence comes " <Ns> ", the solution of which involves the relation between " ( <Ns> | <Np> ) " and " ( <Ns> | <Np> ) "?"
+  | { class=sentence [ <intro.clause> ", " ] "is it " ( "true" | "the case" ) " that " <Ns> <Vst> ( <Ns> | <Np> ) ", or is the real question whether " <Np> <Vpi> "?" }
+  | "Has it ever been suggested that" [ ", " <proof> "," ] <certainty.clause> " there is " ( "no relation" | "a causal connection" ) " bewteen " ( <Ns> | <Np> ) " and " ( <Ns> | <Np> ) "?"
+  | "In which of our cognitive faculties are " ( <Ns> | <Np> ) " and " ( <Ns> | <Np> ) " connected together?"
+  | { class=sentence <conjunction> " can I entertain " <Ns> " in thought, or does it present itself to me?" }
+  ;
+sentence ->
+    { class=sentence [ <intro.clause> ", " ] [ <certainty.clause> ] <main.clause> [ ", " <proof> ] "." }
+  | { class=sentence [ <proof> ", " ] [ <certainty.clause> ", " <throwaway.clause> ", " ] <main.clause> [ ", " <conjunction> <main.clause> ] "." }
+  | { class=sentence [ <proof> ", " ] [ <certainty.clause> ] <main.clause> [ "; " <intro.clause> ", " <main.clause> ] "." }
+  ;
 conjunction ->
     "and"
   | "but"
   | "yet"
+  ;
+proof ->
+    "because of our necessary ignorance of the conditions"
+  | "as is shown in the writings of " <philosopher>
+  | "as is proven in the ontological manuals"
+  | "as any dedicated reader can clearly see"
+  | "as is evident upon close examination"
+  | "as will easily be shown in the next section"
+  | "since knowledge of " <Np> " is " <knowledge.type>
+  | "by virtue of " <reason.type> " reason"
+  | "as we have already seen"
+  | "since " <quantity> <Np> " are " <judgement.type>
+  | "because of the relation between " <Ns> " and " <Np>
+  | "by means of analysis"
+  | "by means of analytic unity"
+  ;
+main.clause ->
+    <Ns> [ " (and " <certainty.clause> " this is true)" | ", " <throwaway.clause> "," ] <Vst> ( <Ns> | <Np> )
+  | <Ns> <Vst> [ ", " ( <throwaway.clause> | <intro.clause> ) "," ] ( <Ns> | <Np> )
+  | <Ns> [ ", " ( <throwaway.clause> | <intro.clause> ) "," ] <Vsi>
+  | <Np> [ " (and " <certainty.clause> " this is the case)" | ", " <intro.clause> "," ] <Vpt> ( <Ns> | <Np> )
+  | <Np> <Vpt> [ ", " ( <throwaway.clause> | <intro.clause> ) "," ] ( <Ns> | <Np> )
+  | <Np> [ ", " ( <throwaway.clause> | <intro.clause> ) "," ] <Vpi>
+  ;
+Vpi ->
+    "are the mere results of the power of " <Ns> ", a blind but indispensable function of the soul"
+  | "occupy part of the sphere of " <Ns> " concerning the existence of " <Np> " in general"
+  | "are by their very nature contradictory"
+  | "would be falsified"
+  | "abstract from all content of " [ <knowledge.type> ] "knowledge"
+  | "constitute a body of demonstrated doctrine, and " <quantity> " this body must be known " <knowledge.type>
+  | "can never, as a whole, furnish a true and demonstrated science, because, like " <Ns> ", they " <Vpt> <judgement.type> " principles"
+  | "can be treated like " ( <Ns> | <Np> )
+  | "should only be used as a canon for " ( <Ns> | <Np> )
+  | "exist in " ( <Ns> | <Np> )
+  ;
+Vpt ->
+    "are what first give rise to"
+  | "have lying before them"
+  | "constitute the whole content of"
+  | "would thereby be made to contradict"
+  | "can not take account of"
+  | "have nothing to do with"
+  | "stand in need to"
+  | "are the clue to the discovery of"
+  | "prove the validity of"
+  | "are just as necessary as"
+  | "are a representation of"
+  | "exclude the possibility of"
+  ;
+Vsi ->
+    "is the mere result of the power of " <Ns> ", a blind but indispensable function of the soul"
+  | "occupies part of the sphere of " <Ns> " concerning the existence of " <Np> " in general"
+  | "is by its very nature contradictory"
+  | "would be falsified"
+  | "abstracts from all content of " [ <knowledge.type> ] "knowledge"
+  | "is a body of demonstrated science, and " <quantity> " it must be known " <knowledge.type>
+  | "can never furnish a true and demonstrated science, because, like " <Ns> ", it " <Vst> <judgement.type> " principles"
+  | "can be treated like " ( <Ns> | <Np> )
+  | "exists in " ( <Ns> | <Np> )
   ;
 quantity ->
     "all of"
   | "some of"
   | "none of"
   ;
-logic.type ->
-    "general"
-  | "applied"
-  | "pure"
-  | "transcendental"
-  | "formal"
+Vst ->
+    "is what first gives rise to"
+  | "can thereby determine in its totality"
+  | "has lying before it"
+  | "constitutes the whole content for"
+  | "may not contradict itself, but it is still possible that it may be in contradictions with"
+  | "would thereby be made to contradict"
+  | "teaches us nothing whatsoever regarding the content of"
+  | "can not take account of"
+  | "has nothing to do with"
+  | "stands in need of"
+  | "is the key to understanding"
+  | "proves the validity of"
+  | "is just as necessary as"
+  | "is the clue to the discovery of"
+  | "is a representation of"
+  | "depends on"
+  | "excludes the possibility of"
+  ;
+throwaway.clause ->
+    "in so far as this expounds the " <rule.type> " rules of " ( <Ns> | <Np> )
+  | "when thus treated as " ( <Ns> | <Np> )
+  | "in other words"
+  | "in the full sense of these terms"
+  | "insomuch as " <Ns> " relies on " <Np>
+  | "indeed"
+  | "then"
+  | "that is to say"
+  | "even as this relates to " <Ns>
+  | "in respect of the intelligible character"
+  | "so regarded"
+  | "for example"
+  | "irrespective of all empirical conditions"
+  | "so far as regards " <Ns> [ " and " <Np> ]
+  | "on the contrary"
+  | "in accordance with the principles of " ( <Ns> | <Np> )
+  | "in reference to ends"
+  | "in particular"
+  | "so far as I know"
   ;
 rule.type ->
     "universal"
@@ -22,36 +160,42 @@ rule.type ->
   | "contradictory"
   | "sufficient"
   ;
-judgement.type ->
-    "hypothetical"
-  | "problematic"
-  | "analytic"
-  | "synthetic"
-  | "ampliative"
-  | "inductive"
-  | "speculative"
-  | "disjunctive"
-  | <knowledge.type>
-  ;
-knowledge.type ->
-    "a priori"
-  | "a posteriori"
-  ;
-reason.type ->
-    "pure"
-  | "practical"
-  | "human"
-  | "natural"
-  ;
-object.type ->
-    "intelligible"
-  | "transcendental"
-  | "empirical"
+certainty.clause ->
+    "it must not be supposed that"
+  | "there can be no doubt that"
+  | "we can deduce that"
+  | "it is not at all certain that"
+  | <philosopher> " tells us that"
+  | "it remains a mystery why"
+  | "I assert" [ ", " <intro.clause> "," ] " that"
+  | "to avoid all misapprehension, it is necessary to explain that"
+  | "let us suppose that"
+  | "it is obvious that"
+  | "the reader should be careful to observe that"
+  | "what we have alone been able to show is that"
   ;
 philosopher ->
     "Aristotle"
   | "Hume"
   | "Galileo"
+  ;
+intro.clause ->
+    "in all theoretical sciences"
+  | "in view of these considerations"
+  | "thus"
+  | "by means of " <Ns>
+  | "in the study of " <Ns>
+  | "therefore"
+  | "with the sole exception of " <Ns>
+  | "certainly"
+  | "still"
+  | "as I have elsewhere shown"
+  | "on the other hand"
+  | "for these reasons"
+  | "in the case of " <Ns>
+  | "however"
+  | "in natural theology"
+  | "consequently"
   ;
 Ns ->
     "the transcendental aesthetic"
@@ -92,180 +236,36 @@ Np ->
   | "the noumena"
   | "the phenomena"
   ;
-Vst ->
-    "is what first gives rise to"
-  | "can thereby determine in its totality"
-  | "has lying before it"
-  | "constitutes the whole content for"
-  | "may not contradict itself, but it is still possible that it may be in contradictions with"
-  | "would thereby be made to contradict"
-  | "teaches us nothing whatsoever regarding the content of"
-  | "can not take account of"
-  | "has nothing to do with"
-  | "stands in need of"
-  | "is the key to understanding"
-  | "proves the validity of"
-  | "is just as necessary as"
-  | "is the clue to the discovery of"
-  | "is a representation of"
-  | "depends on"
-  | "excludes the possibility of"
+object.type ->
+    "intelligible"
+  | "transcendental"
+  | "empirical"
   ;
-Vsi ->
-    "is the mere result of the power of " <Ns> ", a blind but indispensable function of the soul"
-  | "occupies part of the sphere of " <Ns> " concerning the existence of " <Np> " in general"
-  | "is by its very nature contradictory"
-  | "would be falsified"
-  | "abstracts from all content of " [ <knowledge.type> ] "knowledge"
-  | "is a body of demonstrated science, and " <quantity> " it must be known " <knowledge.type>
-  | "can never furnish a true and demonstrated science, because, like " <Ns> ", it " <Vst> <judgement.type> " principles"
-  | "can be treated like " ( <Ns> | <Np> )
-  | "exists in " ( <Ns> | <Np> )
+judgement.type ->
+    "hypothetical"
+  | "problematic"
+  | "analytic"
+  | "synthetic"
+  | "ampliative"
+  | "inductive"
+  | "speculative"
+  | "disjunctive"
+  | <knowledge.type>
   ;
-Vpt ->
-    "are what first give rise to"
-  | "have lying before them"
-  | "constitute the whole content of"
-  | "would thereby be made to contradict"
-  | "can not take account of"
-  | "have nothing to do with"
-  | "stand in need to"
-  | "are the clue to the discovery of"
-  | "prove the validity of"
-  | "are just as necessary as"
-  | "are a representation of"
-  | "exclude the possibility of"
+knowledge.type ->
+    "a priori"
+  | "a posteriori"
   ;
-Vpi ->
-    "are the mere results of the power of " <Ns> ", a blind but indispensable function of the soul"
-  | "occupy part of the sphere of " <Ns> " concerning the existence of " <Np> " in general"
-  | "are by their very nature contradictory"
-  | "would be falsified"
-  | "abstract from all content of " [ <knowledge.type> ] "knowledge"
-  | "constitute a body of demonstrated doctrine, and " <quantity> " this body must be known " <knowledge.type>
-  | "can never, as a whole, furnish a true and demonstrated science, because, like " <Ns> ", they " <Vpt> <judgement.type> " principles"
-  | "can be treated like " ( <Ns> | <Np> )
-  | "should only be used as a canon for " ( <Ns> | <Np> )
-  | "exist in " ( <Ns> | <Np> )
+reason.type ->
+    "pure"
+  | "practical"
+  | "human"
+  | "natural"
   ;
-intro.clause ->
-    "in all theoretical sciences"
-  | "in view of these considerations"
-  | "thus"
-  | "by means of " <Ns>
-  | "in the study of " <Ns>
-  | "therefore"
-  | "with the sole exception of " <Ns>
-  | "certainly"
-  | "still"
-  | "as I have elsewhere shown"
-  | "on the other hand"
-  | "for these reasons"
-  | "in the case of " <Ns>
-  | "however"
-  | "in natural theology"
-  | "consequently"
-  ;
-certainty.clause ->
-    "it must not be supposed that"
-  | "there can be no doubt that"
-  | "we can deduce that"
-  | "it is not at all certain that"
-  | <philosopher> " tells us that"
-  | "it remains a mystery why"
-  | "I assert" [ ", " <intro.clause> "," ] " that"
-  | "to avoid all misapprehension, it is necessary to explain that"
-  | "let us suppose that"
-  | "it is obvious that"
-  | "the reader should be careful to observe that"
-  | "what we have alone been able to show is that"
-  ;
-proof ->
-    "because of our necessary ignorance of the conditions"
-  | "as is shown in the writings of " <philosopher>
-  | "as is proven in the ontological manuals"
-  | "as any dedicated reader can clearly see"
-  | "as is evident upon close examination"
-  | "as will easily be shown in the next section"
-  | "since knowledge of " <Np> " is " <knowledge.type>
-  | "by virtue of " <reason.type> " reason"
-  | "as we have already seen"
-  | "since " <quantity> <Np> " are " <judgement.type>
-  | "because of the relation between " <Ns> " and " <Np>
-  | "by means of analysis"
-  | "by means of analytic unity"
-  ;
-throwaway.clause ->
-    "in so far as this expounds the " <rule.type> " rules of " ( <Ns> | <Np> )
-  | "when thus treated as " ( <Ns> | <Np> )
-  | "in other words"
-  | "in the full sense of these terms"
-  | "insomuch as " <Ns> " relies on " <Np>
-  | "indeed"
-  | "then"
-  | "that is to say"
-  | "even as this relates to " <Ns>
-  | "in respect of the intelligible character"
-  | "so regarded"
-  | "for example"
-  | "irrespective of all empirical conditions"
-  | "so far as regards " <Ns> [ " and " <Np> ]
-  | "on the contrary"
-  | "in accordance with the principles of " ( <Ns> | <Np> )
-  | "in reference to ends"
-  | "in particular"
-  | "so far as I know"
-  ;
-main.clause ->
-    <Ns> [ " (and " <certainty.clause> " this is true)" | ", " <throwaway.clause> "," ] <Vst> ( <Ns> | <Np> )
-  | <Ns> <Vst> [ ", " ( <throwaway.clause> | <intro.clause> ) "," ] ( <Ns> | <Np> )
-  | <Ns> [ ", " ( <throwaway.clause> | <intro.clause> ) "," ] <Vsi>
-  | <Np> [ " (and " <certainty.clause> " this is the case)" | ", " <intro.clause> "," ] <Vpt> ( <Ns> | <Np> )
-  | <Np> <Vpt> [ ", " ( <throwaway.clause> | <intro.clause> ) "," ] ( <Ns> | <Np> )
-  | <Np> [ ", " ( <throwaway.clause> | <intro.clause> ) "," ] <Vpi>
-  ;
-sentence ->
-    { class=sentence [ <intro.clause> ", " ] [ <certainty.clause> ] <main.clause> [ ", " <proof> ] "." }
-  | { class=sentence [ <proof> ", " ] [ <certainty.clause> ", " <throwaway.clause> ", " ] <main.clause> [ ", " <conjunction> <main.clause> ] "." }
-  | { class=sentence [ <proof> ", " ] [ <certainty.clause> ] <main.clause> [ "; " <intro.clause> ", " <main.clause> ] "." }
-  ;
-question ->
-    "Whence comes " <Ns> ", the solution of which involves the relation between " ( <Ns> | <Np> ) " and " ( <Ns> | <Np> ) "?"
-  | { class=sentence [ <intro.clause> ", " ] "is it " ( "true" | "the case" ) " that " <Ns> <Vst> ( <Ns> | <Np> ) ", or is the real question whether " <Np> <Vpi> "?" }
-  | "Has it ever been suggested that" [ ", " <proof> "," ] <certainty.clause> " there is " ( "no relation" | "a causal connection" ) " bewteen " ( <Ns> | <Np> ) " and " ( <Ns> | <Np> ) "?"
-  | "In which of our cognitive faculties are " ( <Ns> | <Np> ) " and " ( <Ns> | <Np> ) " connected together?"
-  | { class=sentence <conjunction> " can I entertain " <Ns> " in thought, or does it present itself to me?" }
-  ;
-throwaway.sentence ->
-    "But we have fallen short of the necessary interconnection that we have in mind when we speak of " ( <Ns> | <Np> ) "."
-  | "We thus have a pure synthesis of apprehension."
-  | "And similarly with all the others."
-  | "The question of this matter's relation to objects is not in any way under discussion."
-  | "This distinction must have some ground in the nature of " ( <Ns> | <Np> ) "."
-  | "The divisions are thus provided; all that is required is to fill them."
-  | "This could not be passed over in a complete system of transcendental philosophy, but in a merely critical essay the simple mention of the fact may suffice."
-  | "This is not something we are in a position to establish."
-  | "This is the sense in which it is to be understood in this work."
-  | "But this need not worry us."
-  | "Let us apply this to " <Ns> "."
-  | "But to this matter no answer is possible."
-  | "But the proof of this is a task from which we can here be absolved."
-  | "But at present we shall turn our attention to " <Ns> "."
-  | "This may be clear with an example."
-  | "I feel I have sufficiently shown this to be true."
-  | "This is what chiefly concerns us."
-  | "On this matter, what has been said already should in any case suffice by itself."
-  | "In my present remarks I am referring to " <Ns> " only in so far as it is founded on " <judgement.type> " principles."
-  | "But this is to be dismissed as random groping."
-  ;
-paragraph ->
-    <sentence> <sentence> [ <sentence> ] <sentence> [ <sentence> ] [ <question> ] [ <sentence> ] [ <sentence> ] <sentence> [ <throwaway.sentence> ]
-  | <sentence> <sentence> [ <sentence> ] <sentence> [ "(" <sentence> ") " ] <sentence> <sentence> [ <throwaway.sentence> ]
-  | <sentence> <sentence> [ <sentence> ] <sentence> [ <sentence> ] [ <sentence> ] [ <sentence> ] <sentence>
-  ;
-section ->
-  <paragraph> <paragraph> <paragraph> <paragraph> [ <paragraph> ] [ <paragraph> ] [ <paragraph> ] [ <paragraph> ] [ <paragraph> ] [ <paragraph> ]
-  ;
-start ->
-  <section>
+logic.type ->
+    "general"
+  | "applied"
+  | "pure"
+  | "transcendental"
+  | "formal"
   ;

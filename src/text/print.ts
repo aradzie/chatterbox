@@ -14,11 +14,13 @@ import {
   Span,
 } from "../types";
 import { Printer } from "./printer";
+import { sort } from "./sort";
 
 /**
  * Prints the given grammar in the human-readable form.
  */
 export function print(grammar: Grammar): string {
+  grammar = sort(grammar);
   const printer = new Printer();
   for (const [name, rule] of Object.entries(grammar.rule)) {
     printer.print(`${name} ->\n`);
