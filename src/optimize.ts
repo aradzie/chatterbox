@@ -11,7 +11,7 @@ import {
   RuleMap,
   Seq,
   Span,
-} from "../types";
+} from "./types";
 
 /**
  * Returns an optimized copy of the given grammar.

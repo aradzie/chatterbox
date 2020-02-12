@@ -1,4 +1,4 @@
-import { Grammar, P } from "../types";
+import { Grammar, P } from "./types";
 
 /**
  * Merges multiple grammar into one, from left to right, the later rules overwrite the former.

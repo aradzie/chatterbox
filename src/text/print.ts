@@ -12,7 +12,7 @@ import {
   Ref,
   Seq,
   Span,
-} from "../../types";
+} from "../types";
 import { Printer } from "./printer";
 
 /**

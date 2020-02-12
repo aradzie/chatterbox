@@ -1,4 +1,4 @@
-import { Grammar } from "../../types";
+import { Grammar } from "../types";
 import { parse as pegjs, SyntaxError } from "./pegjs-parser"; // eslint-disable-line import/named
 
 export { SyntaxError };

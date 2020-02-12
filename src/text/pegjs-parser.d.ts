@@ -1,4 +1,4 @@
-import { P } from "../../types";
+import { P } from "../types";
 
 declare class SyntaxError extends Error {
   readonly location: Location;

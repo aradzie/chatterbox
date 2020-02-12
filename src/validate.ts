@@ -1,4 +1,4 @@
-import { Grammar, isAlt, isLit, isOpt, isRef, isSeq, isSpan, P } from "../types";
+import { Grammar, isAlt, isLit, isOpt, isRef, isSeq, isSpan, P } from "./types";
 
 /**
  * Checks that the given grammar is valid.
