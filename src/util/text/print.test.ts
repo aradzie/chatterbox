@@ -33,4 +33,12 @@ test("print", (t) => {
       },
     }),
   );
+
+  t.snapshot(
+    print({
+      rule: {
+        start: { cls: "xyz", span: { seq: [{ alt: ["a", "b"] }, { alt: ["c", "d"] }] } },
+      },
+    }),
+  );
 });

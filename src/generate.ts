@@ -1,4 +1,4 @@
-import { Grammar, isAlt, isLit, isOpt, isRef, isSeq, P } from "./types";
+import { Grammar, isAlt, isLit, isOpt, isRef, isSeq, isSpan, P } from "./types";
 
 export interface Options {
   readonly start?: string;
@@ -21,6 +21,11 @@ export function generate(grammar: Grammar, options: Options = {}): string {
   return result.join("");
 
   function visit(p: P): void {
+    if (isSpan(p)) {
+      visit(p.span);
+      return;
+    }
+
     if (isOpt(p)) {
       const { f = 1 } = p;
       if (f == 1 || f > random()) {

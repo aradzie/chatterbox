@@ -225,16 +225,16 @@ main.clause ->
   | <Np> [ ", " ( <throwaway.clause> | <intro.clause> ) "," ] <Vpi>
   ;
 sentence ->
-    [ <intro.clause> ", " ] [ <certainty.clause> ] <main.clause> [ ", " <proof> ] "."
-  | [ <proof> ", " ] [ <certainty.clause> ", " <throwaway.clause> ", " ] <main.clause> [ ", " <conjunction> <main.clause> ] "."
-  | [ <proof> ", " ] [ <certainty.clause> ] <main.clause> [ "; " <intro.clause> ", " <main.clause> ] "."
+    { class=sentence [ <intro.clause> ", " ] [ <certainty.clause> ] <main.clause> [ ", " <proof> ] "." }
+  | { class=sentence [ <proof> ", " ] [ <certainty.clause> ", " <throwaway.clause> ", " ] <main.clause> [ ", " <conjunction> <main.clause> ] "." }
+  | { class=sentence [ <proof> ", " ] [ <certainty.clause> ] <main.clause> [ "; " <intro.clause> ", " <main.clause> ] "." }
   ;
 question ->
     "Whence comes " <Ns> ", the solution of which involves the relation between " ( <Ns> | <Np> ) " and " ( <Ns> | <Np> ) "?"
-  | [ <intro.clause> ", " ] "is it " ( "true" | "the case" ) " that " <Ns> <Vst> ( <Ns> | <Np> ) ", or is the real question whether " <Np> <Vpi> "?"
+  | { class=sentence [ <intro.clause> ", " ] "is it " ( "true" | "the case" ) " that " <Ns> <Vst> ( <Ns> | <Np> ) ", or is the real question whether " <Np> <Vpi> "?" }
   | "Has it ever been suggested that" [ ", " <proof> "," ] <certainty.clause> " there is " ( "no relation" | "a causal connection" ) " bewteen " ( <Ns> | <Np> ) " and " ( <Ns> | <Np> ) "?"
   | "In which of our cognitive faculties are " ( <Ns> | <Np> ) " and " ( <Ns> | <Np> ) " connected together?"
-  | <conjunction> " can I entertain " <Ns> " in thought, or does it present itself to me?"
+  | { class=sentence <conjunction> " can I entertain " <Ns> " in thought, or does it present itself to me?" }
   ;
 throwaway.sentence ->
     "But we have fallen short of the necessary interconnection that we have in mind when we speak of " ( <Ns> | <Np> ) "."

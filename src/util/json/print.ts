@@ -6,13 +6,14 @@ import {
   isOpt,
   isRef,
   isSeq,
+  isSpan,
   Opt,
   P,
   Ref,
   RuleMap,
   Seq,
+  Span,
 } from "../../types";
-import { isSimple } from "../util";
 
 /**
  * Takes the given machine-processable grammar and converts it
@@ -33,6 +34,10 @@ export function print(grammar: Grammar): Grammar {
 }
 
 function visit(p: P): P {
+  if (isSpan(p)) {
+    return visitSpan(p);
+  }
+
   if (isOpt(p)) {
     return visitOpt(p);
   }
@@ -56,6 +61,11 @@ function visit(p: P): P {
   throw new Error(); // Unreachable.
 }
 
+function visitSpan(p: Span): P {
+  const { cls, span } = p;
+  return { cls, span: visit(span) };
+}
+
 function visitOpt(p: Opt): P {
   const { f, opt } = p;
   return { f, opt: visit(opt) };
@@ -70,7 +80,7 @@ function visitSeq(p: Seq): P {
       seq.push(item);
     }
   }
-  if (isSimple(p) && seq.length == 1) {
+  if (seq.length == 1) {
     return seq[0];
   } else {
     return { ...p, seq };
@@ -79,7 +89,7 @@ function visitSeq(p: Seq): P {
 
 function visitAlt(p: Alt): P {
   const { alt } = p;
-  if (isSimple(p) && alt.every(isRef)) {
+  if (alt.every(isRef)) {
     return `<${(alt as Ref[]).map(({ ref }) => ref).join("|")}>`;
   } else {
     return { ...p, alt: alt.map(visit) };
@@ -87,9 +97,5 @@ function visitAlt(p: Alt): P {
 }
 
 function visitRef(p: Ref): P {
-  if (isSimple(p)) {
-    return `<${p.ref}>`;
-  } else {
-    return p;
-  }
+  return `<${p.ref}>`;
 }

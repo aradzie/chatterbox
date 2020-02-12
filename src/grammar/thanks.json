@@ -33,7 +33,10 @@
                     "seq": [
                       "for the next ",
                       {
-                        "alt": ["week", "few days"]
+                        "alt": [
+                          "week",
+                          "few days"
+                        ]
                       }
                     ]
                   }
@@ -49,11 +52,11 @@
       "alt": [
         {
           "cls": "sentence",
-          "seq": ["<money.thanks>"]
+          "span": "<money.thanks>"
         },
         {
           "cls": "sentence",
-          "seq": ["<gift.thanks>"]
+          "span": "<gift.thanks>"
         }
       ]
     },
@@ -130,7 +133,20 @@
     },
     "gift.thanks": "<gift.received><gift.used><gift.tag.line>",
     "money.amount": {
-      "alt": ["$5", "$10", "$15", "$20", "$25", "$30", "$35", "$40", "$45", "$50", "$75", "$100"]
+      "alt": [
+        "$5",
+        "$10",
+        "$15",
+        "$20",
+        "$25",
+        "$30",
+        "$35",
+        "$40",
+        "$45",
+        "$50",
+        "$75",
+        "$100"
+      ]
     },
     "female.name": {
       "alt": [
@@ -312,11 +328,17 @@
           "seq": [
             "I've already ",
             {
-              "alt": ["put", "stashed"]
+              "alt": [
+                "put",
+                "stashed"
+              ]
             },
             " it in ",
             {
-              "alt": ["the bank", "a shoebox"]
+              "alt": [
+                "the bank",
+                "a shoebox"
+              ]
             },
             {
               "f": 0.5,
@@ -353,7 +375,10 @@
                   {
                     "f": 0.5,
                     "opt": {
-                      "alt": ["immediately", "right away"]
+                      "alt": [
+                        "immediately",
+                        "right away"
+                      ]
                     }
                   },
                   ", but "
@@ -370,39 +395,39 @@
       "alt": [
         {
           "cls": "sentence",
-          "seq": ["It's not much by today's standards, but every little bit helps!"]
+          "span": "It's not much by today's standards, but every little bit helps!"
         },
         {
           "cls": "sentence",
-          "seq": ["It was either that or give it to the poor."]
+          "span": "It was either that or give it to the poor."
         },
         {
           "cls": "sentence",
-          "seq": ["<tag.line>"]
+          "span": "<tag.line>"
         },
         {
           "cls": "sentence",
-          "seq": ["<tag.line>"]
+          "span": "<tag.line>"
         },
         {
           "cls": "sentence",
-          "seq": ["<tag.line>"]
+          "span": "<tag.line>"
         },
         {
           "cls": "sentence",
-          "seq": ["<tag.line>"]
+          "span": "<tag.line>"
         },
         {
           "cls": "sentence",
-          "seq": ["<tag.line>"]
+          "span": "<tag.line>"
         },
         {
           "cls": "sentence",
-          "seq": ["<tag.line>"]
+          "span": "<tag.line>"
         },
         {
           "cls": "sentence",
-          "seq": ["<tag.line>"]
+          "span": "<tag.line>"
         }
       ]
     },
@@ -410,238 +435,334 @@
       "alt": [
         {
           "cls": "sentence",
-          "seq": [
-            {
-              "f": 0.5,
-              "opt": "This is "
-            },
-            "just a brief note to ",
-            {
-              "alt": [
-                {
-                  "seq": [
-                    "say ",
-                    {
-                      "alt": ["thanks", "\"thank you\""]
-                    }
-                  ]
-                },
-                "thank you"
-              ]
-            },
-            " for the <money.amount>",
-            {
-              "alt": ["you sent", "I received from you"]
-            },
-            " for <occasion>."
-          ]
+          "span": {
+            "seq": [
+              {
+                "f": 0.5,
+                "opt": "This is "
+              },
+              "just a brief note to ",
+              {
+                "alt": [
+                  {
+                    "seq": [
+                      "say ",
+                      {
+                        "alt": [
+                          "thanks",
+                          "\"thank you\""
+                        ]
+                      }
+                    ]
+                  },
+                  "thank you"
+                ]
+              },
+              " for the <money.amount>",
+              {
+                "alt": [
+                  "you sent",
+                  "I received from you"
+                ]
+              },
+              " for <occasion>."
+            ]
+          }
         },
         {
           "cls": "sentence",
-          "seq": [
-            "Of all the ",
-            {
-              "alt": ["presents", "gifts", "things", "stuff"]
-            },
-            " I ",
-            {
-              "alt": ["received", "got"]
-            },
-            " for <occasion>, I ",
-            {
-              "alt": ["liked", "loved"]
-            },
-            " your ",
-            {
-              "f": 0.5,
-              "opt": "gift of "
-            },
-            "<money.amount>",
-            {
-              "alt": ["the most", "more than anything else"]
-            },
-            "."
-          ]
+          "span": {
+            "seq": [
+              "Of all the ",
+              {
+                "alt": [
+                  "presents",
+                  "gifts",
+                  "things",
+                  "stuff"
+                ]
+              },
+              " I ",
+              {
+                "alt": [
+                  "received",
+                  "got"
+                ]
+              },
+              " for <occasion>, I ",
+              {
+                "alt": [
+                  "liked",
+                  "loved"
+                ]
+              },
+              " your ",
+              {
+                "f": 0.5,
+                "opt": "gift of "
+              },
+              "<money.amount>",
+              {
+                "alt": [
+                  "the most",
+                  "more than anything else"
+                ]
+              },
+              "."
+            ]
+          }
         },
         {
           "cls": "sentence",
-          "seq": [
-            "I ",
-            {
-              "f": 0.5,
-              "opt": "really "
-            },
-            {
-              "alt": ["appreciate", "enjoyed receiving"]
-            },
-            " the <money.amount> you ",
-            {
-              "alt": ["gave", "sent"]
-            },
-            " me for <occasion>."
-          ]
+          "span": {
+            "seq": [
+              "I ",
+              {
+                "f": 0.5,
+                "opt": "really "
+              },
+              {
+                "alt": [
+                  "appreciate",
+                  "enjoyed receiving"
+                ]
+              },
+              " the <money.amount> you ",
+              {
+                "alt": [
+                  "gave",
+                  "sent"
+                ]
+              },
+              " me for <occasion>."
+            ]
+          }
         },
         {
           "cls": "sentence",
-          "seq": [
-            "I ",
-            {
-              "f": 0.5,
-              "opt": "really "
-            },
-            "love ",
-            {
-              "alt": ["getting", "receiving"]
-            },
-            " money for <occasion>, ",
-            {
-              "alt": ["since", "because"]
-            },
-            {
-              "alt": ["that", "it"]
-            },
-            " means I can ",
-            {
-              "f": 0.5,
-              "opt": "always "
-            },
-            {
-              "f": 0.5,
-              "opt": "go out and "
-            },
-            {
-              "alt": ["spend it on", "use it for"]
-            },
-            " what I really ",
-            {
-              "alt": ["want", "need"]
-            },
-            ". ",
-            {
-              "alt": ["Thanks", "Thank you"]
-            },
-            " for the <money.amount>."
-          ]
+          "span": {
+            "seq": [
+              "I ",
+              {
+                "f": 0.5,
+                "opt": "really "
+              },
+              "love ",
+              {
+                "alt": [
+                  "getting",
+                  "receiving"
+                ]
+              },
+              " money for <occasion>, ",
+              {
+                "alt": [
+                  "since",
+                  "because"
+                ]
+              },
+              {
+                "alt": [
+                  "that",
+                  "it"
+                ]
+              },
+              " means I can ",
+              {
+                "f": 0.5,
+                "opt": "always "
+              },
+              {
+                "f": 0.5,
+                "opt": "go out and "
+              },
+              {
+                "alt": [
+                  "spend it on",
+                  "use it for"
+                ]
+              },
+              " what I really ",
+              {
+                "alt": [
+                  "want",
+                  "need"
+                ]
+              },
+              ". ",
+              {
+                "alt": [
+                  "Thanks",
+                  "Thank you"
+                ]
+              },
+              " for the <money.amount>."
+            ]
+          }
         },
         {
           "cls": "sentence",
-          "seq": [
-            "You can't imagine how surprised I was to discover that you had sent me <money.amount> for <occasion>."
-          ]
+          "span": "You can't imagine how surprised I was to discover that you had sent me <money.amount> for <occasion>."
         },
         {
           "cls": "sentence",
-          "seq": [
-            {
-              "alt": ["Thanks", "Thank you"]
-            },
-            " for the <money.amount>",
-            {
-              "alt": [". I", "; i"]
-            },
-            "t was ",
-            {
-              "alt": ["the perfect", "a great"]
-            },
-            {
-              "alt": ["present", "gift"]
-            },
-            " for <occasion>."
-          ]
+          "span": {
+            "seq": [
+              {
+                "alt": [
+                  "Thanks",
+                  "Thank you"
+                ]
+              },
+              " for the <money.amount>",
+              {
+                "alt": [
+                  ". I",
+                  "; i"
+                ]
+              },
+              "t was ",
+              {
+                "alt": [
+                  "the perfect",
+                  "a great"
+                ]
+              },
+              {
+                "alt": [
+                  "present",
+                  "gift"
+                ]
+              },
+              " for <occasion>."
+            ]
+          }
         },
         {
           "cls": "sentence",
-          "seq": [
-            "I don't know how to thank you ",
-            {
-              "f": 0.5,
-              "opt": {
-                "alt": ["properly", "enough"]
-              }
-            },
-            "for the <money.amount> you ",
-            {
-              "alt": ["sent", "gave"]
-            },
-            {
-              "f": 0.5,
-              "opt": "me "
-            },
-            "for <occasion>."
-          ]
-        },
-        {
-          "cls": "sentence",
-          "seq": [
-            "I'm ",
-            {
-              "f": 0.5,
-              "opt": "just "
-            },
-            "writing to say ",
-            {
-              "alt": ["thanks", "\"thank you\""]
-            },
-            " for the <money.amount> you ",
-            {
-              "f": 0.5,
-              "opt": "graciously "
-            },
-            {
-              "alt": ["gave", "sent"]
-            },
-            " me for <occasion>."
-          ]
-        },
-        {
-          "cls": "sentence",
-          "seq": [
-            {
-              "alt": ["Thank you", "Thanks"]
-            },
-            " for the <money.amount> you ",
-            {
-              "alt": ["bestowed upon", "sent"]
-            },
-            " me for <occasion>."
-          ]
-        },
-        {
-          "cls": "sentence",
-          "seq": [
-            {
-              "f": 0.5,
-              "opt": "This is "
-            },
-            "just a quick note to ",
-            {
-              "alt": ["say \"thank you\"", "thank you"]
-            },
-            " for the <money.amount>",
-            {
-              "alt": [
-                {
-                  "seq": [
-                    "I ",
-                    {
-                      "alt": ["got", "received"]
-                    },
-                    " from you"
-                  ]
-                },
-                {
-                  "seq": [
-                    "you sent",
-                    {
-                      "f": 0.5,
-                      "opt": " me"
-                    }
+          "span": {
+            "seq": [
+              "I don't know how to thank you ",
+              {
+                "f": 0.5,
+                "opt": {
+                  "alt": [
+                    "properly",
+                    "enough"
                   ]
                 }
-              ]
-            },
-            " for <occasion>."
-          ]
+              },
+              "for the <money.amount> you ",
+              {
+                "alt": [
+                  "sent",
+                  "gave"
+                ]
+              },
+              {
+                "f": 0.5,
+                "opt": "me "
+              },
+              "for <occasion>."
+            ]
+          }
+        },
+        {
+          "cls": "sentence",
+          "span": {
+            "seq": [
+              "I'm ",
+              {
+                "f": 0.5,
+                "opt": "just "
+              },
+              "writing to say ",
+              {
+                "alt": [
+                  "thanks",
+                  "\"thank you\""
+                ]
+              },
+              " for the <money.amount> you ",
+              {
+                "f": 0.5,
+                "opt": "graciously "
+              },
+              {
+                "alt": [
+                  "gave",
+                  "sent"
+                ]
+              },
+              " me for <occasion>."
+            ]
+          }
+        },
+        {
+          "cls": "sentence",
+          "span": {
+            "seq": [
+              {
+                "alt": [
+                  "Thank you",
+                  "Thanks"
+                ]
+              },
+              " for the <money.amount> you ",
+              {
+                "alt": [
+                  "bestowed upon",
+                  "sent"
+                ]
+              },
+              " me for <occasion>."
+            ]
+          }
+        },
+        {
+          "cls": "sentence",
+          "span": {
+            "seq": [
+              {
+                "f": 0.5,
+                "opt": "This is "
+              },
+              "just a quick note to ",
+              {
+                "alt": [
+                  "say \"thank you\"",
+                  "thank you"
+                ]
+              },
+              " for the <money.amount>",
+              {
+                "alt": [
+                  {
+                    "seq": [
+                      "I ",
+                      {
+                        "alt": [
+                          "got",
+                          "received"
+                        ]
+                      },
+                      " from you"
+                    ]
+                  },
+                  {
+                    "seq": [
+                      "you sent",
+                      {
+                        "f": 0.5,
+                        "opt": " me"
+                      }
+                    ]
+                  }
+                ]
+              },
+              " for <occasion>."
+            ]
+          }
         }
       ]
     },
@@ -649,238 +770,334 @@
       "alt": [
         {
           "cls": "sentence",
-          "seq": [
-            {
-              "f": 0.5,
-              "opt": "This is "
-            },
-            "just a brief note to ",
-            {
-              "alt": [
-                {
-                  "seq": [
-                    "say ",
-                    {
-                      "alt": ["thanks", "\"thank you\""]
-                    }
-                  ]
-                },
-                "thank you"
-              ]
-            },
-            " for the <gift.object>",
-            {
-              "alt": ["you sent", "I received from you"]
-            },
-            " for <occasion>."
-          ]
+          "span": {
+            "seq": [
+              {
+                "f": 0.5,
+                "opt": "This is "
+              },
+              "just a brief note to ",
+              {
+                "alt": [
+                  {
+                    "seq": [
+                      "say ",
+                      {
+                        "alt": [
+                          "thanks",
+                          "\"thank you\""
+                        ]
+                      }
+                    ]
+                  },
+                  "thank you"
+                ]
+              },
+              " for the <gift.object>",
+              {
+                "alt": [
+                  "you sent",
+                  "I received from you"
+                ]
+              },
+              " for <occasion>."
+            ]
+          }
         },
         {
           "cls": "sentence",
-          "seq": [
-            "Of all the ",
-            {
-              "alt": ["presents", "gifts", "things", "stuff"]
-            },
-            " I ",
-            {
-              "alt": ["received", "got"]
-            },
-            " for <occasion>, I ",
-            {
-              "alt": ["liked", "loved"]
-            },
-            " your ",
-            {
-              "f": 0.5,
-              "opt": "gift of "
-            },
-            "<gift.object>",
-            {
-              "alt": ["the most", "more than anything else"]
-            },
-            "."
-          ]
+          "span": {
+            "seq": [
+              "Of all the ",
+              {
+                "alt": [
+                  "presents",
+                  "gifts",
+                  "things",
+                  "stuff"
+                ]
+              },
+              " I ",
+              {
+                "alt": [
+                  "received",
+                  "got"
+                ]
+              },
+              " for <occasion>, I ",
+              {
+                "alt": [
+                  "liked",
+                  "loved"
+                ]
+              },
+              " your ",
+              {
+                "f": 0.5,
+                "opt": "gift of "
+              },
+              "<gift.object>",
+              {
+                "alt": [
+                  "the most",
+                  "more than anything else"
+                ]
+              },
+              "."
+            ]
+          }
         },
         {
           "cls": "sentence",
-          "seq": [
-            "I ",
-            {
-              "f": 0.5,
-              "opt": "really "
-            },
-            {
-              "alt": ["appreciate", "enjoyed receiving"]
-            },
-            " the <gift.object> you ",
-            {
-              "alt": ["gave", "sent"]
-            },
-            " me for <occasion>."
-          ]
+          "span": {
+            "seq": [
+              "I ",
+              {
+                "f": 0.5,
+                "opt": "really "
+              },
+              {
+                "alt": [
+                  "appreciate",
+                  "enjoyed receiving"
+                ]
+              },
+              " the <gift.object> you ",
+              {
+                "alt": [
+                  "gave",
+                  "sent"
+                ]
+              },
+              " me for <occasion>."
+            ]
+          }
         },
         {
           "cls": "sentence",
-          "seq": [
-            "I ",
-            {
-              "f": 0.5,
-              "opt": "really "
-            },
-            "love ",
-            {
-              "alt": ["getting", "receiving"]
-            },
-            " money for <occasion>, ",
-            {
-              "alt": ["since", "because"]
-            },
-            {
-              "alt": ["that", "it"]
-            },
-            " means I can ",
-            {
-              "f": 0.5,
-              "opt": "always "
-            },
-            {
-              "f": 0.5,
-              "opt": "go out and "
-            },
-            {
-              "alt": ["spend it on", "use it for"]
-            },
-            " what I really ",
-            {
-              "alt": ["want", "need"]
-            },
-            ". ",
-            {
-              "alt": ["Thanks", "Thank you"]
-            },
-            " for the <gift.object>."
-          ]
+          "span": {
+            "seq": [
+              "I ",
+              {
+                "f": 0.5,
+                "opt": "really "
+              },
+              "love ",
+              {
+                "alt": [
+                  "getting",
+                  "receiving"
+                ]
+              },
+              " money for <occasion>, ",
+              {
+                "alt": [
+                  "since",
+                  "because"
+                ]
+              },
+              {
+                "alt": [
+                  "that",
+                  "it"
+                ]
+              },
+              " means I can ",
+              {
+                "f": 0.5,
+                "opt": "always "
+              },
+              {
+                "f": 0.5,
+                "opt": "go out and "
+              },
+              {
+                "alt": [
+                  "spend it on",
+                  "use it for"
+                ]
+              },
+              " what I really ",
+              {
+                "alt": [
+                  "want",
+                  "need"
+                ]
+              },
+              ". ",
+              {
+                "alt": [
+                  "Thanks",
+                  "Thank you"
+                ]
+              },
+              " for the <gift.object>."
+            ]
+          }
         },
         {
           "cls": "sentence",
-          "seq": [
-            "You can't imagine how surprised I was to discover that you had sent me <gift.object> for <occasion>."
-          ]
+          "span": "You can't imagine how surprised I was to discover that you had sent me <gift.object> for <occasion>."
         },
         {
           "cls": "sentence",
-          "seq": [
-            {
-              "alt": ["Thanks", "Thank you"]
-            },
-            " for the <gift.object>",
-            {
-              "alt": [". I", "; i"]
-            },
-            "t was ",
-            {
-              "alt": ["the perfect", "a great"]
-            },
-            {
-              "alt": ["present", "gift"]
-            },
-            " for <occasion>."
-          ]
+          "span": {
+            "seq": [
+              {
+                "alt": [
+                  "Thanks",
+                  "Thank you"
+                ]
+              },
+              " for the <gift.object>",
+              {
+                "alt": [
+                  ". I",
+                  "; i"
+                ]
+              },
+              "t was ",
+              {
+                "alt": [
+                  "the perfect",
+                  "a great"
+                ]
+              },
+              {
+                "alt": [
+                  "present",
+                  "gift"
+                ]
+              },
+              " for <occasion>."
+            ]
+          }
         },
         {
           "cls": "sentence",
-          "seq": [
-            "I don't know how to thank you ",
-            {
-              "f": 0.5,
-              "opt": {
-                "alt": ["properly", "enough"]
-              }
-            },
-            "for the <gift.object> you ",
-            {
-              "alt": ["sent", "gave"]
-            },
-            {
-              "f": 0.5,
-              "opt": "me "
-            },
-            "for <occasion>."
-          ]
-        },
-        {
-          "cls": "sentence",
-          "seq": [
-            "I'm ",
-            {
-              "f": 0.5,
-              "opt": "just "
-            },
-            "writing to say ",
-            {
-              "alt": ["thanks", "\"thank you\""]
-            },
-            " for the <gift.object> you ",
-            {
-              "f": 0.5,
-              "opt": "graciously "
-            },
-            {
-              "alt": ["gave", "sent"]
-            },
-            " me for <occasion>."
-          ]
-        },
-        {
-          "cls": "sentence",
-          "seq": [
-            {
-              "alt": ["Thank you", "Thanks"]
-            },
-            " for the <gift.object> you ",
-            {
-              "alt": ["bestowed upon", "sent"]
-            },
-            " me for <occasion>."
-          ]
-        },
-        {
-          "cls": "sentence",
-          "seq": [
-            {
-              "f": 0.5,
-              "opt": "This is "
-            },
-            "just a quick note to ",
-            {
-              "alt": ["say \"thank you\"", "thank you"]
-            },
-            " for the <gift.object>",
-            {
-              "alt": [
-                {
-                  "seq": [
-                    "I ",
-                    {
-                      "alt": ["got", "received"]
-                    },
-                    " from you"
-                  ]
-                },
-                {
-                  "seq": [
-                    "you sent",
-                    {
-                      "f": 0.5,
-                      "opt": " me"
-                    }
+          "span": {
+            "seq": [
+              "I don't know how to thank you ",
+              {
+                "f": 0.5,
+                "opt": {
+                  "alt": [
+                    "properly",
+                    "enough"
                   ]
                 }
-              ]
-            },
-            " for <occasion>."
-          ]
+              },
+              "for the <gift.object> you ",
+              {
+                "alt": [
+                  "sent",
+                  "gave"
+                ]
+              },
+              {
+                "f": 0.5,
+                "opt": "me "
+              },
+              "for <occasion>."
+            ]
+          }
+        },
+        {
+          "cls": "sentence",
+          "span": {
+            "seq": [
+              "I'm ",
+              {
+                "f": 0.5,
+                "opt": "just "
+              },
+              "writing to say ",
+              {
+                "alt": [
+                  "thanks",
+                  "\"thank you\""
+                ]
+              },
+              " for the <gift.object> you ",
+              {
+                "f": 0.5,
+                "opt": "graciously "
+              },
+              {
+                "alt": [
+                  "gave",
+                  "sent"
+                ]
+              },
+              " me for <occasion>."
+            ]
+          }
+        },
+        {
+          "cls": "sentence",
+          "span": {
+            "seq": [
+              {
+                "alt": [
+                  "Thank you",
+                  "Thanks"
+                ]
+              },
+              " for the <gift.object> you ",
+              {
+                "alt": [
+                  "bestowed upon",
+                  "sent"
+                ]
+              },
+              " me for <occasion>."
+            ]
+          }
+        },
+        {
+          "cls": "sentence",
+          "span": {
+            "seq": [
+              {
+                "f": 0.5,
+                "opt": "This is "
+              },
+              "just a quick note to ",
+              {
+                "alt": [
+                  "say \"thank you\"",
+                  "thank you"
+                ]
+              },
+              " for the <gift.object>",
+              {
+                "alt": [
+                  {
+                    "seq": [
+                      "I ",
+                      {
+                        "alt": [
+                          "got",
+                          "received"
+                        ]
+                      },
+                      " from you"
+                    ]
+                  },
+                  {
+                    "seq": [
+                      "you sent",
+                      {
+                        "f": 0.5,
+                        "opt": " me"
+                      }
+                    ]
+                  }
+                ]
+              },
+              " for <occasion>."
+            ]
+          }
         }
       ]
     },
@@ -910,66 +1127,73 @@
       "alt": [
         {
           "cls": "sentence",
-          "seq": ["I know how much of a sacrifice this sort of gift is for you."]
+          "span": "I know how much of a sacrifice this sort of gift is for you."
         },
         {
           "cls": "sentence",
-          "seq": [
-            "<male.name> and <female.name> tried to steal it from me, but I was too quick for them."
-          ]
+          "span": "<male.name> and <female.name> tried to steal it from me, but I was too quick for them."
         },
         {
           "cls": "sentence",
-          "seq": [
-            {
-              "f": 0.5,
-              "opt": "I'm "
-            },
-            "looking forward to getting your next gift for <occasion>."
-          ]
+          "span": {
+            "seq": [
+              {
+                "f": 0.5,
+                "opt": "I'm "
+              },
+              "looking forward to getting your next gift for <occasion>."
+            ]
+          }
         },
         {
           "cls": "sentence",
-          "seq": [
-            {
-              "f": 0.5,
-              "opt": "Frankly, "
-            },
-            "it was ",
-            {
-              "f": 0.5,
-              "opt": "a little "
-            },
-            "strange to get anything from you",
-            {
-              "f": 0.5,
-              "opt": " at all"
-            },
-            ", because ",
-            {
-              "alt": ["I thought", "my friends to me that"]
-            },
-            " you were <state>."
-          ]
+          "span": {
+            "seq": [
+              {
+                "f": 0.5,
+                "opt": "Frankly, "
+              },
+              "it was ",
+              {
+                "f": 0.5,
+                "opt": "a little "
+              },
+              "strange to get anything from you",
+              {
+                "f": 0.5,
+                "opt": " at all"
+              },
+              ", because ",
+              {
+                "alt": [
+                  "I thought",
+                  "my friends to me that"
+                ]
+              },
+              " you were <state>."
+            ]
+          }
         },
         {
           "cls": "sentence",
-          "seq": ["How thoughtful of you."]
+          "span": "How thoughtful of you."
         },
         {
           "cls": "sentence",
-          "seq": ["Give my love to <male.name|female.name>."]
+          "span": "Give my love to <male.name|female.name>."
         },
         {
           "cls": "sentence",
-          "seq": [
-            "Best wishes to you",
-            {
-              "f": 0.5,
-              "opt": " and <person>"
-            },
-            "."
-          ]
+          "span": {
+            "seq": [
+              "Best wishes to you",
+              {
+                "f": 0.5,
+                "opt": " and <person>"
+              },
+              "."
+            ]
+          }
         }
       ]
     },
@@ -1018,147 +1242,185 @@
       "alt": [
         {
           "cls": "sentence",
-          "seq": [
-            {
-              "f": 0.5,
-              "opt": "You'll be happy to know that "
-            },
-            "I've already spent it on <money.object>."
-          ]
+          "span": {
+            "seq": [
+              {
+                "f": 0.5,
+                "opt": "You'll be happy to know that "
+              },
+              "I've already spent it on <money.object>."
+            ]
+          }
         },
         {
           "cls": "sentence",
-          "seq": [
-            "It",
-            {
-              "alt": ["'s", " has"]
-            },
-            {
-              "f": 0.5,
-              "opt": "already "
-            },
-            "been well-spent on <money.object>."
-          ]
-        },
-        {
-          "cls": "sentence",
-          "seq": [
-            "My ",
-            {
-              "alt": ["mother", "father"]
-            },
-            " insisted that I spend it on <money.object>."
-          ]
-        },
-        {
-          "cls": "sentence",
-          "seq": [
-            "Now I ",
-            {
-              "f": 0.5,
-              "opt": " finally"
-            },
-            "have enough money for <money.object>."
-          ]
-        },
-        {
-          "cls": "sentence",
-          "seq": [
-            {
-              "f": 0.5,
-              "opt": {
-                "alt": ["As soon as I can, ", "When I get a chance, "]
-              }
-            },
-            "I'm going ",
-            {
-              "f": 0.5,
-              "opt": "to the mall "
-            },
-            "and spending it on <money.object>."
-          ]
-        },
-        {
-          "cls": "sentence",
-          "seq": [
-            {
-              "f": 0.5,
-              "opt": "To be honest, "
-            },
-            {
-              "alt": ["I tried to get it to the bank", "I wanted to save it"]
-            },
-            ", but I ",
-            {
-              "f": 0.5,
-              "opt": "realized I "
-            },
-            {
-              "alt": ["needed", "had"]
-            },
-            " to spend it on <money.object>",
-            {
-              "f": 0.5,
-              "opt": " instead"
-            },
-            "."
-          ]
-        },
-        {
-          "cls": "sentence",
-          "seq": [
-            {
-              "f": 0.5,
-              "opt": "I just wanted to let you know that "
-            },
-            "it's already gone towards <money.object>."
-          ]
-        },
-        {
-          "cls": "sentence",
-          "seq": [
-            "I ",
-            {
-              "f": 0.5,
-              "opt": {
-                "alt": ["immediately", "rushed right out and"]
-              }
-            },
-            "spent it on <money.object>",
-            {
-              "f": 0.5,
-              "opt": {
-                "seq": [
-                  " for the first time",
-                  {
-                    "f": 0.5,
-                    "opt": " in years"
-                  }
+          "span": {
+            "seq": [
+              "It",
+              {
+                "alt": [
+                  "'s",
+                  " has"
                 ]
-              }
-            },
-            "."
-          ]
+              },
+              {
+                "f": 0.5,
+                "opt": "already "
+              },
+              "been well-spent on <money.object>."
+            ]
+          }
         },
         {
           "cls": "sentence",
-          "seq": [
-            {
-              "f": 0.5,
-              "opt": "As soon as I finish writing this letter, "
-            },
-            "I'm going to put it towards <money.object>."
-          ]
+          "span": {
+            "seq": [
+              "My ",
+              {
+                "alt": [
+                  "mother",
+                  "father"
+                ]
+              },
+              " insisted that I spend it on <money.object>."
+            ]
+          }
         },
         {
           "cls": "sentence",
-          "seq": [
-            {
-              "f": 0.5,
-              "opt": "I have to admit that "
-            },
-            "I already spent it on this month's protection."
-          ]
+          "span": {
+            "seq": [
+              "Now I ",
+              {
+                "f": 0.5,
+                "opt": " finally"
+              },
+              "have enough money for <money.object>."
+            ]
+          }
+        },
+        {
+          "cls": "sentence",
+          "span": {
+            "seq": [
+              {
+                "f": 0.5,
+                "opt": {
+                  "alt": [
+                    "As soon as I can, ",
+                    "When I get a chance, "
+                  ]
+                }
+              },
+              "I'm going ",
+              {
+                "f": 0.5,
+                "opt": "to the mall "
+              },
+              "and spending it on <money.object>."
+            ]
+          }
+        },
+        {
+          "cls": "sentence",
+          "span": {
+            "seq": [
+              {
+                "f": 0.5,
+                "opt": "To be honest, "
+              },
+              {
+                "alt": [
+                  "I tried to get it to the bank",
+                  "I wanted to save it"
+                ]
+              },
+              ", but I ",
+              {
+                "f": 0.5,
+                "opt": "realized I "
+              },
+              {
+                "alt": [
+                  "needed",
+                  "had"
+                ]
+              },
+              " to spend it on <money.object>",
+              {
+                "f": 0.5,
+                "opt": " instead"
+              },
+              "."
+            ]
+          }
+        },
+        {
+          "cls": "sentence",
+          "span": {
+            "seq": [
+              {
+                "f": 0.5,
+                "opt": "I just wanted to let you know that "
+              },
+              "it's already gone towards <money.object>."
+            ]
+          }
+        },
+        {
+          "cls": "sentence",
+          "span": {
+            "seq": [
+              "I ",
+              {
+                "f": 0.5,
+                "opt": {
+                  "alt": [
+                    "immediately",
+                    "rushed right out and"
+                  ]
+                }
+              },
+              "spent it on <money.object>",
+              {
+                "f": 0.5,
+                "opt": {
+                  "seq": [
+                    " for the first time",
+                    {
+                      "f": 0.5,
+                      "opt": " in years"
+                    }
+                  ]
+                }
+              },
+              "."
+            ]
+          }
+        },
+        {
+          "cls": "sentence",
+          "span": {
+            "seq": [
+              {
+                "f": 0.5,
+                "opt": "As soon as I finish writing this letter, "
+              },
+              "I'm going to put it towards <money.object>."
+            ]
+          }
+        },
+        {
+          "cls": "sentence",
+          "span": {
+            "seq": [
+              {
+                "f": 0.5,
+                "opt": "I have to admit that "
+              },
+              "I already spent it on this month's protection."
+            ]
+          }
         }
       ]
     },

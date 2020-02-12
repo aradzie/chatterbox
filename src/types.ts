@@ -7,7 +7,12 @@ export interface RuleMap {
   readonly [name: string]: P;
 }
 
-export type P = Opt | Seq | Alt | Ref | string;
+export type P = Span | Opt | Seq | Alt | Ref | string;
+
+export interface Span {
+  readonly cls: string;
+  readonly span: P;
+}
 
 export interface Opt {
   readonly f: number;
@@ -15,7 +20,6 @@ export interface Opt {
 }
 
 export interface Seq {
-  readonly cls?: string;
   readonly seq: readonly P[];
 }
 
@@ -25,6 +29,10 @@ export interface Alt {
 
 export interface Ref {
   readonly ref: string;
+}
+
+export function isSpan(v: P): v is Span {
+  return typeof v == "object" && "span" in v;
 }
 
 export function isOpt(v: P): v is Opt {

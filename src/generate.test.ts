@@ -14,7 +14,10 @@ test("generate from deterministic grammar", (t) => {
     generate({
       rule: {
         start: {
-          seq: [{ ref: "a" }, { ref: "b" }],
+          cls: "xyz",
+          span: {
+            seq: [{ ref: "a" }, { ref: "b" }],
+          },
         },
         a: "one",
         b: "two",

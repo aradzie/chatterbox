@@ -1,5 +1,17 @@
-import { Alt, Grammar, isAlt, isLit, isOpt, isSeq, Opt, P, RuleMap, Seq } from "../types";
-import { isEmpty, isSimple } from "./util";
+import {
+  Alt,
+  Grammar,
+  isAlt,
+  isLit,
+  isOpt,
+  isSeq,
+  isSpan,
+  Opt,
+  P,
+  RuleMap,
+  Seq,
+  Span,
+} from "../types";
 
 /**
  * Returns an optimized copy of the given grammar.
@@ -24,6 +36,10 @@ export function optimize(grammar: Grammar): Grammar {
 }
 
 function visit(p: P): P {
+  if (isSpan(p)) {
+    return visitSpan(p);
+  }
+
   if (isOpt(p)) {
     return visitOpt(p);
   }
@@ -39,6 +55,11 @@ function visit(p: P): P {
   return p;
 }
 
+function visitSpan(v: Span): P {
+  const { cls, span } = v;
+  return { cls, span: visit(span) };
+}
+
 function visitOpt(v: Opt): P {
   const { f, opt } = v;
   if (f == 1) {
@@ -51,7 +72,7 @@ function visitOpt(v: Opt): P {
 function visitSeq(v: Seq): P {
   const seq: P[] = [];
   step(v);
-  if (isSimple(v) && seq.length == 1) {
+  if (seq.length == 1) {
     return seq[0];
   } else {
     return { ...v, seq };
@@ -59,7 +80,7 @@ function visitSeq(v: Seq): P {
 
   function step(p: Seq): void {
     for (const child of p.seq) {
-      if (isSeq(child) && isSimple(child)) {
+      if (isSeq(child)) {
         step(child);
       } else {
         push(visit(child));
@@ -81,7 +102,7 @@ function visitSeq(v: Seq): P {
 function visitAlt(v: Alt): P {
   const alt: P[] = [];
   step(v);
-  if (isSimple(v) && alt.length == 1) {
+  if (alt.length == 1) {
     return alt[0];
   } else {
     return { ...v, alt };
@@ -89,7 +110,7 @@ function visitAlt(v: Alt): P {
 
   function step(p: Alt): void {
     for (const child of p.alt) {
-      if (isAlt(child) && isSimple(child)) {
+      if (isAlt(child)) {
         step(child);
       } else {
         push(visit(child));
@@ -102,4 +123,16 @@ function visitAlt(v: Alt): P {
       alt.push(p);
     }
   }
+}
+
+export function isEmpty(p: P): boolean {
+  if (isSeq(p)) {
+    return p.seq.length == 0;
+  }
+
+  if (isAlt(p)) {
+    return p.alt.length == 0;
+  }
+
+  return false;
 }

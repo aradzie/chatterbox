@@ -1,4 +1,18 @@
-import { Alt, Grammar, isAlt, isLit, isOpt, isRef, isSeq, Opt, P, Ref, Seq } from "../../types";
+import {
+  Alt,
+  Grammar,
+  isAlt,
+  isLit,
+  isOpt,
+  isRef,
+  isSeq,
+  isSpan,
+  Opt,
+  P,
+  Ref,
+  Seq,
+  Span,
+} from "../../types";
 import { Printer } from "./printer";
 
 /**
@@ -16,6 +30,11 @@ export function print(grammar: Grammar): string {
   return printer.toString();
 
   function printRule(p: P, multiline: boolean): void {
+    if (isSpan(p)) {
+      printSpan(p);
+      return;
+    }
+
     if (isOpt(p)) {
       printOpt(p);
       return;
@@ -42,6 +61,12 @@ export function print(grammar: Grammar): string {
     }
 
     throw new Error(); // Unreachable.
+  }
+
+  function printSpan(p: Span): void {
+    printer.print(`{ class=${p.cls} `);
+    printRule(p.span, false);
+    printer.print(" }");
   }
 
   function printOpt(p: Opt): void {

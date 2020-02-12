@@ -142,9 +142,9 @@ subject.clause ->
   | "I" [ ", the meditating phenomenologist," ] " set myself the all-embracing task of uncovering " ( "myself" | <Ns> | <Np> ) <how.clause>
   ;
 sentence ->
-    [ <certainty.clause> ] <main.clause> "."
-  | [ <certainty.clause> ] <main.clause> "."
-  | [ <certainty.clause> [ ", " <how.clause> "," ] ] <subject.clause> "."
+    { class=sentence [ <certainty.clause> ] <main.clause> "." }
+  | { class=sentence [ <certainty.clause> ] <main.clause> "." }
+  | { class=sentence [ <certainty.clause> [ ", " <how.clause> "," ] ] <subject.clause> "." }
   ;
 paragraph ->
     [ <sentence> ] [ <sentence> ] [ <sentence> ] [ <sentence> ] <sentence> <sentence> <sentence> <sentence> <sentence>

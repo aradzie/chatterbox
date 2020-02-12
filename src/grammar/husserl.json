@@ -156,7 +156,10 @@
             {
               "f": 0.5,
               "opt": {
-                "alt": ["my", "our"]
+                "alt": [
+                  "my",
+                  "our"
+                ]
               }
             },
             "acceptance of <Ns|Np> as existent"
@@ -166,7 +169,10 @@
           "seq": [
             "do not yet produce for ",
             {
-              "alt": ["us", "me"]
+              "alt": [
+                "us",
+                "me"
+              ]
             },
             " any abiding being",
             {
@@ -194,7 +200,10 @@
             },
             "proof that, in spite of the continual experiencedness of <Ns>, a non-being of <Ns|Np> is ",
             {
-              "alt": ["conceivable", "possible"]
+              "alt": [
+                "conceivable",
+                "possible"
+              ]
             }
           ]
         },
@@ -244,7 +253,10 @@
         {
           "seq": [
             {
-              "alt": ["<Ns> calls", "<Np> call"]
+              "alt": [
+                "<Ns> calls",
+                "<Np> call"
+              ]
             },
             " our attention to the fact that"
           ]
@@ -275,7 +287,10 @@
           "seq": [
             "even with respect to the evidence in which ",
             {
-              "alt": ["<Ns> presents itself", "<Np> present themselves"]
+              "alt": [
+                "<Ns> presents itself",
+                "<Np> present themselves"
+              ]
             }
           ]
         },
@@ -360,14 +375,22 @@
       ]
     },
     "ego.type": {
-      "alt": ["reflecting", "phenomenological", "transcendental", "worldly"]
+      "alt": [
+        "reflecting",
+        "phenomenological",
+        "transcendental",
+        "worldly"
+      ]
     },
     "subject.clause": {
       "alt": [
         {
           "seq": [
             {
-              "alt": ["I", "we"]
+              "alt": [
+                "I",
+                "we"
+              ]
             },
             " now shift the weight of transcendental evidence of <Ns|Np>",
             {
@@ -404,7 +427,11 @@
             },
             " set myself the all-embracing task of uncovering ",
             {
-              "alt": ["myself", "<Ns>", "<Np>"]
+              "alt": [
+                "myself",
+                "<Ns>",
+                "<Np>"
+              ]
             },
             "<how.clause>"
           ]
@@ -415,41 +442,47 @@
       "alt": [
         {
           "cls": "sentence",
-          "seq": [
-            {
-              "f": 0.5,
-              "opt": "<certainty.clause>"
-            },
-            "<main.clause>."
-          ]
+          "span": {
+            "seq": [
+              {
+                "f": 0.5,
+                "opt": "<certainty.clause>"
+              },
+              "<main.clause>."
+            ]
+          }
         },
         {
           "cls": "sentence",
-          "seq": [
-            {
-              "f": 0.5,
-              "opt": "<certainty.clause>"
-            },
-            "<main.clause>."
-          ]
+          "span": {
+            "seq": [
+              {
+                "f": 0.5,
+                "opt": "<certainty.clause>"
+              },
+              "<main.clause>."
+            ]
+          }
         },
         {
           "cls": "sentence",
-          "seq": [
-            {
-              "f": 0.5,
-              "opt": {
-                "seq": [
-                  "<certainty.clause>",
-                  {
-                    "f": 0.5,
-                    "opt": ", <how.clause>,"
-                  }
-                ]
-              }
-            },
-            "<subject.clause>."
-          ]
+          "span": {
+            "seq": [
+              {
+                "f": 0.5,
+                "opt": {
+                  "seq": [
+                    "<certainty.clause>",
+                    {
+                      "f": 0.5,
+                      "opt": ", <how.clause>,"
+                    }
+                  ]
+                }
+              },
+              "<subject.clause>."
+            ]
+          }
         }
       ]
     },

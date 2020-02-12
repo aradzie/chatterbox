@@ -1,16 +1,36 @@
 {
   "rule": {
     "conjunction": {
-      "alt": ["and", "but", "yet"]
+      "alt": [
+        "and",
+        "but",
+        "yet"
+      ]
     },
     "quantity": {
-      "alt": ["all of", "some of", "none of"]
+      "alt": [
+        "all of",
+        "some of",
+        "none of"
+      ]
     },
     "logic.type": {
-      "alt": ["general", "applied", "pure", "transcendental", "formal"]
+      "alt": [
+        "general",
+        "applied",
+        "pure",
+        "transcendental",
+        "formal"
+      ]
     },
     "rule.type": {
-      "alt": ["universal", "necessary", "practical", "contradictory", "sufficient"]
+      "alt": [
+        "universal",
+        "necessary",
+        "practical",
+        "contradictory",
+        "sufficient"
+      ]
     },
     "judgement.type": {
       "alt": [
@@ -26,16 +46,32 @@
       ]
     },
     "knowledge.type": {
-      "alt": ["a priori", "a posteriori"]
+      "alt": [
+        "a priori",
+        "a posteriori"
+      ]
     },
     "reason.type": {
-      "alt": ["pure", "practical", "human", "natural"]
+      "alt": [
+        "pure",
+        "practical",
+        "human",
+        "natural"
+      ]
     },
     "object.type": {
-      "alt": ["intelligible", "transcendental", "empirical"]
+      "alt": [
+        "intelligible",
+        "transcendental",
+        "empirical"
+      ]
     },
     "philosopher": {
-      "alt": ["Aristotle", "Hume", "Galileo"]
+      "alt": [
+        "Aristotle",
+        "Hume",
+        "Galileo"
+      ]
     },
     "Ns": {
       "alt": [
@@ -50,7 +86,10 @@
             {
               "f": 0.5,
               "opt": {
-                "alt": ["pure", "practical"]
+                "alt": [
+                  "pure",
+                  "practical"
+                ]
               }
             },
             "employment of <Ns|Np>"
@@ -318,7 +357,10 @@
             {
               "f": 0.5,
               "opt": {
-                "alt": [" (and <certainty.clause> this is true)", ", <throwaway.clause>,"]
+                "alt": [
+                  " (and <certainty.clause> this is true)",
+                  ", <throwaway.clause>,"
+                ]
               }
             },
             "<Vst><Ns|Np>"
@@ -350,7 +392,10 @@
             {
               "f": 0.5,
               "opt": {
-                "alt": [" (and <certainty.clause> this is the case)", ", <intro.clause>,"]
+                "alt": [
+                  " (and <certainty.clause> this is the case)",
+                  ", <intro.clause>,"
+                ]
               }
             },
             "<Vpt><Ns|Np>"
@@ -382,60 +427,66 @@
       "alt": [
         {
           "cls": "sentence",
-          "seq": [
-            {
-              "f": 0.5,
-              "opt": "<intro.clause>, "
-            },
-            {
-              "f": 0.5,
-              "opt": "<certainty.clause>"
-            },
-            "<main.clause>",
-            {
-              "f": 0.5,
-              "opt": ", <proof>"
-            },
-            "."
-          ]
+          "span": {
+            "seq": [
+              {
+                "f": 0.5,
+                "opt": "<intro.clause>, "
+              },
+              {
+                "f": 0.5,
+                "opt": "<certainty.clause>"
+              },
+              "<main.clause>",
+              {
+                "f": 0.5,
+                "opt": ", <proof>"
+              },
+              "."
+            ]
+          }
         },
         {
           "cls": "sentence",
-          "seq": [
-            {
-              "f": 0.5,
-              "opt": "<proof>, "
-            },
-            {
-              "f": 0.5,
-              "opt": "<certainty.clause>, <throwaway.clause>, "
-            },
-            "<main.clause>",
-            {
-              "f": 0.5,
-              "opt": ", <conjunction><main.clause>"
-            },
-            "."
-          ]
+          "span": {
+            "seq": [
+              {
+                "f": 0.5,
+                "opt": "<proof>, "
+              },
+              {
+                "f": 0.5,
+                "opt": "<certainty.clause>, <throwaway.clause>, "
+              },
+              "<main.clause>",
+              {
+                "f": 0.5,
+                "opt": ", <conjunction><main.clause>"
+              },
+              "."
+            ]
+          }
         },
         {
           "cls": "sentence",
-          "seq": [
-            {
-              "f": 0.5,
-              "opt": "<proof>, "
-            },
-            {
-              "f": 0.5,
-              "opt": "<certainty.clause>"
-            },
-            "<main.clause>",
-            {
-              "f": 0.5,
-              "opt": "; <intro.clause>, <main.clause>"
-            },
-            "."
-          ]
+          "span": {
+            "seq": [
+              {
+                "f": 0.5,
+                "opt": "<proof>, "
+              },
+              {
+                "f": 0.5,
+                "opt": "<certainty.clause>"
+              },
+              "<main.clause>",
+              {
+                "f": 0.5,
+                "opt": "; <intro.clause>, <main.clause>"
+              },
+              "."
+            ]
+          }
         }
       ]
     },
@@ -444,17 +495,22 @@
         "Whence comes <Ns>, the solution of which involves the relation between <Ns|Np> and <Ns|Np>?",
         {
           "cls": "sentence",
-          "seq": [
-            {
-              "f": 0.5,
-              "opt": "<intro.clause>, "
-            },
-            "is it ",
-            {
-              "alt": ["true", "the case"]
-            },
-            " that <Ns><Vst><Ns|Np>, or is the real question whether <Np><Vpi>?"
-          ]
+          "span": {
+            "seq": [
+              {
+                "f": 0.5,
+                "opt": "<intro.clause>, "
+              },
+              "is it ",
+              {
+                "alt": [
+                  "true",
+                  "the case"
+                ]
+              },
+              " that <Ns><Vst><Ns|Np>, or is the real question whether <Np><Vpi>?"
+            ]
+          }
         },
         {
           "seq": [
@@ -465,7 +521,10 @@
             },
             "<certainty.clause> there is ",
             {
-              "alt": ["no relation", "a causal connection"]
+              "alt": [
+                "no relation",
+                "a causal connection"
+              ]
             },
             " bewteen <Ns|Np> and <Ns|Np>?"
           ]
@@ -473,7 +532,7 @@
         "In which of our cognitive faculties are <Ns|Np> and <Ns|Np> connected together?",
         {
           "cls": "sentence",
-          "seq": ["<conjunction> can I entertain <Ns> in thought, or does it present itself to me?"]
+          "span": "<conjunction> can I entertain <Ns> in thought, or does it present itself to me?"
         }
       ]
     },

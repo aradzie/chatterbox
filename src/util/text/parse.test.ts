@@ -26,6 +26,10 @@ test("parse alt", (t) => {
   t.deepEqual(parse(`start -> "a" | "b" | "c";`), { rule: { start: { alt: ["a", "b", "c"] } } });
 });
 
+test("parse span", (t) => {
+  t.deepEqual(parse(`start -> { class=xyz "a" };`), { rule: { start: { cls: "xyz", span: "a" } } });
+});
+
 test("priorities", (t) => {
   t.deepEqual(parse(`start -> ("a" | "b") "c";`), {
     rule: { start: { seq: [{ alt: ["a", "b"] }, "c"] } },
@@ -63,7 +67,7 @@ test("syntax error", (t) => {
     },
     {
       name: "SyntaxError",
-      message: 'Expected "(", "[", literal, or ref but end of input found.',
+      message: 'Expected "(", "[", "{", literal, or ref but end of input found.',
     },
   );
   t.deepEqual(location, {

@@ -30,6 +30,7 @@ Seq
 Factor
   = "(" _ p:Alt _ ")" { return p; }
   / "[" _ p:Alt _ "]" { return { f: 0.5, opt: p }; }
+  / "{" _ "class" _ "=" _ cls:Name _ p:Alt _ "}" { return { cls: cls, span: p }; }
   / ref:Ref { return ref; }
   / lit:Lit { return lit; }
 

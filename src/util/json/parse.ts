@@ -1,4 +1,4 @@
-import { Grammar, isAlt, isLit, isOpt, isRef, isSeq, P, RuleMap } from "../../types";
+import { Grammar, isAlt, isLit, isOpt, isRef, isSeq, isSpan, P, RuleMap } from "../../types";
 import { optimize } from "../optimize";
 import { validate } from "../validate";
 
@@ -25,6 +25,10 @@ function parseImpl(grammar: Grammar): Grammar {
 }
 
 function visit(p: P): P {
+  if (isSpan(p)) {
+    return { ...p, span: visit(p.span) };
+  }
+
   if (isOpt(p)) {
     return { ...p, opt: visit(p.opt) };
   }

@@ -1,4 +1,4 @@
-import { Grammar, isAlt, isLit, isOpt, isRef, isSeq, P } from "../types";
+import { Grammar, isAlt, isLit, isOpt, isRef, isSeq, isSpan, P } from "../types";
 
 /**
  * Checks that the given grammar is valid.
@@ -26,6 +26,11 @@ export function validate(grammar: Grammar): Grammar {
   return grammar;
 
   function visit(p: P): void {
+    if (isSpan(p)) {
+      visit(p.span);
+      return;
+    }
+
     if (isOpt(p)) {
       const { f, opt } = p;
       if (f < 0 || f > 1) {
