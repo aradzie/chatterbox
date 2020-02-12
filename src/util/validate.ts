@@ -9,12 +9,9 @@ import { Grammar, isAlt, isLit, isOpt, isRef, isSeq, isSpan, P } from "../types"
  * - Checks that there are no unreferenced rules.
  */
 export function validate(grammar: Grammar): Grammar {
-  const { rule, start = "start" } = grammar;
-  if (!(start in rule)) {
-    throw new Error(`Invalid ref <${start}>`);
-  }
+  const { rule } = grammar;
   const referenced = new Set<string>();
-  referenced.add(start);
+  referenced.add("start");
   for (const item of Object.values(rule)) {
     visit(item);
   }

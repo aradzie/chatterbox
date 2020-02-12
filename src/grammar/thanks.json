@@ -33,10 +33,7 @@
                     "seq": [
                       "for the next ",
                       {
-                        "alt": [
-                          "week",
-                          "few days"
-                        ]
+                        "alt": ["week", "few days"]
                       }
                     ]
                   }
@@ -133,20 +130,7 @@
     },
     "gift.thanks": "<gift.received><gift.used><gift.tag.line>",
     "money.amount": {
-      "alt": [
-        "$5",
-        "$10",
-        "$15",
-        "$20",
-        "$25",
-        "$30",
-        "$35",
-        "$40",
-        "$45",
-        "$50",
-        "$75",
-        "$100"
-      ]
+      "alt": ["$5", "$10", "$15", "$20", "$25", "$30", "$35", "$40", "$45", "$50", "$75", "$100"]
     },
     "female.name": {
       "alt": [
@@ -328,17 +312,11 @@
           "seq": [
             "I've already ",
             {
-              "alt": [
-                "put",
-                "stashed"
-              ]
+              "alt": ["put", "stashed"]
             },
             " it in ",
             {
-              "alt": [
-                "the bank",
-                "a shoebox"
-              ]
+              "alt": ["the bank", "a shoebox"]
             },
             {
               "f": 0.5,
@@ -375,10 +353,7 @@
                   {
                     "f": 0.5,
                     "opt": {
-                      "alt": [
-                        "immediately",
-                        "right away"
-                      ]
+                      "alt": ["immediately", "right away"]
                     }
                   },
                   ", but "
@@ -448,10 +423,7 @@
                     "seq": [
                       "say ",
                       {
-                        "alt": [
-                          "thanks",
-                          "\"thank you\""
-                        ]
+                        "alt": ["thanks", "\"thank you\""]
                       }
                     ]
                   },
@@ -460,10 +432,7 @@
               },
               " for the <money.amount>",
               {
-                "alt": [
-                  "you sent",
-                  "I received from you"
-                ]
+                "alt": ["you sent", "I received from you"]
               },
               " for <occasion>."
             ]
@@ -475,26 +444,15 @@
             "seq": [
               "Of all the ",
               {
-                "alt": [
-                  "presents",
-                  "gifts",
-                  "things",
-                  "stuff"
-                ]
+                "alt": ["presents", "gifts", "things", "stuff"]
               },
               " I ",
               {
-                "alt": [
-                  "received",
-                  "got"
-                ]
+                "alt": ["received", "got"]
               },
               " for <occasion>, I ",
               {
-                "alt": [
-                  "liked",
-                  "loved"
-                ]
+                "alt": ["liked", "loved"]
               },
               " your ",
               {
@@ -503,10 +461,7 @@
               },
               "<money.amount>",
               {
-                "alt": [
-                  "the most",
-                  "more than anything else"
-                ]
+                "alt": ["the most", "more than anything else"]
               },
               "."
             ]
@@ -522,17 +477,11 @@
                 "opt": "really "
               },
               {
-                "alt": [
-                  "appreciate",
-                  "enjoyed receiving"
-                ]
+                "alt": ["appreciate", "enjoyed receiving"]
               },
               " the <money.amount> you ",
               {
-                "alt": [
-                  "gave",
-                  "sent"
-                ]
+                "alt": ["gave", "sent"]
               },
               " me for <occasion>."
             ]
@@ -549,23 +498,14 @@
               },
               "love ",
               {
-                "alt": [
-                  "getting",
-                  "receiving"
-                ]
+                "alt": ["getting", "receiving"]
               },
               " money for <occasion>, ",
               {
-                "alt": [
-                  "since",
-                  "because"
-                ]
+                "alt": ["since", "because"]
               },
               {
-                "alt": [
-                  "that",
-                  "it"
-                ]
+                "alt": ["that", "it"]
               },
               " means I can ",
               {
@@ -577,24 +517,15 @@
                 "opt": "go out and "
               },
               {
-                "alt": [
-                  "spend it on",
-                  "use it for"
-                ]
+                "alt": ["spend it on", "use it for"]
               },
               " what I really ",
               {
-                "alt": [
-                  "want",
-                  "need"
-                ]
+                "alt": ["want", "need"]
               },
               ". ",
               {
-                "alt": [
-                  "Thanks",
-                  "Thank you"
-                ]
+                "alt": ["Thanks", "Thank you"]
               },
               " for the <money.amount>."
             ]
@@ -609,30 +540,18 @@
           "span": {
             "seq": [
               {
-                "alt": [
-                  "Thanks",
-                  "Thank you"
-                ]
+                "alt": ["Thanks", "Thank you"]
               },
               " for the <money.amount>",
               {
-                "alt": [
-                  ". I",
-                  "; i"
-                ]
+                "alt": [". I", "; i"]
               },
               "t was ",
               {
-                "alt": [
-                  "the perfect",
-                  "a great"
-                ]
+                "alt": ["the perfect", "a great"]
               },
               {
-                "alt": [
-                  "present",
-                  "gift"
-                ]
+                "alt": ["present", "gift"]
               },
               " for <occasion>."
             ]
@@ -646,18 +565,12 @@
               {
                 "f": 0.5,
                 "opt": {
-                  "alt": [
-                    "properly",
-                    "enough"
-                  ]
+                  "alt": ["properly", "enough"]
                 }
               },
               "for the <money.amount> you ",
               {
-                "alt": [
-                  "sent",
-                  "gave"
-                ]
+                "alt": ["sent", "gave"]
               },
               {
                 "f": 0.5,
@@ -678,10 +591,7 @@
               },
               "writing to say ",
               {
-                "alt": [
-                  "thanks",
-                  "\"thank you\""
-                ]
+                "alt": ["thanks", "\"thank you\""]
               },
               " for the <money.amount> you ",
               {
@@ -689,10 +599,7 @@
                 "opt": "graciously "
               },
               {
-                "alt": [
-                  "gave",
-                  "sent"
-                ]
+                "alt": ["gave", "sent"]
               },
               " me for <occasion>."
             ]
@@ -703,17 +610,11 @@
           "span": {
             "seq": [
               {
-                "alt": [
-                  "Thank you",
-                  "Thanks"
-                ]
+                "alt": ["Thank you", "Thanks"]
               },
               " for the <money.amount> you ",
               {
-                "alt": [
-                  "bestowed upon",
-                  "sent"
-                ]
+                "alt": ["bestowed upon", "sent"]
               },
               " me for <occasion>."
             ]
@@ -729,10 +630,7 @@
               },
               "just a quick note to ",
               {
-                "alt": [
-                  "say \"thank you\"",
-                  "thank you"
-                ]
+                "alt": ["say \"thank you\"", "thank you"]
               },
               " for the <money.amount>",
               {
@@ -741,10 +639,7 @@
                     "seq": [
                       "I ",
                       {
-                        "alt": [
-                          "got",
-                          "received"
-                        ]
+                        "alt": ["got", "received"]
                       },
                       " from you"
                     ]
@@ -783,10 +678,7 @@
                     "seq": [
                       "say ",
                       {
-                        "alt": [
-                          "thanks",
-                          "\"thank you\""
-                        ]
+                        "alt": ["thanks", "\"thank you\""]
                       }
                     ]
                   },
@@ -795,10 +687,7 @@
               },
               " for the <gift.object>",
               {
-                "alt": [
-                  "you sent",
-                  "I received from you"
-                ]
+                "alt": ["you sent", "I received from you"]
               },
               " for <occasion>."
             ]
@@ -810,26 +699,15 @@
             "seq": [
               "Of all the ",
               {
-                "alt": [
-                  "presents",
-                  "gifts",
-                  "things",
-                  "stuff"
-                ]
+                "alt": ["presents", "gifts", "things", "stuff"]
               },
               " I ",
               {
-                "alt": [
-                  "received",
-                  "got"
-                ]
+                "alt": ["received", "got"]
               },
               " for <occasion>, I ",
               {
-                "alt": [
-                  "liked",
-                  "loved"
-                ]
+                "alt": ["liked", "loved"]
               },
               " your ",
               {
@@ -838,10 +716,7 @@
               },
               "<gift.object>",
               {
-                "alt": [
-                  "the most",
-                  "more than anything else"
-                ]
+                "alt": ["the most", "more than anything else"]
               },
               "."
             ]
@@ -857,17 +732,11 @@
                 "opt": "really "
               },
               {
-                "alt": [
-                  "appreciate",
-                  "enjoyed receiving"
-                ]
+                "alt": ["appreciate", "enjoyed receiving"]
               },
               " the <gift.object> you ",
               {
-                "alt": [
-                  "gave",
-                  "sent"
-                ]
+                "alt": ["gave", "sent"]
               },
               " me for <occasion>."
             ]
@@ -884,23 +753,14 @@
               },
               "love ",
               {
-                "alt": [
-                  "getting",
-                  "receiving"
-                ]
+                "alt": ["getting", "receiving"]
               },
               " money for <occasion>, ",
               {
-                "alt": [
-                  "since",
-                  "because"
-                ]
+                "alt": ["since", "because"]
               },
               {
-                "alt": [
-                  "that",
-                  "it"
-                ]
+                "alt": ["that", "it"]
               },
               " means I can ",
               {
@@ -912,24 +772,15 @@
                 "opt": "go out and "
               },
               {
-                "alt": [
-                  "spend it on",
-                  "use it for"
-                ]
+                "alt": ["spend it on", "use it for"]
               },
               " what I really ",
               {
-                "alt": [
-                  "want",
-                  "need"
-                ]
+                "alt": ["want", "need"]
               },
               ". ",
               {
-                "alt": [
-                  "Thanks",
-                  "Thank you"
-                ]
+                "alt": ["Thanks", "Thank you"]
               },
               " for the <gift.object>."
             ]
@@ -944,30 +795,18 @@
           "span": {
             "seq": [
               {
-                "alt": [
-                  "Thanks",
-                  "Thank you"
-                ]
+                "alt": ["Thanks", "Thank you"]
               },
               " for the <gift.object>",
               {
-                "alt": [
-                  ". I",
-                  "; i"
-                ]
+                "alt": [". I", "; i"]
               },
               "t was ",
               {
-                "alt": [
-                  "the perfect",
-                  "a great"
-                ]
+                "alt": ["the perfect", "a great"]
               },
               {
-                "alt": [
-                  "present",
-                  "gift"
-                ]
+                "alt": ["present", "gift"]
               },
               " for <occasion>."
             ]
@@ -981,18 +820,12 @@
               {
                 "f": 0.5,
                 "opt": {
-                  "alt": [
-                    "properly",
-                    "enough"
-                  ]
+                  "alt": ["properly", "enough"]
                 }
               },
               "for the <gift.object> you ",
               {
-                "alt": [
-                  "sent",
-                  "gave"
-                ]
+                "alt": ["sent", "gave"]
               },
               {
                 "f": 0.5,
@@ -1013,10 +846,7 @@
               },
               "writing to say ",
               {
-                "alt": [
-                  "thanks",
-                  "\"thank you\""
-                ]
+                "alt": ["thanks", "\"thank you\""]
               },
               " for the <gift.object> you ",
               {
@@ -1024,10 +854,7 @@
                 "opt": "graciously "
               },
               {
-                "alt": [
-                  "gave",
-                  "sent"
-                ]
+                "alt": ["gave", "sent"]
               },
               " me for <occasion>."
             ]
@@ -1038,17 +865,11 @@
           "span": {
             "seq": [
               {
-                "alt": [
-                  "Thank you",
-                  "Thanks"
-                ]
+                "alt": ["Thank you", "Thanks"]
               },
               " for the <gift.object> you ",
               {
-                "alt": [
-                  "bestowed upon",
-                  "sent"
-                ]
+                "alt": ["bestowed upon", "sent"]
               },
               " me for <occasion>."
             ]
@@ -1064,10 +885,7 @@
               },
               "just a quick note to ",
               {
-                "alt": [
-                  "say \"thank you\"",
-                  "thank you"
-                ]
+                "alt": ["say \"thank you\"", "thank you"]
               },
               " for the <gift.object>",
               {
@@ -1076,10 +894,7 @@
                     "seq": [
                       "I ",
                       {
-                        "alt": [
-                          "got",
-                          "received"
-                        ]
+                        "alt": ["got", "received"]
                       },
                       " from you"
                     ]
@@ -1165,10 +980,7 @@
               },
               ", because ",
               {
-                "alt": [
-                  "I thought",
-                  "my friends to me that"
-                ]
+                "alt": ["I thought", "my friends to me that"]
               },
               " you were <state>."
             ]
@@ -1258,10 +1070,7 @@
             "seq": [
               "It",
               {
-                "alt": [
-                  "'s",
-                  " has"
-                ]
+                "alt": ["'s", " has"]
               },
               {
                 "f": 0.5,
@@ -1277,10 +1086,7 @@
             "seq": [
               "My ",
               {
-                "alt": [
-                  "mother",
-                  "father"
-                ]
+                "alt": ["mother", "father"]
               },
               " insisted that I spend it on <money.object>."
             ]
@@ -1306,10 +1112,7 @@
               {
                 "f": 0.5,
                 "opt": {
-                  "alt": [
-                    "As soon as I can, ",
-                    "When I get a chance, "
-                  ]
+                  "alt": ["As soon as I can, ", "When I get a chance, "]
                 }
               },
               "I'm going ",
@@ -1330,10 +1133,7 @@
                 "opt": "To be honest, "
               },
               {
-                "alt": [
-                  "I tried to get it to the bank",
-                  "I wanted to save it"
-                ]
+                "alt": ["I tried to get it to the bank", "I wanted to save it"]
               },
               ", but I ",
               {
@@ -1341,10 +1141,7 @@
                 "opt": "realized I "
               },
               {
-                "alt": [
-                  "needed",
-                  "had"
-                ]
+                "alt": ["needed", "had"]
               },
               " to spend it on <money.object>",
               {
@@ -1375,10 +1172,7 @@
               {
                 "f": 0.5,
                 "opt": {
-                  "alt": [
-                    "immediately",
-                    "rushed right out and"
-                  ]
+                  "alt": ["immediately", "rushed right out and"]
                 }
               },
               "spent it on <money.object>",
@@ -1465,7 +1259,7 @@
         "subscription to <magazine>",
         "\"Critique of Pure Reason\""
       ]
-    }
-  },
-  "start": "thank.you.note"
+    },
+    "start": "<thank.you.note>"
+  }
 }

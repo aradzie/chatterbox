@@ -14,7 +14,6 @@ export function merge(
     return grammars[0];
   }
   const map = new Map<string, P>();
-  let start;
   for (const grammar of grammars) {
     for (const [name, rule] of Object.entries(grammar.rule)) {
       if (onDuplicate == "throw" && map.has(name)) {
@@ -22,11 +21,6 @@ export function merge(
       }
       map.set(name, rule);
     }
-    start = grammar.start;
   }
-  if (start != null) {
-    return { rule: Object.fromEntries(map), start };
-  } else {
-    return { rule: Object.fromEntries(map) };
-  }
+  return { rule: Object.fromEntries(map) };
 }

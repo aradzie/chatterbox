@@ -14,20 +14,6 @@ test("valid grammar", (t) => {
   });
 });
 
-test("missing start ref", (t) => {
-  t.throws(
-    () => {
-      validate({
-        rule: {},
-        start: "invalidStart",
-      });
-    },
-    {
-      message: "Invalid ref <invalidStart>",
-    },
-  );
-});
-
 test("missing ref", (t) => {
   t.throws(
     () => {
@@ -37,7 +23,6 @@ test("missing ref", (t) => {
             ref: "invalidRef",
           },
         },
-        start: "start",
       });
     },
     {
@@ -54,7 +39,6 @@ test("unreferenced rule", (t) => {
           start: "start",
           extra: "extra",
         },
-        start: "start",
       });
     },
     {

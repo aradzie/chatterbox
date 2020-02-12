@@ -266,3 +266,6 @@ paragraph ->
 section ->
   <paragraph> <paragraph> <paragraph> <paragraph> [ <paragraph> ] [ <paragraph> ] [ <paragraph> ] [ <paragraph> ] [ <paragraph> ] [ <paragraph> ]
   ;
+start ->
+  <section>
+  ;

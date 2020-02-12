@@ -1,6 +1,5 @@
 export interface Grammar {
   readonly rule: RuleMap;
-  readonly start?: string;
 }
 
 export interface RuleMap {

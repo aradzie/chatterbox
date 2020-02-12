@@ -13,15 +13,11 @@ export function parse(grammar: Grammar): Grammar {
 }
 
 function parseImpl(grammar: Grammar): Grammar {
-  const { rule, start } = grammar;
+  const { rule } = grammar;
   const result: RuleMap = Object.fromEntries(
     Object.entries(rule).map(([name, rule]) => [name, visit(rule)]),
   );
-  if (start != null) {
-    return { rule: result, start };
-  } else {
-    return { rule: result };
-  }
+  return { rule: result };
 }
 
 function visit(p: P): P {

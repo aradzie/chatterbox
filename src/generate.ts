@@ -10,11 +10,11 @@ export interface Options {
  */
 export function generate(grammar: Grammar, options: Options = {}): string {
   const {
-    start: defaultStart = "start", // The default start.
+    start = "start", // The default start.
     random = (): number => Math.random(), // The default RNG.
   } = options;
 
-  const { rule, start = defaultStart } = grammar;
+  const { rule } = grammar;
   const rulesByName = new Map(Object.entries(rule));
   const result: string[] = [];
   visit(getRule(start));

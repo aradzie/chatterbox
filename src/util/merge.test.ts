@@ -3,20 +3,18 @@ import { Grammar } from "../types";
 import { merge } from "./merge";
 
 test("single grammar", (t) => {
-  const a: Grammar = { rule: { a: "a", x: "1" }, start: "a" };
+  const a: Grammar = { rule: { a: "a", x: "1" } };
   t.deepEqual(merge([a], "throw"), a);
 });
 
 test("on duplicate replace", (t) => {
-  const a: Grammar = { rule: { a: "a", x: "1" }, start: "a" };
-  const b: Grammar = { rule: { b: "b", x: "2" }, start: "b" };
+  const a: Grammar = { rule: { a: "a", x: "1" } };
+  const b: Grammar = { rule: { b: "b", x: "2" } };
   t.deepEqual(merge([a, b], "replace"), {
     rule: { a: "a", b: "b", x: "2" },
-    start: "b",
   });
   t.deepEqual(merge([b, a], "replace"), {
     rule: { a: "a", b: "b", x: "1" },
-    start: "a",
   });
 });
 

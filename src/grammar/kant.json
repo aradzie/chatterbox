@@ -1,36 +1,16 @@
 {
   "rule": {
     "conjunction": {
-      "alt": [
-        "and",
-        "but",
-        "yet"
-      ]
+      "alt": ["and", "but", "yet"]
     },
     "quantity": {
-      "alt": [
-        "all of",
-        "some of",
-        "none of"
-      ]
+      "alt": ["all of", "some of", "none of"]
     },
     "logic.type": {
-      "alt": [
-        "general",
-        "applied",
-        "pure",
-        "transcendental",
-        "formal"
-      ]
+      "alt": ["general", "applied", "pure", "transcendental", "formal"]
     },
     "rule.type": {
-      "alt": [
-        "universal",
-        "necessary",
-        "practical",
-        "contradictory",
-        "sufficient"
-      ]
+      "alt": ["universal", "necessary", "practical", "contradictory", "sufficient"]
     },
     "judgement.type": {
       "alt": [
@@ -46,32 +26,16 @@
       ]
     },
     "knowledge.type": {
-      "alt": [
-        "a priori",
-        "a posteriori"
-      ]
+      "alt": ["a priori", "a posteriori"]
     },
     "reason.type": {
-      "alt": [
-        "pure",
-        "practical",
-        "human",
-        "natural"
-      ]
+      "alt": ["pure", "practical", "human", "natural"]
     },
     "object.type": {
-      "alt": [
-        "intelligible",
-        "transcendental",
-        "empirical"
-      ]
+      "alt": ["intelligible", "transcendental", "empirical"]
     },
     "philosopher": {
-      "alt": [
-        "Aristotle",
-        "Hume",
-        "Galileo"
-      ]
+      "alt": ["Aristotle", "Hume", "Galileo"]
     },
     "Ns": {
       "alt": [
@@ -86,10 +50,7 @@
             {
               "f": 0.5,
               "opt": {
-                "alt": [
-                  "pure",
-                  "practical"
-                ]
+                "alt": ["pure", "practical"]
               }
             },
             "employment of <Ns|Np>"
@@ -357,10 +318,7 @@
             {
               "f": 0.5,
               "opt": {
-                "alt": [
-                  " (and <certainty.clause> this is true)",
-                  ", <throwaway.clause>,"
-                ]
+                "alt": [" (and <certainty.clause> this is true)", ", <throwaway.clause>,"]
               }
             },
             "<Vst><Ns|Np>"
@@ -392,10 +350,7 @@
             {
               "f": 0.5,
               "opt": {
-                "alt": [
-                  " (and <certainty.clause> this is the case)",
-                  ", <intro.clause>,"
-                ]
+                "alt": [" (and <certainty.clause> this is the case)", ", <intro.clause>,"]
               }
             },
             "<Vpt><Ns|Np>"
@@ -503,10 +458,7 @@
               },
               "is it ",
               {
-                "alt": [
-                  "true",
-                  "the case"
-                ]
+                "alt": ["true", "the case"]
               },
               " that <Ns><Vst><Ns|Np>, or is the real question whether <Np><Vpi>?"
             ]
@@ -521,10 +473,7 @@
             },
             "<certainty.clause> there is ",
             {
-              "alt": [
-                "no relation",
-                "a causal connection"
-              ]
+              "alt": ["no relation", "a causal connection"]
             },
             " bewteen <Ns|Np> and <Ns|Np>?"
           ]
@@ -665,7 +614,7 @@
           "opt": "<paragraph>"
         }
       ]
-    }
-  },
-  "start": "section"
+    },
+    "start": "<section>"
+  }
 }

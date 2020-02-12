@@ -398,3 +398,6 @@ gift.object ->
   | "subscription to " <magazine>
   | "\"Critique of Pure Reason\""
   ;
+start ->
+  <thank.you.note>
+  ;
