@@ -30,7 +30,7 @@
   ],
   "scripts": {
     "build": "rm -fr lib; tsc",
-    "format": "prettier --write src/**/*.{ts,json}",
+    "format": "prettier --write **/*",
     "generate": "pegjs -o src/text/pegjs-parser.js src/text/pegjs-parser.pegjs",
     "lint": "eslint src --ext .ts",
     "lint-fix": "eslint src --ext .ts --fix",
