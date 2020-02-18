@@ -3,7 +3,7 @@
 .idea
 build
 lib
-lib-esnext
+lib-commonjs
 node_modules
 out
 tmp
