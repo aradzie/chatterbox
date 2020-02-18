@@ -24,10 +24,6 @@
   ],
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "files": [
-    "grammar",
-    "lib"
-  ],
   "scripts": {
     "build": "rm -fr lib; tsc",
     "format": "prettier --write **/*",
