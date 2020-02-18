@@ -23,3 +23,28 @@ A big cat.
 A green house.
 A green cat.
 ```
+
+The full example listing:
+
+```javascript
+const { parse, validate, generate } = require("@aradzie/chatterbox");
+
+const grammar = parse(`
+start ->
+    "The " <noun> " is " <adj> "."
+  | "A " <adj> " " <noun> "."
+  ;
+noun ->
+    "house"
+  | "cat"
+  ;
+adj ->
+    "green"
+  | "big"
+  ;
+`);
+
+validate(grammar);
+
+console.log(generate(grammar));
+```
