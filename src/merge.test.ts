@@ -1,5 +1,5 @@
 import test from "ava";
-import { Grammar } from "./types";
+import type { Grammar } from "./types";
 import { merge } from "./merge";
 
 test("single grammar", (t) => {

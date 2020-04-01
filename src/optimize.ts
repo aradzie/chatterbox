@@ -1,17 +1,5 @@
-import {
-  Alt,
-  Grammar,
-  isAlt,
-  isLit,
-  isOpt,
-  isSeq,
-  isSpan,
-  Opt,
-  P,
-  RuleMap,
-  Seq,
-  Span,
-} from "./types";
+import type { Alt, Grammar, Opt, P, RuleMap, Seq, Span } from "./types";
+import { isAlt, isLit, isOpt, isSeq, isSpan } from "./types";
 
 /**
  * Returns an optimized copy of the given grammar.

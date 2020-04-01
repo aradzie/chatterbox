@@ -27,7 +27,7 @@
   "module": "lib/index.js",
   "scripts": {
     "build": "rm -fr lib-commonjs; rm -fr lib; tsc -d --module commonjs --outDir lib-commonjs; tsc --module es2015 --outDir lib",
-    "format": "prettier --write **/*",
+    "format": "prettier --write 'src/**/*'",
     "generate": "pegjs -o src/text/pegjs-parser.js src/text/pegjs-parser.pegjs",
     "lint": "eslint src --ext .ts",
     "lint-fix": "eslint src --ext .ts --fix",
