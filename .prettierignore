@@ -2,5 +2,6 @@
 *.pegjs
 *.snap
 lib
-lib-commonjs
+lib-cjs
+lib-esm
 tmp

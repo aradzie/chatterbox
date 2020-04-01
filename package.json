@@ -22,11 +22,11 @@
     "lorem",
     "ipsum"
   ],
-  "main": "lib-commonjs/index.js",
-  "types": "lib-commonjs/index.d.ts",
-  "module": "lib/index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "module": "lib-esm/index.js",
   "scripts": {
-    "build": "rm -fr lib-commonjs; rm -fr lib; tsc -d --module commonjs --outDir lib-commonjs; tsc --module es2015 --outDir lib",
+    "compile": "rm -fr lib; rm -fr lib-esm; tsc; tsc -b tsconfig-esm.json",
     "format": "prettier --write 'src/**/*'",
     "generate": "pegjs -o src/text/pegjs-parser.js src/text/pegjs-parser.pegjs",
     "lint": "eslint src --ext .ts",
@@ -51,7 +51,7 @@
   },
   "ava": {
     "files": [
-      "lib-commonjs/**/*.test.js"
+      "lib/**/*.test.js"
     ],
     "require": [
       "source-map-support"

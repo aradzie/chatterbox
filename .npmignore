@@ -2,13 +2,13 @@
 **
 
 # Use negative patterns to bring back the specific things we want to publish
-!/bin/**
 !/lib/**
-!/lib-commonjs/**
-!/grammar/**
+!/lib-cjs/**
+!/lib-esm/**
 
 # Ignore certain files in the above directories
-/lib/**/test/*
-/lib/**/*.test.js
-/lib-commonjs/**/test/*
-/lib-commonjs/**/*.test.js
+**/test/*
+**/spec/*
+**/*.test.*
+**/*.spec.*
+.tsbuildcache

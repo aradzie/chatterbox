@@ -3,7 +3,8 @@
 .idea
 build
 lib
-lib-commonjs
+lib-cjs
+lib-esm
 node_modules
 out
 tmp

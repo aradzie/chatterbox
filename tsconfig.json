@@ -1,11 +1,12 @@
 {
+  "$schema": "http://json.schemastore.org/tsconfig",
   "compilerOptions": {
     "target": "es2019",
     "module": "commonjs",
     "lib": ["es2019"],
     "declaration": true,
     "rootDir": "src",
-    "outDir": "lib-commonjs",
+    "outDir": "lib",
     "sourceMap": true,
     "inlineSources": true,
     "importHelpers": true,
