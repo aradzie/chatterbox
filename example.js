@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const { parse, validate, generate } = require(".");
 
 const grammar = parse(`
