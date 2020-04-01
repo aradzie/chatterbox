@@ -34,20 +34,20 @@
     "test": "ava --verbose"
   },
   "dependencies": {
-    "tslib": "^1.10.0"
+    "tslib": "^1.11.1"
   },
   "devDependencies": {
-    "@types/node": "^13.7.1",
-    "@typescript-eslint/eslint-plugin": "^2.20.0",
-    "@typescript-eslint/parser": "^2.20.0",
-    "ava": "^3.3.0",
+    "@types/node": "^13.9.8",
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
+    "ava": "^3.5.2",
     "eslint": "^6.8.0",
     "eslint-plugin-ava": "^10.2.0",
-    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-import": "^2.20.2",
     "pegjs": "^0.10.0",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.2",
     "source-map-support": "^0.5.16",
-    "typescript": "^3.7.5"
+    "typescript": "^3.8.3"
   },
   "ava": {
     "files": [
