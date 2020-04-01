@@ -17,7 +17,7 @@ export class Printer {
   }
 
   unindent(): this {
-    if (this.level == 0) {
+    if (this.level === 0) {
       throw new Error();
     }
     this.level -= 1;
@@ -26,7 +26,7 @@ export class Printer {
   }
 
   print(value: string): this {
-    if (value == "") {
+    if (value === "") {
       return this;
     }
     let pos = 0;
@@ -34,7 +34,7 @@ export class Printer {
       const index = value.indexOf("\n", pos);
       let substring;
       let nl;
-      if (index == -1) {
+      if (index === -1) {
         substring = value.substring(pos);
         nl = false;
         pos = value.length;

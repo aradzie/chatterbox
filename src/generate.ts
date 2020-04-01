@@ -29,7 +29,7 @@ export function generate(grammar: Grammar, options: Options = {}): string {
 
     if (isOpt(p)) {
       const { f = 1 } = p;
-      if (f == 1 || f > random()) {
+      if (f === 1 || f > random()) {
         visit(p.opt);
       }
       return;

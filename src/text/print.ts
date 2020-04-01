@@ -73,7 +73,7 @@ export function print(grammar: Grammar): string {
 
   function printOpt(p: Opt): void {
     printer.print("[ ");
-    if (p.f != 0.5) {
+    if (p.f !== 0.5) {
       printer.print(`f=${p.f} `);
     }
     printRule(p.opt, false);

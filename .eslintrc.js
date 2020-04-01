@@ -22,6 +22,7 @@ module.exports = {
     "plugin:import/typescript",
   ],
   rules: {
+    "eqeqeq": ["error", "always", { null: "never" }],
     "@typescript-eslint/no-use-before-define": "off",
   },
   overrides: [

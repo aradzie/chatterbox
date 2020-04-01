@@ -40,7 +40,7 @@ export function validate(grammar: Grammar): Grammar {
 
     if (isSeq(p)) {
       const { seq } = p;
-      if (seq.length == 0) {
+      if (seq.length === 0) {
         throw new Error(`Empty seq`);
       }
       for (const child of seq) {
@@ -51,7 +51,7 @@ export function validate(grammar: Grammar): Grammar {
 
     if (isAlt(p)) {
       const { alt } = p;
-      if (alt.length == 0) {
+      if (alt.length === 0) {
         throw new Error(`Empty alt`);
       }
       for (const child of alt) {

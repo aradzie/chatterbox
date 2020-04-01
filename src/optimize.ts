@@ -46,7 +46,7 @@ function visitSpan(v: Span): P {
 
 function visitOpt(v: Opt): P {
   const { f, opt } = v;
-  if (f == 1) {
+  if (f === 1) {
     return visit(opt);
   } else {
     return { f, opt: visit(opt) };
@@ -56,7 +56,7 @@ function visitOpt(v: Opt): P {
 function visitSeq(v: Seq): P {
   const seq: P[] = [];
   step(v);
-  if (seq.length == 1) {
+  if (seq.length === 1) {
     return seq[0];
   } else {
     return { ...v, seq };
@@ -86,7 +86,7 @@ function visitSeq(v: Seq): P {
 function visitAlt(v: Alt): P {
   const alt: P[] = [];
   step(v);
-  if (alt.length == 1) {
+  if (alt.length === 1) {
     return alt[0];
   } else {
     return { ...v, alt };
@@ -111,11 +111,11 @@ function visitAlt(v: Alt): P {
 
 export function isEmpty(p: P): boolean {
   if (isSeq(p)) {
-    return p.seq.length == 0;
+    return p.seq.length === 0;
   }
 
   if (isAlt(p)) {
-    return p.alt.length == 0;
+    return p.alt.length === 0;
   }
 
   return false;

@@ -7,16 +7,16 @@ export function merge(
   grammars: readonly Grammar[],
   onDuplicate: "throw" | "replace" = "replace",
 ): Grammar {
-  if (grammars.length == 0) {
+  if (grammars.length === 0) {
     throw new Error();
   }
-  if (grammars.length == 1) {
+  if (grammars.length === 1) {
     return grammars[0];
   }
   const map = new Map<string, P>();
   for (const grammar of grammars) {
     for (const [name, rule] of Object.entries(grammar.rule)) {
-      if (onDuplicate == "throw" && map.has(name)) {
+      if (onDuplicate === "throw" && map.has(name)) {
         throw new Error(`Duplicate rule "${name}"`);
       }
       map.set(name, rule);
