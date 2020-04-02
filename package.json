@@ -46,15 +46,11 @@
     "eslint-plugin-import": "^2.20.2",
     "pegjs": "^0.10.0",
     "prettier": "^2.0.2",
-    "source-map-support": "^0.5.16",
     "typescript": "^3.8.3"
   },
   "ava": {
     "files": [
       "lib/**/*.test.js"
-    ],
-    "require": [
-      "source-map-support"
     ]
   }
 }
