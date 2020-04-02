@@ -11,15 +11,14 @@ module.exports = {
     tsconfigRootDir: __dirname,
     project: ["./tsconfig.json"],
   },
-  plugins: ["ava", "import", "@typescript-eslint"],
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "plugin:ava/recommended",
     "plugin:import/recommended",
     "plugin:import/typescript",
+    "plugin:ava/recommended",
   ],
   rules: {
     "eqeqeq": ["error", "always", { null: "never" }],
