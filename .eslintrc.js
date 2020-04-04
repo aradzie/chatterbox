@@ -24,12 +24,4 @@ module.exports = {
     "eqeqeq": ["error", "always", { null: "never" }],
     "@typescript-eslint/no-use-before-define": "off",
   },
-  overrides: [
-    {
-      files: ["*.test.ts"],
-      rules: {
-        "ava/no-ignored-test-files": "off",
-      },
-    },
-  ],
 };
