@@ -1,7 +1,9 @@
+lib/
+lib-cjs/
+lib-esm/
+node_modules/
+build/
+out/
 *.grammar
 *.pegjs
 *.snap
-lib
-lib-cjs
-lib-esm
-tmp
