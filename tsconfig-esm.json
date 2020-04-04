@@ -6,5 +6,11 @@
     "outDir": "lib-esm",
     "module": "esnext",
     "declaration": false
-  }
+  },
+  "exclude": [
+    "**/test/*",
+    "**/spec/*",
+    "**/*.test.*",
+    "**/*.spec.*"
+  ]
 }
