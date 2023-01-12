@@ -75,7 +75,8 @@ test("syntax error", (t) => {
     },
     {
       name: "SyntaxError",
-      message: 'Expected "(", "[", "{", literal, ref, or whitespace but end of input found.',
+      message:
+        'Expected "(", "[", "{", literal, ref, separator, or whitespace but end of input found.',
     },
   ) as SyntaxError;
   t.deepEqual(location, {

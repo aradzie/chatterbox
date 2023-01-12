@@ -33,12 +33,16 @@ Factor
   / "{" _ "class" _ "=" _ cls:Name _ p:Alt _ "}" { return { cls: cls, span: p }; }
   / ref:Ref { return ref; }
   / lit:Lit { return lit; }
+  / sep:Sep { return sep; }
 
 Ref "ref"
   = "<" ref:Name ">" { return { ref }; }
 
 Lit "literal"
   = string:string { return string; }
+
+Sep "separator"
+  = "_" { return " "; }
 
 string "string"
   = '"' chars:char* '"' { return chars.join(""); }

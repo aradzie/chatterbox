@@ -4,8 +4,8 @@ import { generate, parse, validate } from "./lib/index.js";
 
 const grammar = parse(`
 start ->
-    "The " <noun> " is " <adj> "."
-  | "A " <adj> " " <noun> "."
+    "The" _ <noun> _ "is" _ <adj> "."
+  | "A" _ <adj> _ <noun> "."
   ;
 noun ->
     "house"

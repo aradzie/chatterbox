@@ -5,7 +5,7 @@ Generates text based on a context-free grammar.
 For example, given this grammar:
 
 ```text
-start -> "The " <noun> " is " <adj> "." | "A " <adj> " " <noun> "." ;
+start -> "The" _ <noun> _ "is" _ <adj> "." | "A" _ <adj> _ <noun> "." ;
 noun -> "house" | "cat" ;
 adj -> "green" | "big" ;
 

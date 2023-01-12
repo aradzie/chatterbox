@@ -2,81 +2,91 @@ start ->
   <section>
   ;
 section ->
-  <paragraph> <paragraph> <paragraph> <paragraph> [ <paragraph> ] [ <paragraph> ] [ <paragraph> ] [ <paragraph> ] [ <paragraph> ] [ <paragraph> ]
+  <paragraph>
+  "\n" "\n" <paragraph>
+  "\n" "\n" <paragraph>
+  "\n" "\n" <paragraph>
+  [ "\n" "\n" <paragraph> ]
+  [ "\n" "\n" <paragraph> ]
   ;
 paragraph ->
-    [ <sentence> ] [ <sentence> ] [ <sentence> ] [ <sentence> ] <sentence> <sentence> <sentence> <sentence> <sentence>
-  | [ <sentence> ] [ <sentence> ] <sentence> <sentence> <sentence> <sentence> <sentence>
-  | [ <sentence> ] [ <sentence> ] [ <sentence> ] [ <sentence> ] <sentence> <sentence> <sentence> <sentence>
+  [ <sentence> _ ]
+  [ <sentence> _ ]
+  [ <sentence> _ ]
+  [ <sentence> _ ]
+  <sentence> _
+  <sentence> _
+  <sentence> _
+  <sentence>
   ;
 sentence ->
-    { class=sentence [ <certainty.clause> ] <main.clause> "." }
-  | { class=sentence [ <certainty.clause> ] <main.clause> "." }
-  | { class=sentence [ <certainty.clause> [ ", " <how.clause> "," ] ] <subject.clause> "." }
+    { class=sentence [ <certainty.clause> _ ] <main.clause> "." }
+  | { class=sentence [ <certainty.clause> _ ] <main.clause> "." }
+  | { class=sentence [ <certainty.clause> [ "," _ <how.clause> "," ] _ ] <subject.clause> "." }
   ;
 main.clause ->
-    <Ns> [ ", " <throwaway.clause> "," ] <Vst> ( <Ns> | <Np> ) [ "; " <subject.clause> ]
-  | <Ns> [ " (" <intro.clause> ")" ] <Vsi> [ <how.clause> ]
-  | <Np> [ ", " <throwaway.clause> "," ] <Vpt> [ ", " <how.clause> "," ] ( <Ns> | <Np> )
-  | <Np> [ " (" <intro.clause> ")" ] <Vpi> [ ", " <how.clause> ] [ "; " <subject.clause> ]
+    <Ns> [ "," _ <throwaway.clause> "," ] <Vst> _ ( <Ns> | <Np> ) [ ";" _ <subject.clause> ]
+  | <Ns> [ _ "(" <intro.clause> ")" ] _ <Vsi> [ _ <how.clause> ]
+  | <Np> [ "," _ <throwaway.clause> "," ] _ <Vpt> [ "," _ <how.clause> "," ] _ ( <Ns> | <Np> )
+  | <Np> [ _ "(" <intro.clause> ")" ] _ <Vpi> [ "," _ <how.clause> ] [ ";" _ <subject.clause> ]
   ;
 Vpi ->
-    "inhibit " [ "my" | "our" ] "acceptance of " ( <Ns> | <Np> ) " as existent"
-  | "do not yet produce for " ( "us" | "me" ) " any abiding being" [ " apart from their relation to " ( <Ns> | <Np> ) ]
+    "inhibit" [ _ "my" | "our" ] _ "acceptance of" _ ( <Ns> | <Np> ) _ "as existent"
+  | "do not yet produce for" _ ( "us" | "me" ) _ "any abiding being" [ _ "apart from their relation to" _ ( <Ns> | <Np> ) ]
   | "are \"in themselves\""
-  | "are infinite ideas, related to infinities of harmoniously combinable " <Np> [ " and " <Np> ]
-  | "can be seen as " [ "full " ] "proof that, in spite of the continual experiencedness of " <Ns> ", a non-being of " ( <Ns> | <Np> ) " is " ( "conceivable" | "possible" )
-  | "need to be criticized with regard to their validity and range, before they can be used for " [ "the purposes of " ] "a radical grounding of " ( <Ns> | <Np> )
-  | "are precisely what make critical decisions about " ( <Ns> | <Np> ) " at all possible"
+  | "are infinite ideas, related to infinities of harmoniously combinable" _ <Np> [ _ "and" _ <Np> ]
+  | "can be seen as" [ _ "full" ] _ "proof that, in spite of the continual experiencedness of" _ <Ns> ", a non-being of" _ ( <Ns> | <Np> ) _ "is" _ ( "conceivable" | "possible" )
+  | "need to be criticized with regard to their validity and range, before they can be used for" [ _ "the purposes of" ] _ "a radical grounding of" _ ( <Ns> | <Np> )
+  | "are precisely what make critical decisions about" _ ( <Ns> | <Np> ) _ "at all possible"
   | "are unified synthetically"
-  | "synthetically constitute all particular instances of " <Ns> " that ever become prominent"
+  | "synthetically constitute all particular instances of" _ <Ns> _ "that ever become prominent"
   ;
 Vpt ->
     "exist for us thanks to"
   | "denote the universal primary phenomena of"
   | "are only modalities of"
   | "become modalized also in correlation with"
-  | "stand in contrast to" [ " the accident being \"for me\" of" ]
+  | "stand in contrast to" [ _ "the accident being \"for me\" of" ]
   | "become adjusted to"
   ;
 Vsi ->
-    "inhibits acceptance of " <Ns> " as existent"
+    "inhibits acceptance of" _ <Ns> _ "as existent"
   | "is actual"
   | "does not yet produce for us any abiding being"
   | "is \"in itself\""
-  | "is an infinite idea, related to infinities of harmoniously combinable " <Np>
-  | "is an agreement of " <Ns> " with the judged " <Np>
-  | "can be seen as full proof that, in spite of the continual experiencedness of " <Np> ", a non-being of " <Ns> " is conceivable"
-  | "needs to be criticized with regard to its validity and range, before it can be used for the purposes of a radical grounding of " <Ns>
-  | "is precisely what makes critical decisions about " <Np> " at all possible"
+  | "is an infinite idea, related to infinities of harmoniously combinable" _ <Np>
+  | "is an agreement of" _ <Ns> _ "with the judged" _ <Np>
+  | "can be seen as full proof that, in spite of the continual experiencedness of" _ <Np> ", a non-being of" _ <Ns> _ "is conceivable"
+  | "needs to be criticized with regard to its validity and range, before it can be used for the purposes of a radical grounding of" _ <Ns>
+  | "is precisely what makes critical decisions about" _ <Np> _ "at all possible"
   | "is unified synthetically"
-  | "synthetically constitutes all particular " <Np> " that ever become prominent"
+  | "synthetically constitutes all particular" _ <Np> _ "that ever become prominent"
   ;
 subject.clause ->
-    ( "I" | "we" ) " now shift the weight of transcendental evidence of " ( <Ns> | <Np> ) [ "(" <intro.clause> ") " ] "from the " [ <ego.type> ] "ego to " ( <Ns> | <Np> )
-  | "we must not let ourselves be frightened by considerations of " <Ns> " and " <Np>
-  | "only in reflection do we \"direct\" ourselves to " <Ns> " and to its perceptual directedness to " <Np>
-  | "we have not simply lost " <Ns> " for phenomenology; we retain it" [ ", " <throwaway.clause> "," ] <how.clause>
-  | "I have the reflection that " <Ns> " is given continuously as an objective unity in a multi-form and changeable multiplicity of " <Np> ", which belong determinately to it"
-  | "I" [ ", the meditating phenomenologist," ] " set myself the all-embracing task of uncovering " ( "myself" | <Ns> | <Np> ) <how.clause>
+    ( "I" | "we" ) _ "now shift the weight of transcendental evidence of" _ ( <Ns> | <Np> ) [ _ "(" <intro.clause> ")" ] _ "from the" [ _ <ego.type> ] _ "ego to" _ ( <Ns> | <Np> )
+  | "we must not let ourselves be frightened by considerations of" _ <Ns> _ "and" _ <Np>
+  | "only in reflection do we \"direct\" ourselves to" _ <Ns> _ "and to its perceptual directedness to" _ <Np>
+  | "we have not simply lost" _ <Ns> _ "for phenomenology; we retain it" [ "," _ <throwaway.clause> "," ] <how.clause>
+  | "I have the reflection that" _ <Ns> _ "is given continuously as an objective unity in a multi-form and changeable multiplicity of" _ <Np> ", which belong determinately to it"
+  | "I" [ ", the meditating phenomenologist," ] _ "set myself the all-embracing task of uncovering" _ ( "myself" | <Ns> | <Np> ) <how.clause>
   ;
 how.clause ->
-    "by conscious conversion into the corresponding " <Np>
-  | "by virtue of a synthesis in which what is meant coincides and agree with " <Ns>
-  | "by a freely actualizable return to " ( <Ns> | <Np> )
-  | "by reconciling with " ( <Ns> | <Np> )
-  | "by orienting " ( <Ns> | <Np> ) " according to accrued insights"
-  | "by the fundamental nature of " ( <Ns> | <Np> )
+    "by conscious conversion into the corresponding" _ <Np>
+  | "by virtue of a synthesis in which what is meant coincides and agree with" _ <Ns>
+  | "by a freely actualizable return to" _ ( <Ns> | <Np> )
+  | "by reconciling with" _ ( <Ns> | <Np> )
+  | "by orienting" _ ( <Ns> | <Np> ) _ "according to accrued insights"
+  | "by the fundamental nature of" _ ( <Ns> | <Np> )
   ;
 intro.clause ->
     "in the natural attitude"
   | "de facto"
-  | "owing to the instability and ambiguity of " ( <Ns> | <Np> )
+  | "owing to the instability and ambiguity of" _ ( <Ns> | <Np> )
   | "by immersing ourselves in such a striving"
   | "in other words"
   | "by this preliminary work, here roughly indicated rather than done explicitly"
   | "where this is still wanting"
-  | "since the form belonging to a systematic order of " ( <Ns> | <Np> ) " is part of this idea"
+  | "since the form belonging to a systematic order of" _ ( <Ns> | <Np> ) _ "is part of this idea"
   | "in the broadest sense"
   | "as we have said"
   | "in the attitude established by transcendental reduction"
@@ -99,48 +109,48 @@ throwaway.clause ->
   | "however"
   | "mediately"
   | "naturally"
-  | "even with respect to the evidence in which " ( <Ns> " presents itself" | <Np> " present themselves" )
+  | "even with respect to the evidence in which" _ ( <Ns> _ "presents itself" | <Np> _ "present themselves" )
   | "as a matter of essential necessity"
   | "perchance"
   | "when we let our thoughts hasten in this manner"
   ;
 certainty.clause ->
     "it is plain that"
-  | "by immersing ourselves meditatively in the general intentions of " ( <Ns> | <Np> ) ", we discover that"
+  | "by immersing ourselves meditatively in the general intentions of" _ ( <Ns> | <Np> ) ", we discover that"
   | "if we follow up this doubt, it becomes manifest that"
   | "by virtue of my free epoche with respect to the being of the experienced world, the momentous fact is that"
   | "yet it must not be overlooked that"
   | "the fact is that"
   | "we can be sure that"
   | "hence it follows without more ado that"
-  | ( <Ns> " calls" | <Np> " call" ) " our attention to the fact that"
+  | ( <Ns> _ "calls" | <Np> _ "call" ) _ "our attention to the fact that"
   | "we see in advance that"
-  | "the fact is evident" [ ", even apodictically evident," ] " that"
+  | "the fact is evident" [ ", even apodictically evident," ] _ "that"
   | "it becomes evident that"
   ;
 Ns ->
     "the phenomenon"
   | "an object"
-  | "the cogitatum" [ " (qua cogitatum)" ]
-  | [ "transcendental " ] "phenomenology"
-  | ( "pure" [ " and genuine" ] | "scientific" ) " evidence"
+  | "the cogitatum" [ _ "(qua cogitatum)" ]
+  | [ "transcendental" _ ] "phenomenology"
+  | ( "pure" [ _ "and genuine" ] | "scientific" ) _ "evidence"
   | "cognition"
   | "the ego cogito"
   | "transcendental subjectivity"
   | "the transcendental-phenomenological reduction"
-  | "the " [ "phenomenological " ] "epoche"
+  | "the" [ _ "phenomenological" ] "epoche"
   | "the Objective world"
-  | "a transcendental grounding of " ( <Ns> | <Np> )
+  | "a transcendental grounding of" _ ( <Ns> | <Np> )
   | "philosophy"
-  | "the stream of " <Np>
+  | "the stream of" _ <Np>
   | "what is itself given"
-  | "the repeatable act of grounding" [ " of " <Np> ]
+  | "the repeatable act of grounding" [ _ "of" _ <Np> ]
   | "an infinite horizon of approximations"
-  | "the " <ego.type> " Ego"
+  | "the" _ <ego.type> _ "Ego"
   | "the fundamental form of this universal synthesis"
-  | "the " [ "all-embracing " ] "consciousness of internal time"
+  | "the" [ _ "all-embracing" ] _ "consciousness of internal time"
   | "immanent time"
-  | "the task of clarifying " <Np>
+  | "the task of clarifying" _ <Np>
   | "the whole of conscious life"
   ;
 ego.type ->
@@ -153,7 +163,7 @@ Np ->
     "noetic acts"
   | "cogitationes"
   | "noematic descriptions"
-  | [ "separated " ] "modes of consciousness"
-  | "multiplicities of " <Ns>
+  | [ "separated" _ ] "modes of consciousness"
+  | "multiplicities of" _ <Ns>
   | "experiences"
   ;
