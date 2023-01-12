@@ -1,5 +1,5 @@
 import type { Grammar } from "../types";
-import { parse as peggyParse, SyntaxError } from "./peggy-parser"; // eslint-disable-line import/named
+import { parse as peggyParse, SyntaxError } from "./peggy-parser";
 
 export { SyntaxError };
 

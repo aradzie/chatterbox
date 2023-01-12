@@ -75,7 +75,7 @@ function visitSeq(v: Seq): P {
   function push(p: P): void {
     if (!isEmpty(p)) {
       if (isLit(p) && seq.length > 0 && isLit(seq[seq.length - 1])) {
-        seq.push(seq.pop() + p);
+        seq.push(String(seq.pop()) + p);
       } else {
         seq.push(p);
       }
