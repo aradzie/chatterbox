@@ -61,16 +61,17 @@ test("parse rules", (t) => {
 });
 
 test("syntax error", (t) => {
-  const { location } = t.throws<SyntaxError>(
+  const { location } = t.throws(
     () => {
       parse(" a -> ");
     },
     {
       name: "SyntaxError",
-      message: 'Expected "(", "[", "{", literal, or ref but end of input found.',
+      message: 'Expected "(", "[", "{", literal, ref, or whitespace but end of input found.',
     },
-  );
+  ) as SyntaxError;
   t.deepEqual(location, {
+    source: undefined,
     start: {
       line: 1,
       column: 7,
