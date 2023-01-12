@@ -1,6 +1,6 @@
 import test from "ava";
+import { type Grammar } from "./ast.js";
 import { merge } from "./merge.js";
-import { type Grammar } from "./types.js";
 
 test("single grammar", (t) => {
   const a: Grammar = { rule: { a: "a", x: "1" } };

@@ -1,4 +1,4 @@
-import { type Grammar, isAlt, isLit, isOpt, isRef, isSeq, isSpan, type P } from "./types.js";
+import { type Grammar, isAlt, isLit, isOpt, isRef, isSeq, isSpan, type P } from "./ast.js";
 
 /**
  * Checks that the given grammar is valid.

@@ -6,7 +6,6 @@ function peg$subclass(child, parent) {
   function C() {
     this.constructor = child;
   }
-
   C.prototype = parent.prototype;
   child.prototype = new C();
 }

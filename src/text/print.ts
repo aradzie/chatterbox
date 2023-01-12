@@ -12,7 +12,7 @@ import {
   type Ref,
   type Seq,
   type Span,
-} from "../types.js";
+} from "../ast.js";
 import { Printer } from "./printer.js";
 import { sort } from "./sort.js";
 

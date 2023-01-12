@@ -11,7 +11,7 @@ import {
   type RuleMap,
   type Seq,
   type Span,
-} from "./types.js";
+} from "./ast.js";
 
 /**
  * Returns an optimized copy of the given grammar.

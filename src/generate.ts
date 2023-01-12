@@ -1,4 +1,4 @@
-import { type Grammar, isAlt, isLit, isOpt, isRef, isSeq, isSpan, type P } from "./types.js";
+import { type Grammar, isAlt, isLit, isOpt, isRef, isSeq, isSpan, type P } from "./ast.js";
 
 export interface Options {
   readonly start?: string;
@@ -11,7 +11,7 @@ export interface Options {
 export function generate(grammar: Grammar, options: Options = {}): string {
   const {
     start = "start", // The default start.
-    random = (): number => Math.random(), // The default RNG.
+    random = Math.random, // The default RNG.
   } = options;
 
   const { rule } = grammar;

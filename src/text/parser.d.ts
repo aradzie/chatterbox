@@ -1,4 +1,4 @@
-import { type P } from "../types.js";
+import { type P } from "../ast.js";
 
 declare class SyntaxError extends Error {
   readonly location: Location;
