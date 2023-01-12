@@ -22,20 +22,19 @@
     "lorem",
     "ipsum"
   ],
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
-  "module": "lib-esm/index.js",
+  "type": "module",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "scripts": {
-    "compile": "rm -fr lib; rm -fr lib-esm; tsc; tsc -b tsconfig-esm.json",
+    "clean": "rm -fr lib",
+    "precompile": "peggy --format es -o src/text/peggy-parser.js src/text/peggy-parser.peggy",
+    "compile": "tsc",
+    "test": "ava",
     "format": "prettier --write 'src/**/*'",
-    "generate": "peggy -o src/text/peggy-parser.js src/text/peggy-parser.peggy",
     "lint": "eslint src --ext .ts",
-    "lint-fix": "eslint src --ext .ts --fix",
-    "test": "ava --verbose"
+    "lint-fix": "eslint src --ext .ts --fix"
   },
-  "dependencies": {
-    "tslib": "^2.4.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@ava/typescript": "^3.0.1",
     "@types/node": "^18.11.18",

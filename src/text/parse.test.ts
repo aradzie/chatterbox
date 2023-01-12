@@ -1,5 +1,5 @@
 import test from "ava";
-import { parse, SyntaxError } from "./parse";
+import { parse, type SyntaxError } from "./parse.js";
 
 test("parse empty", (t) => {
   t.deepEqual(parse(``), { rule: {} });
@@ -15,19 +15,27 @@ test("parse ref", (t) => {
 });
 
 test("parse opt", (t) => {
-  t.deepEqual(parse(`start -> [ "a" ];`), { rule: { start: { f: 0.5, opt: "a" } } });
+  t.deepEqual(parse(`start -> [ "a" ];`), {
+    rule: { start: { f: 0.5, opt: "a" } },
+  });
 });
 
 test("parse seq", (t) => {
-  t.deepEqual(parse(`start -> "a" "b" "c";`), { rule: { start: { seq: ["a", "b", "c"] } } });
+  t.deepEqual(parse(`start -> "a" "b" "c";`), {
+    rule: { start: { seq: ["a", "b", "c"] } },
+  });
 });
 
 test("parse alt", (t) => {
-  t.deepEqual(parse(`start -> "a" | "b" | "c";`), { rule: { start: { alt: ["a", "b", "c"] } } });
+  t.deepEqual(parse(`start -> "a" | "b" | "c";`), {
+    rule: { start: { alt: ["a", "b", "c"] } },
+  });
 });
 
 test("parse span", (t) => {
-  t.deepEqual(parse(`start -> { class=xyz "a" };`), { rule: { start: { cls: "xyz", span: "a" } } });
+  t.deepEqual(parse(`start -> { class=xyz "a" };`), {
+    rule: { start: { cls: "xyz", span: "a" } },
+  });
 });
 
 test("priorities", (t) => {

@@ -1,5 +1,5 @@
 import test from "ava";
-import { Printer } from "./printer";
+import { Printer } from "./printer.js";
 
 test("intially is empty", (t) => {
   t.is(String(new Printer()), "");

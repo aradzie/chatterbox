@@ -1,20 +1,20 @@
 import {
-  Alt,
-  Grammar,
+  type Alt,
+  type Grammar,
   isAlt,
   isLit,
   isOpt,
   isRef,
   isSeq,
   isSpan,
-  Opt,
-  P,
-  Ref,
-  Seq,
-  Span,
-} from "../types";
-import { Printer } from "./printer";
-import { sort } from "./sort";
+  type Opt,
+  type P,
+  type Ref,
+  type Seq,
+  type Span,
+} from "../types.js";
+import { Printer } from "./printer.js";
+import { sort } from "./sort.js";
 
 /**
  * Prints the given grammar in the human-readable form.

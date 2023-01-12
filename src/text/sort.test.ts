@@ -1,10 +1,12 @@
 import test from "ava";
-import { sort } from "./sort";
+import { sort } from "./sort.js";
 
 test("trivial", (t) => {
   t.deepEqual(sort({ rule: {} }), { rule: {} });
   t.deepEqual(sort({ rule: { start: "a" } }), { rule: { start: "a" } });
-  t.deepEqual(sort({ rule: { start: "a", other: "b" } }), { rule: { start: "a", other: "b" } });
+  t.deepEqual(sort({ rule: { start: "a", other: "b" } }), {
+    rule: { start: "a", other: "b" },
+  });
 });
 
 test("sort topologically", (t) => {
@@ -16,7 +18,9 @@ test("sort topologically", (t) => {
 });
 
 test("with cycle", (t) => {
-  const grammar = { rule: { start: { ref: "other" }, other: { ref: "start" } } };
+  const grammar = {
+    rule: { start: { ref: "other" }, other: { ref: "start" } },
+  };
   const sorted = sort(grammar);
   t.deepEqual(sorted, grammar);
 });

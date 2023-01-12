@@ -6,26 +6,20 @@
 //
 // where grammar name is one of the file names found in the `grammar` directory.
 
-const { parse, validate, generate } = require(".");
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
+import { fileURLToPath } from "node:url";
+import { generate, parse, validate } from "./lib/index.js";
 
-const path = require("path");
-const fs = require("fs");
-const util = require("util");
+loadGrammar(process.argv[2] || "thanks").catch((err) => {
+  console.error(err);
+});
 
-const readFile = util.promisify(fs.readFile);
-
-loadGrammar(process.argv[2] || "thanks");
-
-function loadGrammar(name) {
-  const file = path.join(__dirname, "grammar", name + ".grammar");
-
-  readFile(file, "utf8")
-    .then(parse)
-    .then((grammar) => {
-      validate(grammar);
-      console.log(generate(grammar));
-    })
-    .catch((err) => {
-      console.error(err);
-    });
+async function loadGrammar(name) {
+  const dir = fileURLToPath(new URL(".", import.meta.url));
+  const file = join(dir, "grammar", name + ".grammar");
+  const content = await readFile(file, "utf8");
+  const grammar = parse(content);
+  validate(grammar);
+  console.log(generate(grammar));
 }

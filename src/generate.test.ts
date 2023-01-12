@@ -1,5 +1,5 @@
 import test from "ava";
-import { generate } from "./generate";
+import { generate } from "./generate.js";
 
 test("generate from deterministic grammar", (t) => {
   t.is(

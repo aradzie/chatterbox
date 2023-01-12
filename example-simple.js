@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const { parse, validate, generate } = require(".");
+import { generate, parse, validate } from "./lib/index.js";
 
 const grammar = parse(`
 start ->

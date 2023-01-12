@@ -1,5 +1,5 @@
 import test from "ava";
-import { print } from "./print";
+import { print } from "./print.js";
 
 test("print", (t) => {
   t.snapshot(
@@ -37,7 +37,10 @@ test("print", (t) => {
   t.snapshot(
     print({
       rule: {
-        start: { cls: "xyz", span: { seq: [{ alt: ["a", "b"] }, { alt: ["c", "d"] }] } },
+        start: {
+          cls: "xyz",
+          span: { seq: [{ alt: ["a", "b"] }, { alt: ["c", "d"] }] },
+        },
       },
     }),
   );

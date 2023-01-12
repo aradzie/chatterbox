@@ -1,4 +1,4 @@
-import type { Grammar, P } from "./types";
+import { type Grammar, type P } from "./types.js";
 
 /**
  * Merges multiple grammar into one, from left to right, the later rules overwrite the former.

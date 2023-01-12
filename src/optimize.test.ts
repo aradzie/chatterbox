@@ -1,5 +1,5 @@
 import test from "ava";
-import { optimize } from "./optimize";
+import { optimize } from "./optimize.js";
 
 test("flatten seqs", (t) => {
   t.deepEqual(

@@ -1,5 +1,5 @@
-import type { Grammar } from "../types";
-import { parse as peggyParse, SyntaxError } from "./peggy-parser";
+import type { Grammar } from "../types.js";
+import { parse as peggyParse, SyntaxError } from "./peggy-parser.js";
 
 export { SyntaxError };
 

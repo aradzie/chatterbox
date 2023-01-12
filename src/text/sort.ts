@@ -1,4 +1,4 @@
-import { Grammar, isAlt, isOpt, isRef, isSeq, isSpan, P } from "../types";
+import { type Grammar, isAlt, isOpt, isRef, isSeq, isSpan, type P } from "../types.js";
 
 /**
  * Sorts grammar rules topologically.

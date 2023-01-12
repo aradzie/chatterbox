@@ -1,5 +1,5 @@
 import test from "ava";
-import { validate } from "./validate";
+import { validate } from "./validate.js";
 
 test("valid grammar", (t) => {
   t.notThrows(() => {

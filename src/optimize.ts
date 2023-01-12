@@ -1,5 +1,17 @@
-import type { Alt, Grammar, Opt, P, RuleMap, Seq, Span } from "./types";
-import { isAlt, isLit, isOpt, isSeq, isSpan } from "./types";
+import {
+  type Alt,
+  type Grammar,
+  isAlt,
+  isLit,
+  isOpt,
+  isSeq,
+  isSpan,
+  type Opt,
+  type P,
+  type RuleMap,
+  type Seq,
+  type Span,
+} from "./types.js";
 
 /**
  * Returns an optimized copy of the given grammar.
