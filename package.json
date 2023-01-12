@@ -27,7 +27,7 @@
   "types": "./lib/index.d.ts",
   "scripts": {
     "clean": "rm -fr lib",
-    "precompile": "peggy --format es -o src/text/parser.js src/text/parser.peggy",
+    "precompile": "peggy --format es -o src/grammar/parser.js src/grammar/parser.peggy",
     "compile": "tsc",
     "test": "ava",
     "format": "prettier --write 'src/**/*'",
